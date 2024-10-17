@@ -38,14 +38,14 @@
 
   systemd = {
     services = {
-      wireproxy = {
-        wantedBy = [ "multi-user.target" ];
-        serviceConfig = {
-          ExecStart =
-            "${pkgs.wireproxy}/bin/wireproxy -s -c /home/user/wg/wireguard.conf";
-          # User = "wireproxy";
-        };
-      };
+      # wireproxy = {
+      #   wantedBy = [ "multi-user.target" ];
+      #   serviceConfig = {
+      #     ExecStart =
+      #       "${pkgs.wireproxy}/bin/wireproxy -s -c /home/user/wg/wireguard.conf";
+      #     # User = "wireproxy";
+      #   };
+      # };
     };
     user.services = {
       alsa-restore = {
