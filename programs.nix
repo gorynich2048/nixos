@@ -15,6 +15,13 @@
       u = import unstable { system = pkgs.system; };
     in [
       (final: prev: { hyprland = u.hyprland; })
+      (final: prev: {
+        vscode-extensions.ms-vscode.cpptools = prev.vscode-extensions.ms-vscode.cpptools.overrideAttrs(oldAttrs: {
+          postFixup = (oldAttrs.postFixup or "") + ''
+            cp $out/share/vscode/extensions/ms-vscode.cpptools/debugAdapters/bin/cppdbg.ad7Engine.json $out/share/vscode/extensions/ms-vscode.cpptools/debugAdapters/bin/nvim-dap.ad7Engine.json
+          '';
+        });
+      })
       # (final: prev: { linuxPackages = u.linuxPackages; })
     ];
   # hardware.nvidia.package = (import unstable { system = pkgs.system; }).linuxPackages.nvidiaPackages.latest;

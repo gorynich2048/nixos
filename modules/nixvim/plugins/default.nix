@@ -1,4 +1,4 @@
-{
+{ lib, pkgs, ... }: {
   imports = [
     ./treesitter.nix
     ./telescope.nix
@@ -14,6 +14,35 @@
       sleuth.enable = true; #auto indent
       fugitive.enable = true;
       spectre.enable = true;
+      dap = {
+        enable = true;
+        adapters = {
+          executables = {
+            lldb = {
+              command = lib.getExe pkgs.lldb;
+            };
+            cppdbg = {
+              command = "${pkgs.vscode-extensions.ms-vscode.cpptools}/share/vscode/extensions/ms-vscode.cpptools/debugAdapters/bin/OpenDebugAD7";
+            };
+          };
+        };
+        # configurations = {
+        #   c = [
+        #     {
+        #       name = "lldb";
+        #       request = "launch";
+        #       type = "lldb";
+        #     }
+        #     {
+        #       name = "cppdbg";
+        #       request = "launch";
+        #       type = "cppdbg";
+        #     }
+        #   ];
+        # };
+        # configurations.cpp = configurations.c;
+        # configurations.rust = configurations.c;
+      };
       oil = {
         enable = true;
         settings = {
