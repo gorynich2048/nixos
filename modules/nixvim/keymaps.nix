@@ -30,7 +30,16 @@
           "N" = "Nzzzv";
 
           # TODO: conflicts with diagnostics
-          "<leader>d" = "\"_d";
+          #"<leader>d" = "\"_d";
+
+          "<leader>db" = ":DapToggleBreakpoint<CR>";
+          "<leader>dr" = ":DapToggleRepl<CR>";
+          "<leader>dt" = ":DapTerminate<CR>";
+          "<leader>dc" = ":DapContinue<CR>";
+          "<leader>di" = ":DapStepInto<CR>";
+          "<leader>do" = ":DapStepOut<CR>";
+          "<leader>dn" = ":DapStepOver<CR>";
+          "<leader>dd" = ":DapDisconnect<CR>";
 
           # Resize with arrows
           "<C-Up>" = ":resize -2<CR>";

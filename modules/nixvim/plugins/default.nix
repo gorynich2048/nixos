@@ -14,6 +14,7 @@
       sleuth.enable = true; #auto indent
       fugitive.enable = true;
       spectre.enable = true;
+      cmake-tools.enable = true;
       dap = {
         enable = true;
         adapters = {

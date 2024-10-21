@@ -22,6 +22,18 @@
           '';
         });
       })
+      (final: prev: {
+        vimPlugins = prev.vimPlugins // {
+          cmake-tools-nvim = prev.vimPlugins.cmake-tools-nvim.overrideAttrs(oldAttrs: {
+            src = prev.fetchFromGitHub {
+              owner = "Civitasv";
+              repo = "cmake-tools.nvim";
+              rev = "aedf4b6c9b76294ec96ff617db7ffdfa634cfa69";
+              sha256 = "sha256-umUzS4Tq9IEL3zt0ru6T7yPco4KfMgraSjIEMa/6BvQ=";
+            };
+          });
+        };
+      })
       # (final: prev: { linuxPackages = u.linuxPackages; })
     ];
   # hardware.nvidia.package = (import unstable { system = pkgs.system; }).linuxPackages.nvidiaPackages.latest;
@@ -29,7 +41,6 @@
   environment = {
     systemPackages = with pkgs; [
       git
-      p4
       btop
       # nvtop
       kitty
@@ -40,7 +51,6 @@
       # pwvucontrol
       qpwgraph
       # brave
-      remmina
       sshfs
       # vrrtest
 
@@ -72,7 +82,6 @@
       # element-desktop-wayland
       # nheko
       wl-clipboard
-      chromium
       wineWowPackages.waylandFull
       winetricks
       mongodb-compass
@@ -103,8 +112,16 @@
       prismlauncher # minecraft
       inputs.rose-pine-hyprcursor.packages.${system}.default
 
-      openconnect # parascript vpn
       shadowsocks-rust
+
+      # parascript
+      cmake
+      gcc_multi
+      ninja
+      openconnect # parascript vpn
+      p4
+      chromium
+      remmina
     ];
 
     # chromium & electron use wayland
