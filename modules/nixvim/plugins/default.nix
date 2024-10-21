@@ -15,6 +15,7 @@
       fugitive.enable = true;
       spectre.enable = true;
       cmake-tools.enable = true;
+      surround.enable = true;
       dap = {
         enable = true;
         adapters = {
