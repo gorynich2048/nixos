@@ -16,12 +16,12 @@
         };
       };
       servers = {
-        lua-ls.enable = true;
+        lua_ls.enable = true;
         nixd.enable = true;
         # nil_ls.enable = true;
         clangd.enable = true;
         cmake.enable = true;
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
@@ -29,7 +29,7 @@
             cargo.features = "all";
           };
         };
-        java-language-server.enable = true;
+        java_language_server.enable = true;
       };
     };
   };

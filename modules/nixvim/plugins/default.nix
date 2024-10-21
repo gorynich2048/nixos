@@ -15,8 +15,9 @@
       fugitive.enable = true;
       spectre.enable = true;
       cmake-tools.enable = true;
-      surround.enable = true;
+      vim-surround.enable = true;
       treesitter-context.enable = true;
+      web-devicons.enable = true;
       dap = {
         enable = true;
         adapters = {
