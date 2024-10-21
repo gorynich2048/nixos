@@ -16,6 +16,7 @@
       spectre.enable = true;
       cmake-tools.enable = true;
       surround.enable = true;
+      treesitter-context.enable = true;
       dap = {
         enable = true;
         adapters = {
