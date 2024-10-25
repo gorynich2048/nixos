@@ -116,7 +116,13 @@
 
       # parascript
       cmake
-      gcc_multi
+      (wrapCCWith {
+        cc = gcc11Stdenv.cc.cc;
+        libc = glibc_multi;
+        bintools = binutils.override {
+          libc = glibc_multi;
+        };
+      })
       ninja
       openconnect # parascript vpn
       p4
