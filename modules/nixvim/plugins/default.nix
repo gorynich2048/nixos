@@ -19,6 +19,17 @@
       vim-surround.enable = true;
       treesitter-context.enable = true;
       web-devicons.enable = true;
+      harpoon = {
+        enable = true;
+        enableTelescope = true;
+        keymaps = {
+          addFile = "<leader>a";
+          toggleQuickMenu = "<leader>m";
+        };
+        menu = {
+          borderChars = [ " " ];
+        };
+      };
       oil = {
         enable = true;
         settings = {
