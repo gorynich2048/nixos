@@ -1,4 +1,4 @@
-{ config, lib, pkgs, home-manager, ... }: {
+{ config, lib, pkgs, nixpkgs, home-manager, ... }: {
   imports = [
     ./hardware-configuration.nix
     ./modules
@@ -8,6 +8,7 @@
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
