@@ -7,6 +7,7 @@
     ./ollama.nix
     ./neotest.nix
     ./dap.nix
+    ./himalaya.nix
   ];
 
   programs.nixvim = {
