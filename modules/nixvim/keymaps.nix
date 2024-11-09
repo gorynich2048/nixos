@@ -42,10 +42,15 @@
           "<leader>dd" = ":DapDisconnect<CR>";
 
           # Resize with arrows
-          "<C-Up>" = ":resize -2<CR>";
-          "<C-Down>" = ":resize +2<CR>";
-          "<C-Left>" = ":vertical resize +2<CR>";
-          "<C-Right>" = ":vertical resize -2<CR>";
+          # "<C-Up>" = ":resize -2<CR>";
+          # "<C-Down>" = ":resize +2<CR>";
+          # "<C-Left>" = ":vertical resize +2<CR>";
+          # "<C-Right>" = ":vertical resize -2<CR>";
+
+          "<C-Up>" = "<C-w>k";
+          "<C-Down>" = "<C-w>j";
+          "<C-Left>" = "<C-w>h";
+          "<C-Right>" = "<C-w>l";
         };
       visual =
         lib.mapAttrsToList
