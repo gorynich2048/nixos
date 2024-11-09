@@ -67,6 +67,7 @@
       qpwgraph
       # brave
       sshfs
+      nmap
       # vrrtest
 
       # cargo
