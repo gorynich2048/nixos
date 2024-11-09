@@ -34,6 +34,21 @@
           });
         };
       })
+      # (final: prev: {
+      #   himalaya = prev.himalaya.overrideAttrs(oldAttrs: rec {
+      #     src = prev.fetchFromGitHub {
+      #       owner = "pimalaya";
+      #       repo = "himalaya";
+      #       rev = "fecbae001c723bd13c2d65de07988db9222b9b7e";
+      #       hash = "sha256-BNm8YKAeAN5TPAWxbFGAcSnYgxTLZvlyje8ShwkMG8A=";
+      #     };
+      #     cargoDeps = oldAttrs.cargoDeps.overrideAttrs (prev.lib.const {
+      #       name = "${oldAttrs.pname}-vendor.tar.gz";
+      #       inherit src;
+      #       hash = "sha256-umUzS4Tq9IEL3zt0ru6T7yPco4KfMgraSjIEMa/6BvQ=";
+      #     });
+      #   });
+      # })
       # (final: prev: { linuxPackages = u.linuxPackages; })
     ];
   # hardware.nvidia.package = (import unstable { system = pkgs.system; }).linuxPackages.nvidiaPackages.latest;

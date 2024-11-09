@@ -12,6 +12,13 @@
       enable = true;
       joinNetworks = [ "3efa5cb78ac3e597" "17d709436cba1f72" ];
     };
+    davmail = {
+      enable = true;
+      url = "https://mail.parascript.com/EWS/Exchange.asmx";
+      config = {
+        davmail.mode = "EWS";
+      };
+    };
     # hydra = {
     #   enable = true;
     #   hydraURL = "http://localhost:3000"; # externally visible URL
