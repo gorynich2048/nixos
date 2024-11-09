@@ -13,7 +13,7 @@
           inherit action key;
         })
         {
-          "-" = ":lua require('oil').open()<CR>";
+          "\\" = ":Oil<CR>";
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
           "<leader>k" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":lua require('spectre').toggle()<CR>";
