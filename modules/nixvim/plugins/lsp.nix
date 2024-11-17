@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   environment.sessionVariables.PATH = [
     "/home/user/.cargo/bin/"
   ];
@@ -44,6 +44,12 @@
         };
         wgsl_analyzer = {
           enable = true;
+          package = pkgs.fetchFromGitHub {
+            owner = "wgsl-analyzer";
+            repo = "wgsl-analyzer";
+            rev = "a54d6a959518319655c1645d1212747e3b065e8a";
+            sha256 = "sha256-ERpFr120bSfadYMnkNbNquppmF+Xrg9t/0xk87INq2A=";
+          };
         };
         java_language_server.enable = true;
       };

@@ -88,6 +88,7 @@
           "<C-i>" = "<C-\\><C-n><C-i>";
           "<C-o>" = "<C-\\><C-n><C-o>";
           "<C-Esc>" = "<Esc>";
+          "<Tab>" = "<Tab>";
         };
     in
       (normal ++ visual ++ insert ++ terminal);
