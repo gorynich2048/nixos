@@ -13,7 +13,9 @@
           inherit action key;
         })
         {
-          "\\" = ":Oil<CR>";
+          "<C-Enter>" = ":Oil<CR>";
+          "<S-Enter>" = ":Oil .<CR>";
+          "<Backspace>" = ":Oil .<CR>";
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
           "<leader>k" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":lua require('spectre').toggle()<CR>";
@@ -42,10 +44,10 @@
           "<leader>dd" = ":DapDisconnect<CR>";
 
           # Resize with arrows
-          # "<C-Up>" = ":resize -2<CR>";
-          # "<C-Down>" = ":resize +2<CR>";
-          # "<C-Left>" = ":vertical resize +2<CR>";
-          # "<C-Right>" = ":vertical resize -2<CR>";
+          "<S-Up>" = ":resize +2<CR>";
+          "<S-Down>" = ":resize -2<CR>";
+          "<S-Left>" = ":vertical resize -2<CR>";
+          "<S-Right>" = ":vertical resize +2<CR>";
 
           "<C-Up>" = "<C-w>k";
           "<C-Down>" = "<C-w>j";
@@ -72,6 +74,7 @@
           inherit action key;
         })
         {
+          "<C-v>" = "<C-r>+";
         };
       terminal =
         lib.mapAttrsToList
@@ -82,6 +85,8 @@
         {
           # Propagate esc in terminal mode
           "<Esc>" = "<C-\\><C-n>";
+          "<C-i>" = "<C-\\><C-n><C-i>";
+          "<C-o>" = "<C-\\><C-n><C-o>";
           "<C-Esc>" = "<Esc>";
         };
     in
