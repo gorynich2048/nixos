@@ -1,4 +1,8 @@
-{ self, nixvim, ... }: {
+{ ... }: {
+  environment.sessionVariables.PATH = [
+    "/home/user/.cargo/bin/"
+  ];
+
   programs.nixvim = {
     plugins.lsp = {
       enable = true;
@@ -37,6 +41,9 @@
           settings = {
             cargo.features = "all";
           };
+        };
+        wgsl_analyzer = {
+          enable = true;
         };
         java_language_server.enable = true;
       };
