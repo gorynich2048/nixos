@@ -53,6 +53,9 @@
           "<C-Down>" = "<C-w>j";
           "<C-Left>" = "<C-w>h";
           "<C-Right>" = "<C-w>l";
+
+          "p" = "\"+p";
+          "P" = "\"+P";
         };
       visual =
         lib.mapAttrsToList
@@ -62,10 +65,13 @@
         })
         {
           # Replace without yank
-          "<leader>p" = "\"_dP";
+          "<leader>p" = "\"_d\"+P";
 
           # Delete without yank
           "<leader>d" = "\"_d";
+
+          "p" = "\"+p";
+          "P" = "\"+P";
         };
       insert =
         lib.mapAttrsToList
