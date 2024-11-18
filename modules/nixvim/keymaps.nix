@@ -76,7 +76,7 @@
       insert =
         lib.mapAttrsToList
         (key: action: {
-          mode = "i";
+          mode = "!";
           inherit action key;
         })
         {
