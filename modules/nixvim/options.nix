@@ -60,6 +60,7 @@
 
       completeopt = ["menu" "menuone" "noselect" "preview"];
       virtualedit = "block";
+      shadafile = "NONE";
     };
 
     colorschemes.onedark = {
