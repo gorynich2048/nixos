@@ -12,11 +12,11 @@
           "gr" = "references";
           "gt" = "type_definition";
           "gi" = "implementation";
-          "ga" = "code_action";
+          "<leader>ca" = "code_action";
           "<leader>r" = "rename";
           # "<leader>i" = "incoming_calls";
           # "<leader>o" = "outgoing_calls";
-          "K" = "hover";
+          "l" = "hover";
         };
       };
       servers = {

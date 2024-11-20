@@ -15,7 +15,7 @@
         {
           "<C-Enter>" = ":Oil<CR>";
           "<S-Enter>" = ":Oil .<CR>";
-          "<Backspace>" = ":Oil .<CR>";
+          "<Backspace>" = ":Oil<CR>";
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
           "<leader>k" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":lua require('spectre').toggle()<CR>";
@@ -26,8 +26,8 @@
           "<esc>" = ":noh<CR>";
 
           # Center view
-          "<C-d>" = "<C-d>zz";
-          "<C-u>" = "<C-u>zz";
+          "<C-d>" = "M<C-d>zz";
+          "<C-u>" = "M<C-u>";
           "n" = "nzzzv";
           "N" = "Nzzzv";
 
