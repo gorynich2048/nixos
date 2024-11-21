@@ -16,7 +16,7 @@
           "<leader>r" = "rename";
           # "<leader>i" = "incoming_calls";
           # "<leader>o" = "outgoing_calls";
-          "l" = "hover";
+          "H" = "hover";
         };
       };
       servers = {
