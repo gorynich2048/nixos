@@ -70,38 +70,68 @@
 
     extraConfigLua = ''
       local ollama = require('model.providers.ollama')
-      local system = '<|start_header_id|>system<|end_header_id|>\n\n'
-      local user = '<|start_header_id|>user<|end_header_id|>\n\n'
-      local ai = '<|start_header_id|>assistant<|end_header_id|>\n\n'
-      local eot = '<|eot_id|>'
+      local parse = function(input, system, user, assistant)
+        return {
+          prompt = system .. input
+            :gsub('\n# %s*me%s*\n', user)
+            :gsub('\n# %s*you%s*\n', assistant)
+        }
+      end
 
-      local spell = 'system: You must correct user spelling. For example "You meant to ask...". Then answer that question.\n'
       require('model').setup({
         prompts = {
           llama3 = {
-            provider = ollama,
-            params = {
-              model = 'llama3'
+            provider = ollama, params = {
+              model = 'llama3',
+              raw = true
             },
             builder = function(input)
-              return {
-                prompt = input
-                  :gsub('^spell%s*', spell)
-                  :gsub('^system:%s*', system)
-                  :gsub('\nme:%s*', '\n' .. eot .. user)
-                  :gsub('\nyou:%s*', '\n' .. eot .. ai)
-              }
+              return parse(input,
+                '<|start_header_id|>system<|end_header_id|>\n\n',
+                '<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n',
+                '<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'
+              )
             end
           },
           ['llama3:text'] = {
-            provider = ollama,
-            params = {
-              model = 'llama3:text'
+            provider = ollama, params = {
+              model = 'llama3:text',
+              raw = true
             },
             builder = function(input)
               return {
                 prompt = input
               }
+            end
+          },
+          ['qwen2.5-coder:32b'] = {
+            provider = ollama, params = {
+              model = 'qwen2.5-coder:32b',
+              raw = true,
+              options = {
+                num_ctx = 4096,
+                temperature = 0
+              }
+            },
+            builder = function(input)
+              return parse(input,
+                '<|im_start|>system\n',
+                '<|im_end|>\n<|im_start|>user\n',
+                '<|im_end|>\n<|im_start|>assistant\n'
+              )
+            end
+          },
+          ['hf.co/mradermacher/MN-12B-Siskin-v0.1-i1-GGUF:Q4_K_M'] = {
+            provider = ollama, params = {
+              model = 'hf.co/mradermacher/MN-12B-Siskin-v0.1-i1-GGUF:Q4_K_M',
+              raw = true
+            },
+            builder = function(input)
+              return parse(input,
+                "",
+                '</s>[INST] ',
+                '[/INST]  '
+              )
             end
           },
         },
