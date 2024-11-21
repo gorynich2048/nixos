@@ -117,7 +117,7 @@
       # w3m
       mangohud
 
-      #ollama
+      ollama
 
       mpv
       yt-dlp
