@@ -142,6 +142,7 @@
 
       require('term-edit').setup({
         prompt_end = '> ',
+        default_reg = '+'
       })
     '';
   };

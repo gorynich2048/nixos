@@ -81,6 +81,7 @@
         })
         {
           "<C-v>" = "<C-r>+";
+          "<C-Backspace>" = "<C-w>";
         };
       terminal =
         lib.mapAttrsToList
@@ -89,6 +90,9 @@
           inherit action key;
         })
         {
+          "<C-v>" = "<C-\\><C-o>\"+p";
+          "<C-Backspace>" = "<C-w>";
+
           # Propagate esc in terminal mode
           "<Esc>" = "<C-\\><C-n>";
           "<C-i>" = "<C-\\><C-n><C-i>";
