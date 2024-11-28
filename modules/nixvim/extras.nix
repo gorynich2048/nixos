@@ -109,7 +109,7 @@
               model = 'qwen2.5-coder:32b',
               raw = true,
               options = {
-                num_ctx = 4096,
+                num_ctx = 32768,
                 temperature = 0
               }
             },
@@ -124,7 +124,10 @@
           ['hf.co/mradermacher/MN-12B-Siskin-v0.1-i1-GGUF:Q4_K_M'] = {
             provider = ollama, params = {
               model = 'hf.co/mradermacher/MN-12B-Siskin-v0.1-i1-GGUF:Q4_K_M',
-              raw = true
+              raw = true,
+              options = {
+                num_ctx = 32768
+              }
             },
             builder = function(input)
               return parse(input,
