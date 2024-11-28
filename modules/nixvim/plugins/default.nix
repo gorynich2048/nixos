@@ -1,7 +1,6 @@
 {
   imports = [
     ./treesitter.nix
-    ./telescope.nix
     ./cmp.nix
     ./lsp.nix
     ./ollama.nix
@@ -20,15 +19,13 @@
       vim-surround.enable = true;
       treesitter-context.enable = true;
       web-devicons.enable = true;
-      harpoon = {
+      fzf-lua = {
         enable = true;
-        enableTelescope = true;
-        keymaps = {
-          addFile = "<leader>a";
-          toggleQuickMenu = "<leader>m";
-        };
-        menu = {
-          borderChars = [ " " ];
+        settings = {
+          winopts = {
+            border = "none";
+            fullscreen = true;
+          };
         };
       };
       oil = {
