@@ -36,6 +36,8 @@
           };
           keymaps = {
             "-" = false;
+            "`" = false;
+            "<S-Tab>" = "actions.cd";
           };
           cleanup_delay_ms = false;
           # experimental_watch_for_changes = true;
