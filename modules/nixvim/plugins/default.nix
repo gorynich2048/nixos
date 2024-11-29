@@ -21,6 +21,7 @@
       web-devicons.enable = true;
       fzf-lua = {
         enable = true;
+        profile = "skim";
         settings = {
           winopts = {
             border = "none";

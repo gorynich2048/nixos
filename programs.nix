@@ -80,7 +80,7 @@
 
       killall
 
-      fzf
+      skim
 
       wofi
       blender
