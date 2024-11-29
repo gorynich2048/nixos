@@ -73,8 +73,12 @@
       local parse = function(input, system, user, assistant)
         return {
           prompt = system .. input
-            :gsub('\n# %s*me%s*\n', user)
-            :gsub('\n# %s*you%s*\n', assistant)
+            :gsub('\n# me[%s=]*\n', user)
+            :gsub('\n# ai[%s=]*\n', assistant)
+            :gsub('\n# you[%s=]*\n', assistant)
+            :gsub('^# me[%s=]*\n', user)
+            :gsub('^# ai[%s=]*\n', assistant)
+            :gsub('^# you[%s=]*\n', assistant)
         }
       end
 
@@ -109,7 +113,7 @@
               model = 'qwen2.5-coder:32b',
               raw = true,
               options = {
-                num_ctx = 32768,
+                num_ctx = 4096,
                 temperature = 0
               }
             },
@@ -121,19 +125,19 @@
               )
             end
           },
-          ['hf.co/mradermacher/MN-12B-Siskin-v0.1-i1-GGUF:Q4_K_M'] = {
+          ['hf.co/mradermacher/MN-12B-Siskin-v0.1-i1-GGUF'] = {
             provider = ollama, params = {
-              model = 'hf.co/mradermacher/MN-12B-Siskin-v0.1-i1-GGUF:Q4_K_M',
+              model = 'hf.co/mradermacher/MN-12B-Siskin-v0.1-i1-GGUF:IQ3_S',
               raw = true,
               options = {
-                num_ctx = 32768
+                num_ctx = 2048
               }
             },
             builder = function(input)
               return parse(input,
                 "",
-                '</s>[INST] ',
-                '[/INST]  '
+                '</s><s>[INST] ',
+                ' [/INST] '
               )
             end
           },
