@@ -105,6 +105,7 @@
       # lf
       # trashy
       ripgrep
+      fd
       # bat
       xdragon
       # ueberzugpp

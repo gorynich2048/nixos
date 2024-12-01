@@ -19,6 +19,7 @@
         davmail.mode = "EWS";
       };
     };
+    input-remapper.enable = true;
     # hydra = {
     #   enable = true;
     #   hydraURL = "http://localhost:3000"; # externally visible URL
