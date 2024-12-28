@@ -92,7 +92,7 @@
       usbutils
       wireproxy
       alsa-utils
-      gimp
+      # gimp
       grimblast
       tesseract
       # element-desktop-wayland

@@ -7,8 +7,12 @@
     (import "${home-manager}/nixos")
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    nixPath = [ "nixpkgs=${nixpkgs}" ];
+    daemonCPUSchedPolicy = "idle";
+    daemonIOSchedClass = "idle";
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
