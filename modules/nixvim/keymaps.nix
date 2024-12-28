@@ -38,15 +38,6 @@
           # TODO: conflicts with diagnostics
           #"<leader>d" = "\"_d";
 
-          "<leader>db" = ":DapToggleBreakpoint<CR>";
-          "<leader>dr" = ":DapToggleRepl<CR>";
-          "<leader>dt" = ":DapTerminate<CR>";
-          "<leader>dc" = ":DapContinue<CR>";
-          "<leader>di" = ":DapStepInto<CR>";
-          "<leader>do" = ":DapStepOut<CR>";
-          "<leader>dn" = ":DapStepOver<CR>";
-          "<leader>dd" = ":DapDisconnect<CR>";
-
           # Resize with arrows
           "<S-Up>" = ":resize +2<CR>";
           "<S-Down>" = ":resize -2<CR>";
