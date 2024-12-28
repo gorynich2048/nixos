@@ -190,7 +190,12 @@
       xwayland.enable = true;
     };
 
-    steam.enable = true;
+    steam = {
+      enable = true;
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
+    };
     # chromium = {
     #   enable = true;
     #   extensions = [
