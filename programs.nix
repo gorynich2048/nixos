@@ -83,7 +83,7 @@
       skim
 
       wofi
-      blender
+      # blender
       zip
       unzip
       p7zip
