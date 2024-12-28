@@ -51,6 +51,9 @@
 
           "p" = "\"+p";
           "P" = "\"+P";
+
+          "l" = "<C-u>";
+          "h" = "<C-d>";
         };
       visual =
         lib.mapAttrsToList
@@ -67,6 +70,9 @@
 
           "p" = "\"+p";
           "P" = "\"+P";
+
+          "l" = "<C-u>";
+          "h" = "<C-d>";
         };
       insert =
         lib.mapAttrsToList
