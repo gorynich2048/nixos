@@ -3,9 +3,9 @@
     programs = {
       firefox = {
         enable = true;
-        # nativeMessagingHosts = [
-        #   pkgs.tridactyl-native
-        # ];
+        nativeMessagingHosts = [
+          pkgs.tridactyl-native
+        ];
 
         /* ---- POLICIES ---- */
         # Check about:policies#documentation for options.
