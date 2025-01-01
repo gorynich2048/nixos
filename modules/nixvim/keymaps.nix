@@ -18,7 +18,7 @@
           "<Backspace>" = ":Oil<CR>";
           "<C-Backspace>" = ":Oil .refs/<CR>";
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
-          "<leader>k" = ":lua vim.diagnostic.open_float()<CR>";
+          "<leader>h" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":lua require('spectre').toggle()<CR>";
           "<leader>ff" = ":FzfLua files<CR>";
           "<leader>fl" = ":FzfLua live_grep<CR>";
