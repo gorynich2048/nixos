@@ -20,6 +20,7 @@
       vim-surround.enable = true;
       treesitter-context.enable = true;
       web-devicons.enable = true;
+      hex.enable = true;
       fzf-lua = {
         enable = true;
         profile = "skim";
