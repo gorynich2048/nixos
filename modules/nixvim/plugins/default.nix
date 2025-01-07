@@ -1,6 +1,7 @@
 {
   imports = [
     ./treesitter.nix
+    ./telescope.nix
     ./cmp.nix
     ./lsp.nix
     ./ollama.nix

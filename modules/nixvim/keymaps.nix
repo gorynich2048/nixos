@@ -20,9 +20,11 @@
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
           "<leader>h" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":lua require('spectre').toggle()<CR>";
-          "<leader>ff" = ":FzfLua files<CR>";
-          "<leader>fl" = ":FzfLua live_grep<CR>";
-          "<leader>b" = ":FzfLua buffers<CR>";
+
+          "<leader>ff" = ":Telescope find_files<CR>";
+          "<leader>fl" = ":Telescope live_grep<CR>";
+          "<leader>b" = ":Telescope buffers<CR>";
+          "<leader>fd" = ":Telescope diagnostics<CR>";
 
           "<Space>" = "<NOP>";
 
