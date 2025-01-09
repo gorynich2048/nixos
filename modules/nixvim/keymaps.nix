@@ -56,6 +56,8 @@
 
           "l" = "<C-u>";
           "h" = "<C-d>";
+          "L" = ":tabp<CR>";
+          "H" = ":tabn<CR>";
         };
       visual =
         lib.mapAttrsToList
