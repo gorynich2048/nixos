@@ -12,6 +12,7 @@
     nixPath = [ "nixpkgs=${nixpkgs}" ];
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
+    gc.automatic = true;
   };
 
   boot.loader.systemd-boot.enable = true;
