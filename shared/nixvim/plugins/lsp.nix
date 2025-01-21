@@ -1,8 +1,8 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   # For wgsl_analyzer
-  environment.sessionVariables.PATH = lib.mkDefault [
-    "/home/user/.cargo/bin/"
-  ];
+  # environment.sessionVariables.PATH = [
+  #   "/home/user/.cargo/bin/"
+  # ];
 
   programs.nixvim = {
     plugins.lsp = {
