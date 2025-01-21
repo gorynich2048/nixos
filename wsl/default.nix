@@ -13,8 +13,5 @@
 
   networking = {
     hostName = "wsl";
-    extraHosts = ''
-      128.140.88.66 h
-    '';
   };
 }

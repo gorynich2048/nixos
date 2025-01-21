@@ -12,11 +12,6 @@
     gc.automatic = true;
   };
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "C.UTF-8";
 
