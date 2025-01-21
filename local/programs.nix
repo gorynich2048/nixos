@@ -13,13 +13,6 @@
   nixpkgs.overlays =
     [
       (final: prev: {
-        vscode-extensions.ms-vscode.cpptools = prev.vscode-extensions.ms-vscode.cpptools.overrideAttrs(oldAttrs: {
-          postFixup = (oldAttrs.postFixup or "") + ''
-            cp $out/share/vscode/extensions/ms-vscode.cpptools/debugAdapters/bin/cppdbg.ad7Engine.json $out/share/vscode/extensions/ms-vscode.cpptools/debugAdapters/bin/nvim-dap.ad7Engine.json
-          '';
-        });
-      })
-      (final: prev: {
         vimPlugins = prev.vimPlugins // {
           cmake-tools-nvim = prev.vimPlugins.cmake-tools-nvim.overrideAttrs(oldAttrs: {
             src = prev.fetchFromGitHub {
