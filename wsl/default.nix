@@ -3,7 +3,7 @@
     ./programs.nix
     ./services.nix
     ../shared
-    nixos-wsl.nixosModules
+    nixos-wsl.nixosModules.default
   ];
 
   wsl = {
