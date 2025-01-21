@@ -24,14 +24,6 @@
           mappings = {
             i = {
               "<C-v>".__raw = "function() vim.cmd 'normal! p' vim.cmd 'startinsert!' end";
-              # "<Esc>" = "close";
-              # "<C-j>".__raw = "require('telescope.actions').move_selection_next";
-              # "<Tab>".__raw = "require('telescope.actions').move_selection_next";
-              # "<C-d>".__raw = "require('telescope.actions').results_scrolling_down";
-              # "<C-k>".__raw = "require('telescope.actions').move_selection_previous";
-              # "<S-Tab>".__raw = "require('telescope.actions').move_selection_previous";
-              # "<C-u>".__raw = "require('telescope.actions').results_scrolling_up";
-              # "<C-l>".__raw = "require('telescope.actions').select_default";
             };
           };
         };

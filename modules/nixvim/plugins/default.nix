@@ -1,8 +1,10 @@
 {
   imports = [
+    ./oil.nix
     ./treesitter.nix
     ./telescope.nix
     ./cmp.nix
+    ./cmake.nix
     ./lsp.nix
     ./ollama.nix
     ./neotest.nix
@@ -17,40 +19,10 @@
       sleuth.enable = true; #auto indent
       fugitive.enable = true;
       spectre.enable = true;
-      cmake-tools.enable = true;
       vim-surround.enable = true;
       treesitter-context.enable = true;
       web-devicons.enable = true;
       hex.enable = true;
-      fzf-lua = {
-        enable = true;
-        profile = "skim";
-        settings = {
-          winopts = {
-            border = "none";
-            fullscreen = true;
-          };
-        };
-      };
-      oil = {
-        enable = true;
-        settings = {
-          view_options = {
-            show_hidden = true;
-          };
-          keymaps = {
-            "-" = false;
-            "`" = false;
-            "<S-Tab>" = "actions.cd";
-          };
-          cleanup_delay_ms = false;
-          # experimental_watch_for_changes = true;
-          keymaps_help.border = "none";
-          float.border = "none";
-          preview.border = "none";
-          ssh.border = "none";
-        };
-      };
       indent-blankline = {
         enable = true;
         settings = {
@@ -67,9 +39,9 @@
           change.text = "~";
         };
       };
-      nvim-colorizer = {
+      colorizer = {
         enable = true;
-        userDefaultOptions.names = false;
+        settings.user_default_options.names = false;
       };
       # nvim-autopairs.enable = true;
       # refactoring.enable = true;

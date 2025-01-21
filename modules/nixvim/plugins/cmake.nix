@@ -1,10 +1,12 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    himalaya
+    cmake
+    gcc_multi
+    ninja
   ];
   programs.nixvim = {
-    extraPlugins = [
-      pkgs.vimPlugins.himalaya-vim
-    ];
+    plugins = {
+      cmake-tools.enable = true;
+    };
   };
 }

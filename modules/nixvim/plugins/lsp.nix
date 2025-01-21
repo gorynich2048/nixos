@@ -31,7 +31,6 @@
             # };
           };
         };
-        # nil_ls.enable = true;
         clangd.enable = true;
         cmake.enable = true;
         rust_analyzer = {

@@ -27,20 +27,13 @@
           "<leader>fd" = ":Telescope diagnostics<CR>";
 
           "<Space>" = "<NOP>";
-
-          # Esc to clear search results
           "<esc>" = ":noh<CR>";
 
-          # Center view
           "<C-d>" = "M<C-d>zz";
           "<C-u>" = "M<C-u>";
           "n" = "nzzzv";
           "N" = "Nzzzv";
 
-          # TODO: conflicts with diagnostics
-          #"<leader>d" = "\"_d";
-
-          # Resize with arrows
           "<S-Up>" = ":resize +2<CR>";
           "<S-Down>" = ":resize -2<CR>";
           "<S-Left>" = ":vertical resize -2<CR>";
@@ -66,10 +59,7 @@
           inherit action key;
         })
         {
-          # Replace without yank
           "<leader>p" = "\"_d\"+P";
-
-          # Delete without yank
           "<leader>d" = "\"_d";
 
           "p" = "\"+p";
@@ -98,7 +88,6 @@
           "<C-v>" = "<C-\\><C-o>\"+p";
           "<C-Backspace>" = "<C-w>";
 
-          # Propagate esc in terminal mode
           "<Esc>" = "<C-\\><C-n>";
           "<C-i>" = "<C-\\><C-n><C-i>";
           "<C-o>" = "<C-\\><C-n><C-o>";

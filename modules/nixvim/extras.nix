@@ -1,58 +1,5 @@
 { pkgs, ... }: {
   programs.nixvim = {
-    # extraPlugins = [
-    #   (pkgs.vimUtils.buildVimPlugin {
-    #     pname = "llm.nvim";
-    #     version = "2024-02-22";
-    #     src = pkgs.fetchFromGitHub {
-    #       owner = "huggingface";
-    #       repo = "llm.nvim";
-    #       rev = "51b76dac9c33c0122adfe28daf52ceaa31c4aa02";
-    #       sha256 = "sha256-fQJA2z9fsd9HU5p9bjHsQfdt/vObNz9pQIz4FVePIR4=";
-    #     };
-    #     meta.homepage = "https://github.com/huggingface/llm.nvim/";
-    #   })
-    # ];
-    #
-    # extraConfigLua = ''
-    #   require('llm').setup({
-    #     backend = "ollama",
-    #     model = "llama3:text",
-    #     url = "http://localhost:11434/api/generate",
-    #     request_body = {
-    #       parameters = {
-    #         temperature = 0.2,
-    #         top_p = 0.95,
-    #       }
-    #     },
-    #     lsp = {
-    #       bin_path = "${pkgs.llm-ls}/bin/llm-ls",
-    #     },
-    #     enable_suggestions_on_startup = false,
-    #   })
-    # '';
-
-    # extraPlugins = [
-    #   pkgs.vimPlugins.llm-nvim
-    # ];
-    # extraConfigLua = ''
-    #   require('llm').setup({
-    #     backend = "ollama",
-    #     model = "llama3:text",
-    #     url = "http://localhost:11434",
-    #     request_body = {
-    #       options = {
-    #         temperature = 0.2,
-    #         top_p = 0.95,
-    #       }
-    #     },
-    #     lsp = {
-    #       bin_path = "${pkgs.llm-ls}/bin/llm-ls",
-    #     },
-    #     enable_suggestions_on_startup = false,
-    #   })
-    # '';
-
     extraPlugins = [
       (pkgs.vimUtils.buildVimPlugin {
         name = "model.nvim";
