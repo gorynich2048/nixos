@@ -4,7 +4,6 @@
     ./treesitter.nix
     ./telescope.nix
     ./cmp.nix
-    ./cmake.nix
     ./lsp.nix
     ./ollama.nix
     ./neotest.nix
