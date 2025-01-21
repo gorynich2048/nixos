@@ -8,7 +8,6 @@
     ./ollama.nix
     ./neotest.nix
     ./dap.nix
-    ./himalaya.nix
     ./hydra.nix
   ];
 
