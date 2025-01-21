@@ -1,5 +1,6 @@
-{ pkgs, ... }: {
-  environment.sessionVariables.PATH = [
+{ pkgs, lib, ... }: {
+  # For wgsl_analyzer
+  environment.sessionVariables.PATH = lib.mkDefault [
     "/home/user/.cargo/bin/"
   ];
 
