@@ -4,7 +4,6 @@
     ./programs.nix
     ./services.nix
     ./nvidia.nix
-    ./nixvim
     ../shared
   ];
 

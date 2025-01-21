@@ -1,6 +1,7 @@
 { pkgs, nixpkgs, home-manager, ... }: {
   imports = [
     ./programs.nix
+    ./nixvim
     (import "${home-manager}/nixos")
   ];
 
