@@ -23,6 +23,7 @@
           set_env.COLORTERM = "truecolor";
           mappings = {
             i = {
+              "<C-v>".__raw = "function() vim.cmd 'normal! p' vim.cmd 'startinsert!' end";
               # "<Esc>" = "close";
               # "<C-j>".__raw = "require('telescope.actions').move_selection_next";
               # "<Tab>".__raw = "require('telescope.actions').move_selection_next";
