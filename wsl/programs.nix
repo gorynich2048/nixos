@@ -5,4 +5,10 @@
       tmux
     ];
   };
+
+  home-manager.users.user = {
+    imports = [
+      ../shared/btop.nix
+    ];
+  };
 }

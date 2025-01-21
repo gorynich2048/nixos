@@ -2,7 +2,6 @@
   environment = {
     systemPackages = with pkgs; [
       git
-      btop
       killall
       ripgrep
       fd
