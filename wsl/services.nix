@@ -1,5 +1,8 @@
 { ... }: {
   services = {
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      ports = [ 1022 ];
+    };
   };
 }

@@ -1,9 +1,9 @@
-{ ... }: {
+{ nixos-wsl, ... }: {
   imports = [
     ./programs.nix
     ./services.nix
     ../shared
-    <nixos-wsl/modules>
+    nixos-wsl.nixosModules
   ];
 
   wsl = {
