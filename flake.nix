@@ -26,10 +26,10 @@
         specialArgs = inputs;
         modules = [ ./local ];
       };
-      remote = nixpkgs.lib.nixosSystem {
+      wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
-        modules = [ ./remote ];
+        modules = [ ./wsl ];
       };
     };
   };
