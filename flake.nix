@@ -20,10 +20,17 @@
   };
 
   outputs = { nixpkgs, ... }@inputs: {
-    nixosConfigurations.local = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = inputs;
-      modules = [ ./configuration.nix ];
+    nixosConfigurations = {
+      local = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = inputs;
+        modules = [ ./local ];
+      };
+      remote = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = inputs;
+        modules = [ ./remote ];
+      };
     };
   };
 }

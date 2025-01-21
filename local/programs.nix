@@ -35,16 +35,8 @@
 
   environment = {
     systemPackages = with pkgs; [
-      git
-      btop
-      killall
-      ripgrep
-      fd
-      aria
-
       sshfs
       nmap
-      unzip
       android-file-transfer
       alsa-utils
       grimblast
@@ -84,15 +76,6 @@
   };
 
   programs = {
-    fish = {
-      enable = true;
-      interactiveShellInit = ''
-        set fish_greeting ""
-        alias vi=$EDITOR
-        alias grep=rg
-      '';
-    };
-
     hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -107,10 +90,6 @@
   };
 
   home-manager.users.user = {
-    programs = {
-      fish.enable = true;
-    };
-
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
