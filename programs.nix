@@ -94,6 +94,7 @@
       wireproxy
       alsa-utils
       # gimp
+      krita
       grimblast
       tesseract
       # element-desktop-wayland
