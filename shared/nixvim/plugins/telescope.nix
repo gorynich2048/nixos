@@ -24,6 +24,7 @@
           mappings = {
             i = {
               "<C-v>".__raw = "function() vim.cmd 'normal! p' vim.cmd 'startinsert!' end";
+              "<C-Backspace>".__raw = "function() vim.cmd 'normal! bdw' vim.cmd 'startinsert!' end";
             };
           };
         };
