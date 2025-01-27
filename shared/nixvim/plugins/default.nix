@@ -41,7 +41,7 @@
         enable = true;
         settings.user_default_options.names = false;
       };
-      # nvim-autopairs.enable = true;
+      nvim-autopairs.enable = true;
       # refactoring.enable = true;
       # rustaceanvim = {
       #   enable = true;
