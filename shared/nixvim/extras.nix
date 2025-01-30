@@ -104,6 +104,22 @@
               )
             end
           },
+          ['deepseek-r1:7b'] = {
+            provider = ollama, params = {
+              model = 'deepseek-r1:7b',
+              raw = true,
+              options = {
+                num_ctx = 2048,
+              }
+            },
+            builder = function(input)
+              return parse(input,
+                "",
+                '<｜end▁of▁sentence｜><｜User｜>',
+                '<｜Assistant｜>'
+              )
+            end
+          },
         },
       })
 
