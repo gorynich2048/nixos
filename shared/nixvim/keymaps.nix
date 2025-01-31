@@ -31,6 +31,7 @@
 
           "<C-d>" = "M<C-d>zz";
           "<C-u>" = "M<C-u>";
+          "<C-o>" = "<C-o>zzzv";
           "n" = "nzzzv";
           "N" = "Nzzzv";
 
@@ -51,6 +52,9 @@
           "h" = "<C-d>";
           "L" = ":tabp<CR>";
           "H" = ":tabn<CR>";
+
+          "gf" = "gFzzzv";
+          "gd" = "gdzzzv";
         };
       visual =
         lib.mapAttrsToList
