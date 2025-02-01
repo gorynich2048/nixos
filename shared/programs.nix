@@ -21,6 +21,11 @@
         alias pwsh='/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /c'
       '';
     };
+    direnv = {
+      enable = true;
+      silent = true;
+      nix-direnv.enable = true;
+    };
   };
 
   home-manager.users.user = {

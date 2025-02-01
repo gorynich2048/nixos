@@ -13,7 +13,7 @@
           "gr" = "references";
           "gt" = "type_definition";
           "gi" = "implementation";
-          "<leader>ca" = "code_action";
+          "<leader>a" = "code_action";
           "<leader>r" = "rename";
           # "<leader>i" = "incoming_calls";
           # "<leader>o" = "outgoing_calls";
