@@ -39,7 +39,10 @@
           installCargo = true;
           installRustc = true;
           settings = {
-            cargo.features = "all";
+            cargo = {
+              features = "all";
+              targetDir = "target_rust_analyzer";
+            };
           };
         };
         wgsl_analyzer = {

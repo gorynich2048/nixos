@@ -45,7 +45,6 @@
       shadowsocks-rust
       openconnect
 
-      kitty
       qutebrowser
       chromium
       pavucontrol
@@ -98,6 +97,16 @@
       theme = {
         name = "Adwaita-dark";
         package = pkgs.gnome-themes-extra;
+      };
+    };
+
+    programs = {
+      kitty = {
+        enable = true;
+        settings = {
+          background_opacity = 0; # 0.8;
+          background = "#1f1f1f";
+        };
       };
     };
   };

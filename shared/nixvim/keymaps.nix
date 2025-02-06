@@ -31,7 +31,7 @@
 
           "<C-d>" = "M<C-d>zz";
           "<C-u>" = "M<C-u>";
-          "<C-o>" = "<C-o>zzzv";
+          # "<C-o>" = "<C-o>zzzv";
           "n" = "nzzzv";
           "N" = "Nzzzv";
 
