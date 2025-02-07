@@ -9,7 +9,7 @@
     };
 
     clipboard = {
-      register = "unnamedplus";
+      # register = "unnamedplus";
       providers.wl-copy.enable = true;
     };
 

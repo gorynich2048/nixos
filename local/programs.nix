@@ -79,6 +79,10 @@
         proton-ge-bin
       ];
     };
+
+    nixvim = {
+      clipboard.register = "unnamedplus";
+    };
   };
 
   home-manager.users.user = {
