@@ -7,12 +7,10 @@
 
     keymaps = let
       normal =
-        lib.mapAttrsToList
-        (key: action: {
+        lib.mapAttrsToList (key: action: {
           mode = "n";
           inherit action key;
-        })
-        {
+        }) {
           "<C-Enter>" = ":Oil<CR>";
           "<S-Enter>" = ":Oil .<CR>";
           "<Backspace>" = ":Oil<CR>";
@@ -57,12 +55,10 @@
           "gd" = "gdzzzv";
         };
       visual =
-        lib.mapAttrsToList
-        (key: action: {
+        lib.mapAttrsToList (key: action: {
           mode = "v";
           inherit action key;
-        })
-        {
+        }) {
           "<leader>p" = "\"_d\"+P";
           "<leader>d" = "\"_d";
 
@@ -73,22 +69,18 @@
           "h" = "<C-d>";
         };
       insert =
-        lib.mapAttrsToList
-        (key: action: {
+        lib.mapAttrsToList (key: action: {
           mode = "!";
           inherit action key;
-        })
-        {
+        }) {
           "<C-v>" = "<C-r>+";
           "<C-Backspace>" = "<C-w>";
         };
       terminal =
-        lib.mapAttrsToList
-        (key: action: {
+        lib.mapAttrsToList (key: action: {
           mode = "t";
           inherit action key;
-        })
-        {
+        }) {
           "<C-v>" = "<C-\\><C-o>\"+p";
           "<C-Backspace>" = "<C-w>";
 

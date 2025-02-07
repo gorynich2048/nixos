@@ -82,6 +82,25 @@
 
     nixvim = {
       clipboard.register = "unnamedplus";
+      keymaps = let
+        normal =
+          lib.mapAttrsToList (key: action: {
+            mode = "n";
+            inherit action key;
+          }) {
+            "p" = "\"+p";
+            "P" = "\"+P";
+          };
+        visual =
+          lib.mapAttrsToList (key: action: {
+            mode = "v";
+            inherit action key;
+          }) {
+            "p" = "\"+p";
+            "P" = "\"+P";
+          };
+      in
+        (normal ++ visual);
     };
   };
 
