@@ -6,6 +6,7 @@
     };
 
     keymaps = let
+      # :h map-modes
       normal =
         lib.mapAttrsToList (key: action: {
           mode = "n";
@@ -52,7 +53,7 @@
         };
       visual =
         lib.mapAttrsToList (key: action: {
-          mode = "v";
+          mode = "x";
           inherit action key;
         }) {
           "<leader>p" = "\"_d\"+P";
