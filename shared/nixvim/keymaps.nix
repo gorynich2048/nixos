@@ -56,7 +56,6 @@
           mode = "x";
           inherit action key;
         }) {
-          "<leader>p" = "\"_d\"+P";
           "<leader>d" = "\"_d";
 
           "l" = "<C-u>";
@@ -67,7 +66,6 @@
           mode = "!";
           inherit action key;
         }) {
-          "<C-v>" = "<C-r>+";
           "<C-Backspace>" = "<C-w>";
         };
       terminal =
@@ -75,7 +73,6 @@
           mode = "t";
           inherit action key;
         }) {
-          "<C-v>" = "<C-\\><C-o>\"+p";
           "<C-Backspace>" = "<C-w>";
 
           "<Esc>" = "<C-\\><C-n>";

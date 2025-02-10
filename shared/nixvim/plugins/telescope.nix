@@ -34,6 +34,10 @@
           live_grep.hidden = true;
         };
       };
+
+      extensions = {
+        fzf-native.enable = true;
+      };
     };
   };
 }
