@@ -5,6 +5,10 @@
       maplocalleader = " ";
     };
 
+    userCommands = {
+      Cd.command = ":lua require(\"oil.actions\").cd.callback()<CR>";
+    };
+
     keymaps = let
       # :h map-modes
       normal =

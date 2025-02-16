@@ -10,7 +10,6 @@
           keymaps = {
             "-" = false;
             "`" = false;
-            "<Tab>" = "actions.cd";
           };
           cleanup_delay_ms = false;
           # experimental_watch_for_changes = true;
