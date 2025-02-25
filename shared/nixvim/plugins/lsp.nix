@@ -50,8 +50,8 @@
           package = pkgs.fetchFromGitHub {
             owner = "wgsl-analyzer";
             repo = "wgsl-analyzer";
-            rev = "a54d6a959518319655c1645d1212747e3b065e8a";
-            sha256 = "sha256-ERpFr120bSfadYMnkNbNquppmF+Xrg9t/0xk87INq2A=";
+            rev = "4c56b1435d30cd45d8aee52297bbf68ed5bb3beb";
+            sha256 = "sha256-FoVvVoYPWm1e4bV287zIS3JYtuNknPs25rLPygMUqwo=";
           };
         };
         java_language_server.enable = true;
