@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
   nixpkgs.config.nvidia.acceptLicense = true;
 
   # Enable OpenGL
@@ -32,7 +32,7 @@
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-    # package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
     # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
     #   version = "555.58.02";
     #   sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
