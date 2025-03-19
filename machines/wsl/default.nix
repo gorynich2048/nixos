@@ -2,7 +2,7 @@
   imports = [
     ./programs.nix
     ./services.nix
-    ../shared
+    ../../remote
     nixos-wsl.nixosModules.default
   ];
 

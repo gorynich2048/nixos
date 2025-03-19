@@ -120,10 +120,6 @@
   };
 
   home-manager.users.user = {
-    imports = [
-      ../shared/btop.nix
-    ];
-
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";

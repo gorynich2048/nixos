@@ -1,7 +1,6 @@
 { lib, pkgs, ... }: {
   environment = {
     systemPackages = with pkgs; [
-      p4
       tmux
     ];
   };
@@ -39,11 +38,5 @@
       in
         (normal ++ visual ++ insert ++ terminal);
     };
-  };
-
-  home-manager.users.user = {
-    imports = [
-      ../shared/btop.nix
-    ];
   };
 }

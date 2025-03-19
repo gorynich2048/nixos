@@ -25,12 +25,12 @@
       local = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
-        modules = [ ./local ];
+        modules = [ ./machines/local ];
       };
       wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
-        modules = [ ./wsl ];
+        modules = [ ./machines/wsl ];
       };
     };
   };

@@ -4,7 +4,7 @@
     ./programs.nix
     ./services.nix
     ./nvidia.nix
-    ../shared
+    ../../shared
   ];
 
   boot.loader = {
