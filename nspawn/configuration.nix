@@ -5,7 +5,6 @@
   ];
 
   boot.isContainer = true;
-  networking.hostName = "nspawn";
 
   nix = {
     settings.sandbox = false;
