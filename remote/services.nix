@@ -2,7 +2,7 @@
   services = {
     openssh = {
       enable = true;
-      ports = [ 1022 ];
+      ports = [ 40022 ];
       settings = {
         PasswordAuthentication = false;
       };
