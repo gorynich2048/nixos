@@ -1,7 +1,4 @@
 { ... }: {
   services = {
-    ocserv = {
-      enable = true;
-    };
   };
 }
