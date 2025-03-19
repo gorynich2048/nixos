@@ -2,7 +2,6 @@
   imports = [
     (modulesPath + "/profiles/minimal.nix")
     ../../remote
-    ./nspawn-image.nix
     ./programs.nix
     ./services.nix
   ];
