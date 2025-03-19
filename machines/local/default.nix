@@ -1,10 +1,10 @@
 { ... }: {
   imports = [
+    ../../shared
     ./hardware-configuration.nix
     ./programs.nix
     ./services.nix
     ./nvidia.nix
-    ../../shared
   ];
 
   boot.loader = {

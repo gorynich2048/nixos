@@ -1,11 +1,14 @@
-{ ... }: {
+{ modulesPath, ... }: {
   imports = [
+    (modulesPath + "/profiles/minimal.nix")
+    ../../remote
+    ./nspawn-image.nix
     ./programs.nix
     ./services.nix
-    ../../remote
   ];
 
-  networking = {
-    hostName = "host";
-  };
+  boot.isContainer = true;
+  nix.settings.sandbox = false;
+
+  networking.hostName = "host";
 }

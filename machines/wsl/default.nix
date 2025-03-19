@@ -1,9 +1,9 @@
 { nixos-wsl, ... }: {
   imports = [
+    nixos-wsl.nixosModules.default
+    ../../remote
     ./programs.nix
     ./services.nix
-    ../../remote
-    nixos-wsl.nixosModules.default
   ];
 
   wsl = {

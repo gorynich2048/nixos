@@ -12,7 +12,6 @@
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
     };
     rose-pine-hyprcursor = {
       url = "github:ndom91/rose-pine-hyprcursor";
@@ -20,18 +19,50 @@
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
-    nixosConfigurations = {
-      local = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs;
-        modules = [ ./machines/local ];
+  outputs = { nixpkgs, ... }@inputs:
+    let
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      overlays = [ ];
+
+      forAllSystems = f:
+        nixpkgs.lib.genAttrs systems (system:
+          f system (import nixpkgs { inherit system overlays; })
+        );
+    in {
+      nixosConfigurations = {
+        local = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = inputs;
+          modules = [ ./machines/local ];
+        };
+        wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = inputs;
+          modules = [ ./machines/wsl ];
+        };
+        host = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          specialArgs = inputs;
+          modules = [ ./machines/host ];
+        };
       };
-      wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs;
-        modules = [ ./machines/wsl ];
-      };
+
+      packages = forAllSystems (system: pkgs: {
+        default =
+          let
+            nixos = nixpkgs.lib.nixosSystem {
+              inherit system;
+              modules = [
+                ./nspawn/configuration.nix
+                ./nspawn/nspawn-tarball.nix
+              ];
+            };
+          in
+            nixos.config.system.build.tarball;
+          }
+      );
     };
-  };
 }
