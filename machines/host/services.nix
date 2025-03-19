@@ -2,7 +2,9 @@
   services = {
     ocserv = {
       enable = true;
-      config = "";
+      config = ''       
+        auth = "plain[passwd=/home/user/ocpasswd]"
+      '';
     };
   };
 }
