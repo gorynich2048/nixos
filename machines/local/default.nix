@@ -16,7 +16,7 @@
     hostName = "local";
     extraHosts = ''
       130.61.52.25 xcore1
-      128.140.88.66 h
+      128.140.88.66 host
     '';
   };
 
