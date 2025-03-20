@@ -8,19 +8,6 @@
     };
   };
 
-  systemd = {
-    user.services = {
-      alsa-restore = {
-         wantedBy = [ "default.target" ];
-         wants = [ "pipewire.service" ];
-         serviceConfig = {
-           ExecStartPre = "${pkgs.coreutils-full}/bin/sleep 5";
-           ExecStart = "${pkgs.alsa-utils}/bin/alsactl restore -L";
-         };
-      };
-    };
-  };
-
   services.pipewire.extraConfig.pipewire."92-low-latency" = {
     "context.properties" = {
       "default.clock.rate" = 48000;
