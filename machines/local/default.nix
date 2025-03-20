@@ -5,7 +5,6 @@
     ./programs.nix
     ./services.nix
     ./nvidia.nix
-    ./wireguard.nix
   ];
 
   boot.loader = {
