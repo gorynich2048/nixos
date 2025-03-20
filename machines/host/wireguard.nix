@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  boot.extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_12.amneziawg ];
   # enable NAT
   networking.nat.enable = true;
   networking.nat.externalInterface = "eth0";
