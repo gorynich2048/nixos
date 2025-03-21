@@ -26,6 +26,10 @@
     };
   };
 
+  users.users.root = {
+    shell = pkgs.fish;
+  };
+
   home-manager.users.root = {
     imports = [
       ../../home_modules/btop.nix
