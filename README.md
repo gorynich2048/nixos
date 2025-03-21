@@ -5,7 +5,7 @@ sudo nixos-rebuild switch --flake github:Terr2048/nixos --refresh
 
 # Setup dedicated server
 ```sh
-nix run github:nix-community/nixos-anywhere -- --generate-hardware-config nixos-generate-config ./machines/host/hardware-configuration.nix --flake .#host --target-host root@176.9.86.158
+nix run github:nix-community/nixos-anywhere -- --generate-hardware-config nixos-generate-config ./machines/host/hardware-configuration.nix --flake github:Terr2048/nixos#host --target-host root@176.9.86.158
 ```
 
 # Setup systemd-nspawn container
