@@ -7,6 +7,8 @@
       fd
       aria
       unzip
+      speedtest-cli
+      neofetch
     ];
   };
 
