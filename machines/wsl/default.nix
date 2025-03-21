@@ -1,7 +1,11 @@
 { nixos-wsl, ... }: {
   imports = [
     nixos-wsl.nixosModules.default
-    ../../remote
+    ../../modules/shared
+    ../../modules/dev
+    ../../modules/remote
+    ../../modules/remote_dev
+
     ./programs.nix
     ./services.nix
   ];
@@ -13,5 +17,16 @@
 
   networking = {
     hostName = "wsl";
+  };
+
+  system.stateVersion = "23.11"; # NEVER CHANGE
+  home-manager = {
+    users.user = {
+      home.stateVersion = "23.11"; # NEVER CHANGE
+    };
+    users.root = {
+      home.stateVersion = "23.11"; # NEVER CHANGE
+    };
+    backupFileExtension = "backup";
   };
 }

@@ -1,10 +1,4 @@
-{ lib, pkgs, ... }: {
-  environment = {
-    systemPackages = with pkgs; [
-      tmux
-    ];
-  };
-
+{ lib, ... }: {
   programs = {
     nixvim = {
       keymaps = let

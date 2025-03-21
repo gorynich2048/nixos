@@ -17,6 +17,10 @@
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -44,7 +48,7 @@
           modules = [ ./machines/wsl ];
         };
         host = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
+          system = "x86_64-linux";
           specialArgs = inputs;
           modules = [ ./machines/host ];
         };
