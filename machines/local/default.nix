@@ -14,8 +14,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  virtualisation.libvirtd.enable = true;
-
   networking = {
     hostName = "local";
     extraHosts = ''
