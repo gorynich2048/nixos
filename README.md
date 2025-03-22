@@ -1,5 +1,5 @@
 # Update system
-```sh
+```fish
 # local repo -> local host
 sudo nixos-rebuild switch --flake .
 
@@ -11,7 +11,7 @@ sudo nixos-rebuild switch --flake github:Terr2048/nixos --refresh
 ```
 
 # Setup dedicated server
-```sh
+```fish
 nix run github:nix-community/nixos-anywhere -- \
     --generate-hardware-config nixos-generate-config ./machines/host/hardware-configuration.nix \
     --flake github:Terr2048/nixos#host \
@@ -19,7 +19,7 @@ nix run github:nix-community/nixos-anywhere -- \
 ```
 
 # Setup systemd-nspawn container
-```sh
+```fish
 nix build github:Terr2048/nixos
 
 machinectl import-tar result/tarball/nixos-system-x86_64-linux.tar.xz nixos
