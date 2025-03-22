@@ -26,12 +26,8 @@
 
   system.stateVersion = "23.11"; # NEVER CHANGE
   home-manager = {
-    users.user = {
-      home.stateVersion = "23.11"; # NEVER CHANGE
-    };
-    users.root = {
-      home.stateVersion = "23.11"; # NEVER CHANGE
-    };
+    users.user.home.stateVersion = "23.11"; # NEVER CHANGE
+    users.root.home.stateVersion = "23.11"; # NEVER CHANGE
     backupFileExtension = "backup";
   };
 }

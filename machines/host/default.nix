@@ -18,7 +18,6 @@
 
   networking = {
     hostName = "host";
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
     interfaces = {
       eth0 = {
         ipv4.addresses = [{
@@ -49,9 +48,7 @@
 
   system.stateVersion = "24.05"; # NEVER CHANGE
   home-manager = {
-    users.root = {
-      home.stateVersion = "24.05"; # NEVER CHANGE
-    };
+    users.root.home.stateVersion = "24.05"; # NEVER CHANGE
     backupFileExtension = "backup";
   };
 }
