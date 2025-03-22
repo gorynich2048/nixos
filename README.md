@@ -1,5 +1,12 @@
 # Update system
 ```sh
+# local repo -> local host
+sudo nixos-rebuild switch --flake .
+
+# local repo -> remote host
+nixos-rebuild switch --flake . --target-host host
+
+# github repo -> local host
 sudo nixos-rebuild switch --flake github:Terr2048/nixos --refresh
 ```
 
