@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
     ../../modules/shared
     ../../modules/remote
@@ -13,24 +13,46 @@
     hostName = "vpn";
   };
 
-  virtualisation.vmVariant = {
+  virtualisation.vmVariant = let
+    index = 1;
+    mac = "00:00:00:00:00:01";
+  in {
+    networking.useDHCP = false;
     systemd.network = {
       enable = true;
       networks."10-eth" = {
-        matchConfig.Type = "ether";
-        # matchConfig.MACAddress = "52:55:00:d1:55:01";
-        networkConfig = {
-          Address = [ "192.168.100.2/24" ];
-          Gateway = "192.168.100.1";
-          DHCP = "no";
-        };
+        matchConfig.MACAddress = mac;
+        address = [
+          "192.168.100.${toString index}/32"
+          "fec0::${lib.toHexString index}/128"
+        ];
+        routes = [
+          {
+            # A route to the host
+            Destination = "192.168.100.0/32";
+            GatewayOnLink = true;
+          }
+          {
+            # Default route
+            Destination = "0.0.0.0/0";
+            Gateway = "192.168.100.0";
+            GatewayOnLink = true;
+          }
+          {
+            # Default route
+            Destination = "::/0";
+            Gateway = "fec0::";
+            GatewayOnLink = true;
+          }
+        ];
+        linkConfig.RequiredForOnline = "routable";
       };
     };
     virtualisation = {
       graphics = false;
-      qemu.networkingOptions = [
-        "-netdev tap,id=nd0,ifname=tap0,script=no,downscript=no"
-        "-device virtio-net-pci,netdev=nd0,mac=52:55:00:d1:55:01"
+      qemu.networkingOptions = lib.mkForce [
+        "-netdev tap,id=nd0,ifname=vm${toString index},script=no,downscript=no"
+        "-device virtio-net-pci,netdev=nd0,mac=${mac}"
       ];
     };
   };

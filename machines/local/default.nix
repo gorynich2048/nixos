@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
     ../../modules/shared
     ../../modules/dev
@@ -29,25 +29,26 @@
 
   systemd.network = {
     enable = true;
-    netdevs = {
-      "10-br0" = {
-        netdevConfig = {
-          Kind = "bridge";
-          Name = "br0";
-        };
-      };
-    };
-    networks = {
-      "20-taps" = {
-        matchConfig.Name ="tap*";
+    networks = let
+      index = 1;
+    in {
+      "10-vm${toString index}" = {
+        matchConfig.Name = "vm${toString index}";
+        address = [
+          "192.168.100.0/32"
+          "fec0::/128"
+        ];
+        routes = [
+          {
+            Destination = "192.168.100.${toString index}/32";
+          }
+          {
+            Destination = "fec0::${lib.toHexString index}/128";
+          }
+        ];
         networkConfig = {
-          Bridge = "br0";
-        };
-      };
-      "20-br0" = {
-        matchConfig.Name = "br0";
-        networkConfig = {
-          Address = [ "192.168.100.1/24" ];
+          IPv4Forwarding = true;
+          IPv6Forwarding = true;
         };
       };
     };
