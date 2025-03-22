@@ -1,16 +1,22 @@
 # Update system
+
+local repo -> local host
 ```fish
-# local repo -> local host
 sudo nixos-rebuild switch --flake .
+```
 
-# local repo -> remote host
+local repo -> remote host
+```fish
 nixos-rebuild switch --flake . --target-host host
+```
 
-# github repo -> local host
+github repo -> local host
+```fish
 sudo nixos-rebuild switch --flake github:Terr2048/nixos --refresh
 ```
 
 # Setup dedicated server
+
 ```fish
 nix run github:nix-community/nixos-anywhere -- \
     --generate-hardware-config nixos-generate-config ./machines/host/hardware-configuration.nix \
@@ -19,6 +25,7 @@ nix run github:nix-community/nixos-anywhere -- \
 ```
 
 # Setup systemd-nspawn container
+
 ```fish
 nix build github:Terr2048/nixos
 
@@ -32,7 +39,6 @@ iptables -t filter -A FORWARD -i ve-nixos -j ACCEPT
 iptables -t filter -A FORWARD -o ve-nixos -j ACCEPT
 iptables -t nat -A POSTROUTING -s 192.168.252.113/28 -j MASQUERADE
 iptables -t nat -A PREROUTING -i eth0 -p tcp -m tcp --dport 40022 -j DNAT --to-destination 192.168.252.125:22
-
 
 machinectl shell nixos
 hostname host
