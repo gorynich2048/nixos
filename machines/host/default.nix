@@ -7,6 +7,7 @@
     disko.nixosModules.disko
     ./disk-config.nix
     ./hardware-configuration.nix
+    ./services.nix
   ];
 
   boot.loader.grub = {
