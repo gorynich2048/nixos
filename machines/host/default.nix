@@ -2,6 +2,7 @@
   imports = [
     ../../modules/shared
     ../../modules/remote
+    ../../modules/kvm
 
     disko.nixosModules.disko
     ./disk-config.nix
@@ -13,8 +14,6 @@
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
-
-  virtualisation.libvirtd.enable = true;
 
   networking = {
     hostName = "host";
@@ -41,7 +40,6 @@
   };
 
   users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIANY37jZd9CA4E2ktVrexTOochSow1yE4NYfCUB74fDC gorynich"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAr87Ijv/4gAllpnZrhaQZhW+iI/HzAMEjaxFsbrA91L continue"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIke/35rx1Hemk61WLo9CtGkrsKfVsgcerFgXZpmpkdf ragamaffin"
   ];

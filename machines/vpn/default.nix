@@ -4,11 +4,6 @@
     ../../modules/remote
   ];
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-
   networking = {
     hostName = "vpn";
   };
@@ -56,7 +51,6 @@
       ];
     };
   };
-  users.users.root.password = "test";
 
   system.stateVersion = "24.05"; # NEVER CHANGE
   home-manager = {
