@@ -21,6 +21,16 @@
       130.61.52.25 xcore1
       176.9.86.158 host
     '';
+    useDHCP = false;
+  };
+
+  systemd.network = {
+    enable = true;
+    networks."0-enp" = {
+      matchConfig.Name = "enp*";
+      DHCP = "yes";
+      linkConfig.RequiredForOnline = "routable";
+    };
   };
 
   security.rtkit.enable = true;

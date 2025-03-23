@@ -23,24 +23,9 @@
 
   systemd.network = {
     enable = true;
-    networks."10-eth0" = {
+    networks."0-enp" = {
       matchConfig.Name = "enp*";
-      address = [
-        "176.9.86.158/27"
-        "2a01:4f8:151:2484::2/64"
-      ];
-      routes = [
-        {
-          Destination = "0.0.0.0/0";
-          Gateway = "176.9.86.129";
-          GatewayOnLink = true;
-        }
-        {
-          Destination = "::/0";
-          Gateway = "fe80::1";
-          GatewayOnLink = true;
-        }
-      ];
+      DHCP = "yes";
       linkConfig.RequiredForOnline = "routable";
     };
   };
