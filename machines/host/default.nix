@@ -23,8 +23,8 @@
 
   systemd.network = {
     enable = true;
-    networks."10-eth" = {
-      matchConfig.Name = "eth0";
+    networks."10-eth0" = {
+      matchConfig.Name = "enp*";
       address = [
         "176.9.86.158/27"
         "2a01:4f8:151:2484::2/64"
