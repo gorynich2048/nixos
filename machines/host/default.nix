@@ -18,25 +18,30 @@
 
   networking = {
     hostName = "host";
-    interfaces = {
-      eth0 = {
-        ipv4.addresses = [{
-          address = "176.9.86.158";
-          prefixLength = 27;
-        }];
-        ipv6.addresses = [{
-          address = "2a01:4f8:151:2484::2";
-          prefixLength = 64;
-        }];
-      };
-    };
-    defaultGateway = {
-      address = "176.9.86.129";
-      interface = "eth0";
-    };
-    defaultGateway6 = {
-      address = "fe80::1";
-      interface = "eth0";
+    useDHCP = false;
+  };
+
+  systemd.network = {
+    enable = true;
+    networks."10-eth" = {
+      matchConfig.Name = "eth0";
+      address = [
+        "176.9.86.158/27"
+        "2a01:4f8:151:2484::2/64"
+      ];
+      routes = [
+        {
+          Destination = "0.0.0.0/0";
+          Gateway = "176.9.86.129";
+          GatewayOnLink = true;
+        }
+        {
+          Destination = "::/0";
+          Gateway = "fe80::1";
+          GatewayOnLink = true;
+        }
+      ];
+      linkConfig.RequiredForOnline = "routable";
     };
   };
 
