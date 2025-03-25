@@ -1,11 +1,9 @@
 { lib, ... }: {
   virtualisation.libvirtd.enable = true;
 
-  networking = {
-    nat = {
-      enable = true;
-      internalIPs = [ "192.168.100.0/24" ];
-    };
+  networking.nat = {
+    enable = true;
+    internalIPs = [ "192.168.100.0/24" ];
   };
 
   systemd.network = {
