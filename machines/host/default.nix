@@ -19,6 +19,19 @@
   networking = {
     hostName = "host";
     useDHCP = false;
+
+    nat.forwardPorts = [
+      {
+        destination = "192.168.100.1:22";
+        proto = "tcp";
+        sourcePort = 1000;
+      }
+      {
+        destination = "192.168.100.1:62048";
+        proto = "udp";
+        sourcePort = 1000;
+      }
+    ];
   };
 
   systemd.network = {
