@@ -20,6 +20,7 @@
     hostName = "host";
     useDHCP = false;
 
+    nat.externalInterface = "enp7s0";
     nat.forwardPorts = [
       {
         destination = "192.168.100.1:22";
