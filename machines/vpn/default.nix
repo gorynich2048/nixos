@@ -6,6 +6,7 @@ in {
   imports = [
     ../../modules/shared
     ../../modules/remote
+    ../../modules/wireguard/server.nix
 
     ./hardware-configuration.nix
   ];

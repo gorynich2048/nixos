@@ -1,8 +1,9 @@
-{ lib, ... }: {
+{ ... }: {
   imports = [
     ../../modules/shared
     ../../modules/dev
     ../../modules/kvm
+    ../../modules/wireguard/client.nix
 
     ./hardware-configuration.nix
     ./programs.nix
