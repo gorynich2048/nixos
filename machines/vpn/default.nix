@@ -51,8 +51,7 @@ in {
   virtualisation.vmVariantWithBootLoader.virtualisation = {
     graphics = false;
     qemu.networkingOptions = lib.mkForce [
-      "-netdev tap,id=nd0,ifname=vm${toString index},script=no,downscript=no"
-      "-device virtio-net-pci,netdev=nd0,mac=${mac}"
+      "-nic tap,script=no,downscript=no,vhost=on,model=virtio-net-pci,ifname=vm${toString index},mac=${mac}"
     ];
     cores = 4;
     memorySize = 16384;
