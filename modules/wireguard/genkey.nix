@@ -17,4 +17,6 @@
       '';
     };
   };
+
+  networking.wireguard.interfaces.wg0.privateKeyFile = "/var/wg/private";
 }

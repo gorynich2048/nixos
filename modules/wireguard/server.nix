@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./kernel.nix
+    ./amnezia.nix
     ./genkey.nix
   ];
 
@@ -24,8 +24,6 @@
       postShutdown = ''
         ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE
       '';
-
-      privateKeyFile = "/var/wg/private";
 
       peers = [
         {

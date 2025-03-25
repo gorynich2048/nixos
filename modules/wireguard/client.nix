@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./kernel.nix
+    ./amnezia.nix
     ./genkey.nix
   ];
 
@@ -9,7 +9,6 @@
     wg0 = {
       ips = [ "10.100.0.2/24" ];
       listenPort = 62048;
-      privateKeyFile = "/var/wg/private";
 
       peers = [
         {
