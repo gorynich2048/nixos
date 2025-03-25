@@ -45,7 +45,6 @@ in {
           GatewayOnLink = true;
         }
       ];
-      linkConfig.RequiredForOnline = "routable";
     };
   };
 
