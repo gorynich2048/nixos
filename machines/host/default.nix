@@ -14,6 +14,7 @@
     device = "/dev/nvme0n1";
     efiSupport = true;
     efiInstallAsRemovable = true;
+    configurationLimit = 10;
   };
 
   networking = {
