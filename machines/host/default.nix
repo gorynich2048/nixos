@@ -10,8 +10,6 @@
   ];
 
   boot.loader.grub = {
-    # Next time try to omit this and install boot loader on both drives, disko should generate this
-    device = "/dev/nvme0n1";
     efiSupport = true;
     efiInstallAsRemovable = true;
     configurationLimit = 10;
