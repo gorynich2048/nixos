@@ -20,24 +20,34 @@
     useDHCP = false;
 
     firewall.allowedTCPPorts = [ 5900 ];
+
     nat.externalInterface = "enp7s0";
     nat.forwardPorts = [
       {
         destination = "192.168.100.1:22";
         proto = "tcp";
-        sourcePort = 1000;
+        sourcePort = 51000;
       }
       {
         destination = "192.168.100.1:62048";
         proto = "udp";
-        sourcePort = 1000;
+        sourcePort = 51000;
+      }
+      {
+        destination = "192.168.100.3:22";
+        proto = "tcp";
+        sourcePort = 53000;
       }
       {
         destination = "192.168.100.3:80";
         proto = "tcp";
-        sourcePort = 9090;
+        sourcePort = 53001;
       }
     ];
+    nat.extraCommands = ''
+      iptables -A PREROUTING -t nat -p gre --src 92.255.229.156 -j DNAT --to-destination 192.168.100.3
+      iptables -A POSTROUTING -t nat -p gre --src 192.168.100.3 -j SNAT --to-source 176.9.86.158
+    '';
   };
 
   systemd.network = {
