@@ -20,6 +20,7 @@
         set fish_greeting ""
         alias vi=$EDITOR
         alias grep=rg
+        alias wget=aria2c
         alias cmd='/mnt/c/Windows/System32/cmd.exe /c'
         alias pwsh='/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /c'
       '';
