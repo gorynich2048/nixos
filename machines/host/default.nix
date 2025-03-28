@@ -19,8 +19,6 @@
     hostName = "host";
     useDHCP = false;
 
-    firewall.allowedTCPPorts = [ 5900 ];
-
     nat.externalInterface = "enp7s0";
     nat.forwardPorts = [
       {
@@ -37,11 +35,6 @@
         destination = "192.168.100.3:22";
         proto = "tcp";
         sourcePort = 53000;
-      }
-      {
-        destination = "192.168.100.3:80";
-        proto = "tcp";
-        sourcePort = 53001;
       }
     ];
     nat.extraCommands = ''
