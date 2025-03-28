@@ -2,6 +2,7 @@
   systemd.services = {
     vpn-vm = {
       wantedBy = [ "multi-user.target" ];
+      restartIfChanged = false;
       environment = {
         KVM_NAME = "vpn";
       };
