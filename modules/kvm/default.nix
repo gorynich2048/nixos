@@ -7,7 +7,7 @@
   systemd.network = {
     enable = true;
     networks = let
-      maxVMs = 16;
+      maxVMs = 9;
     in builtins.listToAttrs (
         map (index: {
           name = "10-vm${toString index}";

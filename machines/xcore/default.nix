@@ -1,14 +1,15 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
-  index = 1;
-  mac = "00:00:00:00:00:01";
+  index = 2;
+  mac = "00:00:00:00:00:02";
 in {
   imports = [
     ../../modules/shared
     ../../modules/remote
-    ../../modules/wireguard/server.nix
 
     ./hardware-configuration.nix
+    ./programs.nix
+    ./services.nix
   ];
 
   boot.loader = {
@@ -20,7 +21,7 @@ in {
   };
 
   networking = {
-    hostName = "vpn";
+    hostName = "xcore";
     useDHCP = false;
   };
 
@@ -51,6 +52,27 @@ in {
     };
   };
 
+  networking.firewall.allowedTCPPortRanges = [
+    { from = 52001; to = 52020; }
+  ];
+  networking.firewall.allowedUDPPortRanges = [
+    { from = 52001; to = 52020; }
+  ];
+
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHhntA/HYUki0QUHsTPC+G8CZrYHkUKH0ldBWGdDLW0c root@host"
+  ];
+
+  users.users.user = {
+    uid = 1000;
+    shell = pkgs.fish;
+    isNormalUser = true;
+    linger = true;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIANY37jZd9CA4E2ktVrexTOochSow1yE4NYfCUB74fDC gorynich"
+    ];
+  };
+
   virtualisation.vmVariantWithBootLoader.virtualisation = {
     graphics = false;
     qemu = {
@@ -72,6 +94,7 @@ in {
   system.stateVersion = "24.05"; # NEVER CHANGE
   home-manager = {
     users.root.home.stateVersion = "24.05"; # NEVER CHANGE
+    users.user.home.stateVersion = "24.05"; # NEVER CHANGE
     backupFileExtension = "backup";
   };
 }
