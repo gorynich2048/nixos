@@ -1,15 +1,13 @@
-{ lib, pkgs, ... }:
-let
-  index = 2;
-  mac = "00:00:00:00:00:02";
-in {
+{ lib, ... }: {
   imports = [
     ../../modules/shared
     ../../modules/remote
 
     ./hardware-configuration.nix
+    ./network.nix
     ./programs.nix
     ./services.nix
+    ./ssh.nix
   ];
 
   boot.loader = {
@@ -20,67 +18,9 @@ in {
     efi.canTouchEfiVariables = true;
   };
 
-  networking = {
-    hostName = "xcore";
-    useDHCP = false;
-  };
-
-  systemd.network = {
-    enable = true;
-    networks."10-eth" = {
-      matchConfig.MACAddress = mac;
-      address = [
-        "192.168.100.${toString index}/32"
-        "fec0::${lib.toHexString index}/128"
-      ];
-      routes = [
-        {
-          Destination = "192.168.100.0/32";
-          GatewayOnLink = true;
-        }
-        {
-          Destination = "0.0.0.0/0";
-          Gateway = "192.168.100.0";
-          GatewayOnLink = true;
-        }
-        {
-          Destination = "::/0";
-          Gateway = "fec0::";
-          GatewayOnLink = true;
-        }
-      ];
-    };
-  };
-
-  networking.firewall.allowedTCPPortRanges = [
-    { from = 52001; to = 52020; }
-  ];
-  networking.firewall.allowedUDPPortRanges = [
-    { from = 52001; to = 52020; }
-  ];
-
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDerZOezNrs95Sm5sizY7LA/9axm8HoOEnorNlADw0Rm root@host"
-  ];
-
-  users.users.user = {
-    uid = 1000;
-    shell = pkgs.fish;
-    isNormalUser = true;
-    linger = true;
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIANY37jZd9CA4E2ktVrexTOochSow1yE4NYfCUB74fDC gorynich"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKdqc3JqQub+9WygQnWPN5nGHHrZKgMdqAKA/E5haBR0 pozitive"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINaUSEyu9MV6OjaMsETniGP3UxdbMjnkO41BfJxh+uwQ xexebe"
-    ];
-  };
-
   virtualisation.vmVariantWithBootLoader.virtualisation = {
     graphics = false;
     qemu = {
-      networkingOptions = lib.mkForce [
-        "-nic tap,script=no,downscript=no,vhost=on,model=virtio-net-pci,ifname=vm${toString index},mac=${mac}"
-      ];
       options = [
         "-device virtio-balloon,free-page-reporting=on"
       ];

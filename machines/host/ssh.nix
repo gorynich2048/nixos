@@ -8,11 +8,19 @@
     users.root = {
       programs.ssh = {
         enable = true;
-        matchBlocks.xcore-root = {
-          hostname = "192.168.100.2";
-          port = 22;
-          user = "root";
-          identityFile = "/etc/ssh/ssh_host_ed25519_key";
+        matchBlocks = {
+          vpn = {
+            hostname = "192.168.100.1";
+            port = 22;
+            user = "root";
+            identityFile = "/etc/ssh/ssh_host_ed25519_key";
+          };
+          xcore = {
+            hostname = "192.168.100.2";
+            port = 22;
+            user = "root";
+            identityFile = "/etc/ssh/ssh_host_ed25519_key";
+          };
         };
       };
     };
