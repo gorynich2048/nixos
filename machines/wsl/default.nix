@@ -7,7 +7,6 @@
     ../../modules/remote_dev
 
     ./programs.nix
-    ./services.nix
   ];
 
   wsl = {
