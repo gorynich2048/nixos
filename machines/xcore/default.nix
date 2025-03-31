@@ -60,7 +60,7 @@ in {
   ];
 
   users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHhntA/HYUki0QUHsTPC+G8CZrYHkUKH0ldBWGdDLW0c root@host"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDerZOezNrs95Sm5sizY7LA/9axm8HoOEnorNlADw0Rm root@host"
   ];
 
   users.users.user = {
