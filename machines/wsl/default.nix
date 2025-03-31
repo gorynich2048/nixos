@@ -7,6 +7,7 @@
     ../../modules/remote_dev
 
     ./programs.nix
+    ./wireguard.nix
   ];
 
   wsl = {

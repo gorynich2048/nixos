@@ -3,13 +3,12 @@
     ../../modules/shared
     ../../modules/dev
     ../../modules/kvm
-    ../../modules/wireguard/client.nix
 
     ./hardware-configuration.nix
     ./programs.nix
     ./services.nix
     ./nvidia.nix
-    ./wireguard-ns.nix
+    ./wireguard.nix
   ];
 
   boot.loader = {
