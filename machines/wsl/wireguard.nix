@@ -1,10 +1,12 @@
 { ... }: {
   imports = [
-    ../../modules/wireguard/client.nix
+    ../../modules/wireguard/genkey.nix
   ];
 
+  networking.wireguard.enable = true;
   networking.wireguard.interfaces.wg0 = {
     ips = [ "10.0.0.4/24" ];
+    listenPort = 62048;
 
     peers = [
       {
