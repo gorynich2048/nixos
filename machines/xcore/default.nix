@@ -70,6 +70,7 @@ in {
     linger = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIANY37jZd9CA4E2ktVrexTOochSow1yE4NYfCUB74fDC gorynich"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKdqc3JqQub+9WygQnWPN5nGHHrZKgMdqAKA/E5haBR0 pozitive"
     ];
   };
 
