@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  services.openssh.settings.GatewayPorts = "yes";
+
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDerZOezNrs95Sm5sizY7LA/9axm8HoOEnorNlADw0Rm root@host"
   ];

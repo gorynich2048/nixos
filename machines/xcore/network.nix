@@ -36,10 +36,10 @@ in {
   };
 
   networking.firewall.allowedTCPPortRanges = [
-    { from = 52001; to = 52020; }
+    { from = 52000; to = 52999; }
   ];
   networking.firewall.allowedUDPPortRanges = [
-    { from = 52001; to = 52020; }
+    { from = 52000; to = 52999; }
   ];
 
   virtualisation.vmVariantWithBootLoader.virtualisation = {

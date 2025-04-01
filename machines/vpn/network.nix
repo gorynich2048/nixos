@@ -35,6 +35,13 @@ in {
     };
   };
 
+  networking.firewall.allowedTCPPortRanges = [
+    { from = 51000; to = 51999; }
+  ];
+  networking.firewall.allowedUDPPortRanges = [
+    { from = 51000; to = 51999; }
+  ];
+
   virtualisation.vmVariantWithBootLoader.virtualisation = {
     qemu.networkingOptions = lib.mkForce [
       "-nic tap,script=no,downscript=no,vhost=on,model=virtio-net-pci,ifname=vm${toString index},mac=${mac}"
