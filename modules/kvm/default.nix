@@ -1,4 +1,6 @@
 { lib, ... }: {
+  hardware.ksm.enable = true;
+
   networking.nat = {
     enable = true;
     internalIPs = [ "192.168.100.0/24" ];
