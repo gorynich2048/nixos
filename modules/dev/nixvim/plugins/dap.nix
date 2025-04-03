@@ -4,11 +4,6 @@
       dap = {
         enable = true;
         extensions = {
-          dap-virtual-text.enable = true;
-          dap-ui = {
-            enable = true;
-            controls.enabled = false;
-          };
         };
         adapters = {
           executables = {
@@ -17,6 +12,11 @@
             };
           };
         };
+      };
+      dap-virtual-text.enable = true;
+      dap-ui = {
+        enable = true;
+        settings.controls.enabled = false;
       };
     };
   };
