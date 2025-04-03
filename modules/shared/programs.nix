@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   environment = {
     systemPackages = with pkgs; [
-      git
       killall
       ripgrep
       fd
@@ -34,6 +33,7 @@
   home-manager.users.root = {
     imports = [
       ../../home_modules/btop.nix
+      ../../home_modules/git.nix
     ];
 
     programs = {

@@ -24,6 +24,7 @@
   home-manager.users.user = {
     imports = [
       ../../home_modules/btop.nix
+      ../../home_modules/git.nix
     ];
   };
 }
