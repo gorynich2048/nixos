@@ -12,6 +12,7 @@
     linger = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFPe92LGBClSeLpArZLDjFGzg5LK8G6pA3TQ4RaNszRa root@wsl"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINW4tucb0u13bGb/1hB3GBo69z9XbK0Y6cRK4ZOP3t/E valer@Vfok-PC"
     ];
   };
 }
