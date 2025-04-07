@@ -3,14 +3,6 @@
     ./nixvim
   ];
 
-  programs = {
-    direnv = {
-      enable = true;
-      silent = true;
-      nix-direnv.enable = true;
-    };
-  };
-
   users.users.user = {
     uid = 1000;
     shell = pkgs.fish;
