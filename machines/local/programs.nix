@@ -42,7 +42,6 @@
       ollama
       mpv
       yt-dlp
-      shadowsocks-rust
       openconnect
 
       qutebrowser
@@ -51,6 +50,7 @@
       easyeffects
       wofi
       krita
+      blender
       prismlauncher
       inputs.rose-pine-hyprcursor.packages.${system}.default
       remmina
