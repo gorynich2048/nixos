@@ -11,6 +11,11 @@
         ];
         command = "setlocal spell spelllang=en";
       }
+      # Enable line numbers in terminal
+      {
+        event = "TermOpen";
+        command = "setlocal number relativenumber";
+      }
     ];
   };
 }
