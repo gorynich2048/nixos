@@ -22,6 +22,7 @@
       web-devicons.enable = true;
       hex.enable = true;
       crates.enable = true;
+      csvview.enable = true;
       indent-blankline = {
         enable = true;
         settings = {
