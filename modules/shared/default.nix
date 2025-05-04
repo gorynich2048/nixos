@@ -10,6 +10,9 @@
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
     gc.automatic = true;
+    gc.dates = "weekly";
+    optimise.automatic = true;
+    optimise.dates = [ "weekly" ];
   };
 
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
