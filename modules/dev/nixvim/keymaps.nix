@@ -36,6 +36,7 @@
           # "<C-o>" = "<C-o>zzzv";
           "n" = "nzzzv";
           "N" = "Nzzzv";
+          "zz" = "zzzszH";
 
           "<S-Up>" = ":resize +2<CR>";
           "<S-Down>" = ":resize -2<CR>";
