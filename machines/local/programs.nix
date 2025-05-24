@@ -42,7 +42,6 @@
       ollama
       mpv
       yt-dlp
-      openconnect
 
       qutebrowser
       chromium
@@ -51,7 +50,6 @@
       wofi
       krita
       blender
-      prismlauncher
       inputs.rose-pine-hyprcursor.packages.${system}.default
       remmina
     ];
