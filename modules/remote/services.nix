@@ -5,6 +5,7 @@
       authorizedKeysInHomedir = false;
       settings = {
         PasswordAuthentication = false;
+        PermitTunnel = "yes";
       };
     };
   };
