@@ -37,6 +37,7 @@
           "n" = "nzzzv";
           "N" = "Nzzzv";
           "zz" = "zzzszH";
+          "<C-i>" = "<C-i>zz";
 
           "<S-Up>" = ":resize +2<CR>";
           "<S-Down>" = ":resize -2<CR>";
