@@ -47,12 +47,6 @@
         };
         wgsl_analyzer = {
           enable = true;
-          package = pkgs.fetchFromGitHub {
-            owner = "wgsl-analyzer";
-            repo = "wgsl-analyzer";
-            rev = "4c56b1435d30cd45d8aee52297bbf68ed5bb3beb";
-            sha256 = "sha256-FoVvVoYPWm1e4bV287zIS3JYtuNknPs25rLPygMUqwo=";
-          };
         };
         java_language_server.enable = true;
       };
