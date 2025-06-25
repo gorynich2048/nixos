@@ -55,6 +55,15 @@
 
           "gf" = "gFzzzv";
           "gd" = "gdzzzv";
+
+          "s" = "<NOP>";
+          "sa" = ":HopAnywhere<CR>";
+          "sw" = ":HopWord<CR>";
+          "sl" = ":HopLine<CR>";
+          "sp" = ":HopPattern<CR>";
+          "sc" = ":HopChar1<CR>";
+          "sn" = ":HopNodes<CR>";
+          "sv" = ":HopVertical<CR>";
         };
       visual =
         lib.mapAttrsToList (key: action: {
