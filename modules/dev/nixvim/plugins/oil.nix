@@ -10,6 +10,7 @@
           keymaps = {
             "-" = false;
             "`" = false;
+            "<C-s>" = false;
           };
           cleanup_delay_ms = false;
           # experimental_watch_for_changes = true;
