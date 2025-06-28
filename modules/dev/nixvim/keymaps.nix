@@ -34,6 +34,8 @@
           "<leader>fl" = ":Telescope live_grep<CR>";
           "<leader>b" = ":Telescope buffers<CR>";
           "<leader>fd" = ":Telescope diagnostics<CR>";
+          "<leader>g" = ":G<CR>:only<CR>";
+          "<leader>l" = ":G l<CR>:only<CR>";
 
           "<Space>" = "<NOP>";
           "<esc>" = ":noh<CR>";
