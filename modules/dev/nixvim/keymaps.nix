@@ -36,6 +36,7 @@
           "<leader>fd" = ":Telescope diagnostics<CR>";
           "<leader>g" = ":G<CR>:only<CR>";
           "<leader>l" = ":G l<CR>:only<CR>";
+          "<leader>cd" = ":Cd<CR>";
 
           "<Space>" = "<NOP>";
           "<esc>" = ":noh<CR>";
