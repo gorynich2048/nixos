@@ -63,6 +63,9 @@
 
           "gf" = "gFzzzv";
           "gd" = "gdzzzv";
+
+          "<C-s>" = ":w<CR>";
+          "<C-S>" = ":wa<CR>";
         };
       visual =
         lib.mapAttrsToList (key: action: {
