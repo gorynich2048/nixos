@@ -13,6 +13,7 @@
       pkgs.vimPlugins.term-edit-nvim
       # pkgs.vimPlugins.replacer-nvim
       pkgs.vimPlugins.quickfix-reflector-vim
+      pkgs.vimPlugins.vim-wordmotion
     ];
 
     extraConfigLua = ''

@@ -11,6 +11,13 @@
 
     keymaps = let
       # :h map-modes
+      operator = 
+        lib.mapAttrsToList (key: action: {
+          mode = "";
+          inherit action key;
+        }) {
+          "f" = ":HopChar1<CR>";
+        };
       normal =
         lib.mapAttrsToList (key: action: {
           mode = "n";
@@ -56,15 +63,6 @@
 
           "gf" = "gFzzzv";
           "gd" = "gdzzzv";
-
-          "s" = "<NOP>";
-          "sa" = ":HopAnywhere<CR>";
-          "sw" = ":HopWord<CR>";
-          "sl" = ":HopLine<CR>";
-          "sp" = ":HopPattern<CR>";
-          "sc" = ":HopChar1<CR>";
-          "sn" = ":HopNodes<CR>";
-          "sv" = ":HopVertical<CR>";
         };
       visual =
         lib.mapAttrsToList (key: action: {
@@ -97,6 +95,6 @@
           "<Tab>" = "<Tab>";
         };
     in
-      (normal ++ visual ++ insert ++ terminal);
+      (operator ++ normal ++ visual ++ insert ++ terminal);
   };
 }

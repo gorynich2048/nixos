@@ -17,7 +17,7 @@
       sleuth.enable = true; #auto indent
       fugitive.enable = true;
       spectre.enable = true;
-      vim-surround.enable = true;
+      # vim-surround.enable = true;
       treesitter-context.enable = true;
       web-devicons.enable = true;
       hex.enable = true;
