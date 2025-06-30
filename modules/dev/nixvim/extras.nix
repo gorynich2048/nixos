@@ -17,6 +17,12 @@
     ];
 
     extraConfigLua = ''
+      vim.g.wordmotion_uppercase_spaces = {
+        '!','/','(',')','|','=',':','.','&','-','[',']','~',
+        '"','{','}','*',"'",',',';','%','?','`','<','>','+',
+        '#','@','\\','^','$'
+      }
+
       local ollama = require('model.providers.ollama')
       local parse = function(input, system, user, assistant)
         return {
