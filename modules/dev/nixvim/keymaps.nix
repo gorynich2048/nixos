@@ -25,7 +25,7 @@
         }) {
           "<Backspace>" = ":Oil<CR>";
           "<C-Backspace>" = ":Oil .<CR>";
-          "<S-Tab>" = ":Oil ~/.refs/<CR>";
+          "gh" = ":Oil ~/.refs/<CR>";
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
           "<leader>h" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":lua require('spectre').toggle()<CR>";
