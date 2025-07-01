@@ -26,17 +26,19 @@
           "<Backspace>" = ":Oil<CR>";
           "<C-Backspace>" = ":Oil .<CR>";
           "gh" = ":Oil ~/.refs/<CR>";
+          "gt" = ":b term_root<CR>";
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
           "<leader>h" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":lua require('spectre').toggle()<CR>";
 
           "<leader>ff" = ":Telescope find_files<CR>";
           "<leader>fl" = ":Telescope live_grep<CR>";
-          "<leader>b" = ":Telescope buffers<CR>";
+          "<leader>fb" = ":Telescope buffers<CR>";
           "<leader>fd" = ":Telescope diagnostics<CR>";
-          "<leader>g" = ":G<CR>:only<CR>";
-          "<leader>l" = ":G l<CR>:only<CR>";
-          "<leader>cd" = ":Cd<CR>";
+          "<leader>gg" = ":G<CR>:only<CR>";
+          "<leader>gs" = ":G<CR>:only<CR>";
+          "<leader>gl" = ":G l<CR>:only<CR>";
+          "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
 
           "<Space>" = "<NOP>";
           "<esc>" = ":noh<CR>";
@@ -102,5 +104,14 @@
         };
     in
       (operator ++ normal ++ visual ++ insert ++ terminal);
+
+    extraConfigLua = ''
+      -- Use lowercase for global marks and uppercase for local marks.
+      local low = function(i) return string.char(97+i) end
+      local upp = function(i) return string.char(65+i) end
+
+      for i=0,25 do vim.keymap.set("n", "m"..low(i), "`"..upp(i)) end
+      for i=0,25 do vim.keymap.set("n", "M"..low(i), "m"..upp(i)) end
+    '';
   };
 }

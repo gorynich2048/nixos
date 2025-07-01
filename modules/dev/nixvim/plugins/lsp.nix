@@ -11,7 +11,7 @@
         lspBuf = {
           "gd" = "definition";
           "gr" = "references";
-          "gt" = "type_definition";
+          # "gt" = "type_definition";
           "gi" = "implementation";
           "<leader>a" = "code_action";
           "<leader>r" = "rename";
