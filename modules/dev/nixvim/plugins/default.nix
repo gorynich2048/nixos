@@ -15,7 +15,10 @@
       comment.enable = true;
       sleuth.enable = true; #auto indent
       fugitive.enable = true;
-      spectre.enable = true;
+      spectre = {
+        enable = true;
+        settings.open_cmd = "enew";
+      };
       # vim-surround.enable = true;
       treesitter-context.enable = true;
       web-devicons.enable = true;
