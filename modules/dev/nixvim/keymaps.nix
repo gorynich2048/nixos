@@ -16,7 +16,7 @@
           mode = "";
           inherit action key;
         }) {
-          "f" = ":HopChar1<CR>";
+          "s" = ":HopChar1<CR>";
         };
       normal =
         lib.mapAttrsToList (key: action: {
@@ -28,7 +28,7 @@
           "gh" = ":Oil ~/.refs/<CR>";
           "gt" = ":b term_root<CR>";
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
-          "<leader>h" = ":lua vim.diagnostic.open_float()<CR>";
+          "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":lua require('spectre').toggle()<CR>";
 
           "<leader>ff" = ":Telescope find_files<CR>";
