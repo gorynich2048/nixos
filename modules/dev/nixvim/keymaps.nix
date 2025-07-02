@@ -30,6 +30,7 @@
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
           "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":Spectre<CR>";
+          "<leader>h" = "<NOP>";
 
           "<leader>ff" = ":Telescope find_files<CR>";
           "<leader>fl" = ":Telescope live_grep<CR>";
