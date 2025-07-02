@@ -8,7 +8,6 @@
     ./ollama.nix
     ./neotest.nix
     ./dap.nix
-    ./hydra.nix
   ];
 
   programs.nixvim = {
