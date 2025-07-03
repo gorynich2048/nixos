@@ -54,13 +54,6 @@
       #     floatWinConfig = { border = ["" "" "" " " "" "" "" " "]; };
       #   };
       # };
-      hop = {
-        enable = true;
-        settings = {
-          keys = "hetisngploradumycfbw";
-          multi_windows = true;
-        };
-      };
     };
   };
 }

@@ -16,7 +16,6 @@
           mode = "";
           inherit action key;
         }) {
-          "s" = ":HopChar1<CR>";
         };
       normal =
         lib.mapAttrsToList (key: action: {
