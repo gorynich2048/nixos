@@ -8,6 +8,7 @@
 #             "request": "launch",
 #             "name": "Debug with lldb",
 #             "args": ["arg1", "arg2"],
+#             "cwd": "${workspaceFolder}",
 #             "program": "${workspaceFolder}/path/to/executable"
 #         }
 #     ]
@@ -36,6 +37,7 @@
             body = "<leader>d";
             mode = "n";
             config = {
+              invoke_on_body = true;
               color = "pink";
             };
             name = "debug";
@@ -50,6 +52,20 @@
                 require('dap').terminate()
               end
               ''; } {} ]
+              [ "b" { __raw = ''
+              function()
+                require('dap').toggle_breakpoint()
+              end
+              ''; } {} ]
+              [ "r" { __raw = ''
+              function()
+                require('dap').repl.open({},"enew")
+              end
+              ''; } { exit = true; } ]
+              [ "<Esc>" { __raw = ''
+              function() end
+              ''; } { exit = true; } ]
+
               [ "i" { __raw = ''
               function()
                 require('dap').step_into()
@@ -65,23 +81,25 @@
                 require('dap').step_over()
               end
               ''; } {} ]
-              [ "r" { __raw = ''
+
+              [ "d" { __raw = ''
               function()
-                require('dap').repl.toggle()
+                require('dap').down()
               end
               ''; } {} ]
-              [ "b" { __raw = ''
+              [ "u" { __raw = ''
               function()
-                require('dap').toggle_breakpoint()
+                require('dap').up()
+              end
+              ''; } {} ]
+              [ "f" { __raw = ''
+              function()
+                require('dap').focus_frame()
               end
               ''; } {} ]
             ];
           }
         ];
-        settings = {
-          foreign_keys = "run";
-          invoke_on_body = true;
-        };
       };
     };
   };
