@@ -21,7 +21,6 @@
         };
       };
       servers = {
-        lua_ls.enable = true;
         nixd = {
           enable = true;
           settings = {
@@ -33,7 +32,6 @@
           };
         };
         clangd.enable = true;
-        cmake.enable = true;
         rust_analyzer = {
           enable = true;
           installCargo = false;
@@ -48,7 +46,9 @@
         wgsl_analyzer = {
           enable = true;
         };
-        java_language_server.enable = true;
+        # java_language_server.enable = true;
+        # cmake.enable = true;
+        # lua_ls.enable = true;
       };
     };
   };

@@ -19,8 +19,6 @@
     plugins = {
       dap = {
         enable = true;
-        extensions = {
-        };
         adapters = {
           executables = {
             lldb = {
