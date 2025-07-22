@@ -74,20 +74,5 @@
           modules = [ ./machines/lab ];
         };
       };
-
-      packages = forAllSystems (system: pkgs: {
-        default =
-          let
-            nixos = nixpkgs.lib.nixosSystem {
-              inherit system;
-              modules = [
-                ./nspawn/configuration.nix
-                ./nspawn/nspawn-tarball.nix
-              ];
-            };
-          in
-            nixos.config.system.build.tarball;
-          }
-      );
     };
 }
