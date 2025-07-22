@@ -36,11 +36,11 @@
     nat = {
       extraCommands = ''
         iptables -A PREROUTING -t nat -p gre --src 92.255.229.156 -j DNAT --to-destination 192.168.100.3
-        iptables -A POSTROUTING -t nat -p gre --src 192.168.100.3 -j SNAT --to-source 176.9.86.158
+        iptables -A POSTROUTING -t nat -p gre --src 192.168.100.3 -j SNAT --to-source 138.201.221.18
       '';
       extraStopCommands = ''
         iptables -D PREROUTING -t nat -p gre --src 92.255.229.156 -j DNAT --to-destination 192.168.100.3 || true
-        iptables -D POSTROUTING -t nat -p gre --src 192.168.100.3 -j SNAT --to-source 176.9.86.158 || true
+        iptables -D POSTROUTING -t nat -p gre --src 192.168.100.3 -j SNAT --to-source 138.201.221.18 || true
       '';
     };
     firewall = {
