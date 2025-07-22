@@ -11,17 +11,6 @@
         ${self.nixosConfigurations.vpn.config.system.build.vmWithBootLoader}/bin/run-$VM_NAME-vm
       '';
     };
-    xcore-vm = {
-      wantedBy = [ "multi-user.target" ];
-      restartIfChanged = false;
-      script = ''
-        VM_NAME=xcore
-        VM_STORAGE=/var/vm/$VM_NAME
-        mkdir -p $VM_STORAGE
-        cd $VM_STORAGE
-        ${self.nixosConfigurations.xcore.config.system.build.vmWithBootLoader}/bin/run-$VM_NAME-vm
-      '';
-    };
     opnsense-vm = {
       wantedBy = [ "multi-user.target" ];
       restartIfChanged = false;

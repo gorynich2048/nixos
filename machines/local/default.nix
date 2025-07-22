@@ -22,7 +22,6 @@
   networking = {
     hostName = "local";
     extraHosts = ''
-      130.61.52.25 xcore1
       176.9.86.158 host
     '';
     useDHCP = false;

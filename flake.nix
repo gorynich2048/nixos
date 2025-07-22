@@ -57,11 +57,6 @@
           specialArgs = inputs;
           modules = [ ./machines/vpn ];
         };
-        xcore = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = inputs;
-          modules = [ ./machines/xcore ];
-        };
       };
 
       packages = forAllSystems (system: pkgs: {
