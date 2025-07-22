@@ -4,7 +4,7 @@ let
   mac = "00:00:00:00:00:01";
 in {
   networking = {
-    hostName = "vpn";
+    hostName = "lab";
     useDHCP = false;
   };
 

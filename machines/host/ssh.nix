@@ -9,7 +9,7 @@
       programs.ssh = {
         enable = true;
         matchBlocks = {
-          vpn = {
+          lab = {
             hostname = "192.168.100.1";
             port = 22;
             user = "root";

@@ -1,14 +1,14 @@
 { self, pkgs, ... }: {
   systemd.services = {
-    vpn-vm = {
+    lab-vm = {
       wantedBy = [ "multi-user.target" ];
       restartIfChanged = false;
       script = ''
-        VM_NAME=vpn
+        VM_NAME=lab
         VM_STORAGE=/var/vm/$VM_NAME
         mkdir -p $VM_STORAGE
         cd $VM_STORAGE
-        ${self.nixosConfigurations.vpn.config.system.build.vmWithBootLoader}/bin/run-$VM_NAME-vm
+        ${self.nixosConfigurations.lab.config.system.build.vmWithBootLoader}/bin/run-$VM_NAME-vm
       '';
     };
     opnsense-vm = {

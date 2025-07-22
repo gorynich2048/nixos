@@ -4,7 +4,7 @@
       programs.ssh = {
         enable = true;
         matchBlocks = {
-          vpn = {
+          lab = {
             hostname = "176.9.86.158";
             port = 51000;
             user = "user";
