@@ -1,16 +1,10 @@
-{ ... }: {
-  imports = [
-    ./amnezia.nix
-    ./genkey.nix
-  ];
-
+{
   networking.nat = {
     enable = true;
     internalIPs = [ "10.0.0.0/24" ];
   };
   networking.firewall.allowedUDPPorts = [ 62048 ];
 
-  networking.wireguard.enable = true;
   networking.wireguard.interfaces = {
     wg0 = {
       ips = [ "10.0.0.1/24" ];

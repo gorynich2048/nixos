@@ -51,12 +51,12 @@
         local = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = inputs;
-          modules = [ ./machines/local ];
+          modules = [ ./hosts/local ];
         };
         wsl = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = inputs;
-          modules = [ ./machines/wsl ];
+          modules = [ ./hosts/wsl ];
         };
         host = nixpkgs-host.lib.nixosSystem {
           system = "x86_64-linux";
@@ -66,12 +66,12 @@
             disko = disko-host;
             inherit self;
           };
-          modules = [ ./machines/host ];
+          modules = [ ./hosts/host ];
         };
         lab = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = inputs;
-          modules = [ ./machines/lab ];
+          modules = [ ./hosts/lab ];
         };
       };
     };

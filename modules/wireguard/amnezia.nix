@@ -1,4 +1,4 @@
-{ ... }: {
+{
   networking.wireguard.interfaces.wg0 = {
     type = "amneziawg";
     extraOptions = {

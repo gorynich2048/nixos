@@ -27,7 +27,7 @@ Test it: `nixos-rebuild build-vm --flake .#host`
 
 ```fish
 nix run github:nix-community/nixos-anywhere -- \
-    --generate-hardware-config nixos-generate-config ./machines/host/hardware-configuration.nix \
+    --generate-hardware-config nixos-generate-config ./hosts/host/hardware-configuration.nix \
     --flake .#host \
     --target-host root@176.9.86.158
 ```

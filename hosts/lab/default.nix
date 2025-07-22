@@ -1,8 +1,12 @@
 { lib, ... }: {
   imports = [
-    ../../modules/shared
-    ../../modules/remote
-    ../../modules/wireguard/server.nix
+    ../../modules/base.nix
+    ../../modules/sshd.nix
+    ../../modules/fish.nix
+    ../../modules/direnv.nix
+    ../../modules/programs.nix
+    ../../modules/wireguard
+    ../../modules/wireguard_server.nix
 
     ./hardware-configuration.nix
     ./network.nix
@@ -16,6 +20,10 @@
     };
     efi.canTouchEfiVariables = true;
   };
+
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIANY37jZd9CA4E2ktVrexTOochSow1yE4NYfCUB74fDC gorynich"
+  ];
 
   virtualisation.vmVariantWithBootLoader.virtualisation = {
     graphics = false;

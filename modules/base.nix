@@ -1,6 +1,5 @@
 { nixpkgs, home-manager, ... }: {
   imports = [
-    ./programs.nix
     (import "${home-manager}/nixos")
   ];
 
