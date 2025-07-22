@@ -5,7 +5,7 @@
         enable = true;
         matchBlocks = {
           lab = {
-            hostname = "176.9.86.158";
+            hostname = "138.201.221.18";
             port = 51000;
             user = "user";
             identityFile = "/etc/ssh/ssh_host_ed25519_key";

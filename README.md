@@ -29,5 +29,5 @@ Test it: `nixos-rebuild build-vm --flake .#host`
 nix run github:nix-community/nixos-anywhere -- \
     --generate-hardware-config nixos-generate-config ./hosts/host/hardware-configuration.nix \
     --flake .#host \
-    --target-host root@176.9.86.158
+    --target-host root@138.201.221.18
 ```
