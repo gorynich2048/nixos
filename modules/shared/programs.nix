@@ -17,6 +17,7 @@
       # TODO: remove aliases from global config
       interactiveShellInit = ''
         set fish_greeting ""
+        bind shift-right nextd-or-forward-word
         alias vi=$EDITOR
         alias grep=rg
         alias wget=aria2c

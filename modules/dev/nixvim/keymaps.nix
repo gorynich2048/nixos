@@ -24,8 +24,11 @@
         }) {
           "<Backspace>" = ":Oil<CR>";
           "<C-Backspace>" = ":Oil .<CR>";
-          "gh" = ":Oil ~/.refs/<CR>";
+          "gh" = ":Oil ~/.home/<CR>";
           "gt" = ":b term_root<CR>";
+          "yp" = ":let @+=@%<CR>";
+          "gs" = ":G<CR>:only<CR>";
+          "gl" = ":G l<CR>:only<CR>";
           "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
           "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":Spectre<CR>";
@@ -34,8 +37,6 @@
           "<leader>fl" = ":Telescope live_grep<CR>";
           "<leader>fb" = ":Telescope buffers<CR>";
           "<leader>fd" = ":Telescope diagnostics<CR>";
-          "<leader>g" = ":G<CR>:only<CR>";
-          "<leader>l" = ":G l<CR>:only<CR>";
           "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
 
           "<Space>" = "<NOP>";

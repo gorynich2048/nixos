@@ -11,6 +11,7 @@
             "-" = false;
             "`" = false;
             "<C-s>" = false;
+            "gs" = false;
           };
           cleanup_delay_ms = false;
           # experimental_watch_for_changes = true;
