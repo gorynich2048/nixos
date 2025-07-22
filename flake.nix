@@ -21,9 +21,20 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # for the host
+    nixpkgs-host.url = "github:NixOS/nixpkgs/release-25.05";
+    home-manager-host = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs-host";
+    };
+    disko-host = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs-host";
+    };
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-host, disko-host, home-manager-host, ... }@inputs:
     let
       systems = [
         "x86_64-linux"
@@ -47,9 +58,14 @@
           specialArgs = inputs;
           modules = [ ./machines/wsl ];
         };
-        host = nixpkgs.lib.nixosSystem {
+        host = nixpkgs-host.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = inputs;
+          specialArgs = { 
+            nixpkgs = nixpkgs-host;
+            home-manager = home-manager-host;
+            disko = disko-host;
+            inherit self;
+          };
           modules = [ ./machines/host ];
         };
         lab = nixpkgs.lib.nixosSystem {

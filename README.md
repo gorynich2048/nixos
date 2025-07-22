@@ -15,12 +15,20 @@ github repo -> local host
 sudo nixos-rebuild switch --flake github:Terr2048/nixos --refresh
 ```
 
+# Test config with qemu
+```fish
+nixos-rebuild build-vm --flake .#lab
+```
+
 # Setup dedicated server
+Update external network interface name.
+Update disk ids.
+Test it: `nixos-rebuild build-vm --flake .#host`
 
 ```fish
 nix run github:nix-community/nixos-anywhere -- \
     --generate-hardware-config nixos-generate-config ./machines/host/hardware-configuration.nix \
-    --flake github:Terr2048/nixos#host \
+    --flake .#host \
     --target-host root@176.9.86.158
 ```
 

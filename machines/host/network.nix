@@ -3,7 +3,7 @@
     hostName = "host";
     useDHCP = false;
 
-    nat.externalInterface = "enp7s0";
+    nat.externalInterface = "eth0";
     nat.forwardPorts = let
       addCommon = n: [
         {

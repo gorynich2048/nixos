@@ -7,7 +7,7 @@
     disk = {
       disk1 = {
         type = "disk";
-        device = "/dev/disk/by-id/nvme-SAMSUNG_MZVL2512HCJQ-00B00_S675NX1T370427";
+        device = "/dev/disk/by-id/ata-Crucial_CT250MX200SSD1_162713285D57";
         content = {
           type = "gpt";
           partitions = {
@@ -37,7 +37,7 @@
       };
       disk2 = {
         type = "disk";
-        device = "/dev/disk/by-id/nvme-SAMSUNG_MZVL2512HCJQ-00B00_S675NX1T370421";
+        device = "/dev/disk/by-id/ata-Crucial_CT250MX200SSD1_162713285D59";
         content = {
           type = "gpt";
           partitions = {

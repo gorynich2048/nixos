@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "disko-host": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-host"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753140376,
+        "narHash": "sha256-7lrVrE0jSvZHrxEzvnfHFE/Wkk9DDqb+mYCodI5uuB8=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "545aba02960caa78a31bd9a8709a0ad4b6320a5c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -91,6 +111,27 @@
       },
       "original": {
         "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager-host": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-host"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753198507,
+        "narHash": "sha256-NCG6izg+B3zsCwcT6+ssiWT3Y202jhOqGL/zh6fofa4=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "fce051eaf881220843401df545a1444ab676520c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-25.05",
         "repo": "home-manager",
         "type": "github"
       }
@@ -181,6 +222,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-host": {
+      "locked": {
+        "lastModified": 1753200251,
+        "narHash": "sha256-JJgwRcViOIPdGFHnlQ6eh3PnLrNHNttbwCh6QgGzOE0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "efc27ba588cde81aecbf812318c0af67b9e81219",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1748026106,
@@ -246,9 +303,12 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "disko-host": "disko-host",
         "home-manager": "home-manager",
+        "home-manager-host": "home-manager-host",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-host": "nixpkgs-host",
         "nixvim": "nixvim",
         "rose-pine-hyprcursor": "rose-pine-hyprcursor"
       }
