@@ -3,6 +3,8 @@
     (import "${home-manager}/nixos")
   ];
 
+  users.users.root.initialHashedPassword = "";
+
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
     nixPath = [ "nixpkgs=${nixpkgs}" ];
