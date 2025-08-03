@@ -12,7 +12,6 @@
     ./hardware-configuration.nix
     ./vm_services.nix
     ./vm_network.nix
-    ./ssh_lab.nix
   ];
 
   boot.loader.grub = {
