@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ../../modules/base.nix
+    ../../modules/systemd_dhcp.nix
     ../../modules/sshd.nix
     ../../modules/fish.nix
     ../../modules/direnv.nix
@@ -9,8 +10,8 @@
 
     ./disk-config.nix
     ./hardware-configuration.nix
-    ./services.nix
-    ./network.nix
+    ./vm_services.nix
+    ./vm_network.nix
     ./ssh_lab.nix
   ];
 
@@ -18,6 +19,10 @@
     efiSupport = true;
     efiInstallAsRemovable = true;
     configurationLimit = 10;
+  };
+
+  networking = {
+    hostName = "host";
   };
 
   users.users.root.openssh.authorizedKeys.keys = [

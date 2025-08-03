@@ -1,8 +1,5 @@
 { lib, ... }: {
   networking = {
-    hostName = "host";
-    useDHCP = false;
-
     # eth0 doesn't work here
     nat.externalInterface = "enp0s31f6";
     nat.forwardPorts = let
@@ -53,15 +50,6 @@
         iptables -D FORWARD -s 192.168.100.2 -d 192.168.0.0/16 -j DROP || true
         iptables -D FORWARD -s 192.168.100.2 -d 10.0.0.0/8 -j DROP || true
       '';
-    };
-  };
-
-  systemd.network = {
-    enable = true;
-    networks."0-enp" = {
-      matchConfig.Name = "enp*";
-      DHCP = "yes";
-      linkConfig.RequiredForOnline = "routable";
     };
   };
 }

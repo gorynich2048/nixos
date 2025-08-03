@@ -1,8 +1,8 @@
 {
   imports = [
     ../../modules/base.nix
-    ../../modules/fish.nix
     ../../modules/systemd_dhcp.nix
+    ../../modules/fish.nix
     ../../modules/nixvim
     ../../modules/direnv.nix
     ../../modules/programs.nix
