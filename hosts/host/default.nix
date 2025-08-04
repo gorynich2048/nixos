@@ -6,7 +6,6 @@
     ../../modules/fish.nix
     ../../modules/direnv.nix
     ../../modules/programs.nix
-    ../../modules/kvm.nix
 
     ./disk-config.nix
     ./hardware-configuration.nix

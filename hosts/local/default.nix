@@ -6,7 +6,6 @@
     ../../modules/nixvim
     ../../modules/direnv.nix
     ../../modules/programs.nix
-    ../../modules/kvm.nix
 
     ./hardware-configuration.nix
     ./programs.nix

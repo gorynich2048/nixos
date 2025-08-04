@@ -1,4 +1,7 @@
 { self, pkgs, ... }: {
+  # kernel Same-Page Merging
+  hardware.ksm.enable = true;
+
   systemd.services = {
     lab-vm = {
       wantedBy = [ "multi-user.target" ];
