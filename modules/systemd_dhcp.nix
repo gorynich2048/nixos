@@ -5,8 +5,8 @@
 
   systemd.network = {
     enable = true;
-    networks."0-enp" = {
-      matchConfig.Name = "enp*";
+    networks."0-en" = {
+      matchConfig.Name = "en*";
       DHCP = "yes";
       linkConfig.RequiredForOnline = "routable";
     };
