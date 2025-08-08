@@ -35,18 +35,7 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-host, disko-host, home-manager-host, ... }@inputs:
-    let
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
-      overlays = [ ];
-
-      forAllSystems = f:
-        nixpkgs.lib.genAttrs systems (system:
-          f system (import nixpkgs { inherit system overlays; })
-        );
-    in {
+    {
       nixosConfigurations = {
         local = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
