@@ -20,14 +20,14 @@
   systemd.services = {
     wireguard-route = {
       requiredBy = [ "multi-user.target" ];
-      after = [ "network-online.target" ];
+      requires = [ "network-online.target" ];
       path = with pkgs; [ iproute2 ];
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = "yes";
       };
       script = ''
-        ip route add 138.201.221.18 via 192.168.1.1
+        ip route add 138.201.221.18 via 192.168.1.1 || true
       '';
     };
   };

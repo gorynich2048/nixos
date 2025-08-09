@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   # For wgsl_analyzer
   # environment.sessionVariables.PATH = [
   #   "/home/user/.cargo/bin/"
