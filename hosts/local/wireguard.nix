@@ -19,7 +19,7 @@
 
   systemd.services = {
     wireguard-route = {
-      requiredBy = [ "multi-user.target" ];
+      wantedBy = [ "multi-user.target" ];
       requires = [ "network-online.target" ];
       path = with pkgs; [ iproute2 ];
       serviceConfig = {

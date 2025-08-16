@@ -11,6 +11,7 @@
 
     ./programs.nix
     ./ssh_vpn.nix
+    ./net_drives.nix
   ];
 
   wsl = {
