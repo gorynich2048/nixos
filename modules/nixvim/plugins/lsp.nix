@@ -39,7 +39,7 @@
           settings = {
             cargo = {
               features = "all";
-              targetDir = "target_rust_analyzer";
+              # targetDir = "target_rust_analyzer";
             };
           };
         };
