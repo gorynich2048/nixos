@@ -33,10 +33,9 @@
           "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":Spectre<CR>";
 
-          "<leader>ff" = ":Telescope find_files<CR>";
-          "<leader>fl" = ":Telescope live_grep<CR>";
-          "<leader>fb" = ":Telescope buffers<CR>";
-          "<leader>fd" = ":Telescope diagnostics<CR>";
+          "<leader>f" = ":Telescope find_files<CR>";
+          "<leader>l" = ":Telescope live_grep<CR>";
+          "<leader>b" = ":Telescope buffers<CR>";
           "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
 
           "<Space>" = "<NOP>";
