@@ -10,6 +10,7 @@
             "^.secret/"
             "^.env"
             "^.envrc"
+            "Cargo.lock"
           ];
           layout_strategy = "vertical";
           sorting_strategy = "ascending";
