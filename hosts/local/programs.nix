@@ -132,6 +132,7 @@
       };
     };
 
+    home.packages = [ pkgs.jetbrains-mono ];
     programs = {
       kitty = {
         enable = true;
@@ -139,6 +140,13 @@
           background_opacity = 0; # 0.8;
           background = "#1f1f1f";
         };
+        extraConfig = ''
+          font_family full_name="JetBrains Mono Regular"
+          disable_ligatures always
+          modify_font cell_height 90%
+          modify_font baseline 1px
+          font_size 12
+        '';
       };
     };
   };
