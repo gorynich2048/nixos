@@ -33,6 +33,12 @@
           endfor
         '';
       }
+      # Run rustfmt on save
+      {
+        event = "BufWritePre";
+        pattern = [ "*.rs" ];
+        command = "lua vim.lsp.buf.format()";
+      }
     ];
   };
 }
