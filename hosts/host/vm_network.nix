@@ -31,11 +31,6 @@
       (map (index: (addCommon (toString index)))
         (lib.genList (i: i + 1) maxVMs)
       )
-      {
-        destination = "192.168.100.1:62048";
-        proto = "udp";
-        sourcePort = 51000;
-      }
     ];
 
     # Forward GRE

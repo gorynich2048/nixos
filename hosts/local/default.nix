@@ -12,7 +12,6 @@
     ./programs.nix
     ./pipewire.nix
     ./nvidia.nix
-    ./wireguard.nix
   ];
 
   boot.loader = {
