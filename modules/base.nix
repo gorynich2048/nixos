@@ -16,8 +16,6 @@
     optimise.dates = [ "weekly" ];
   };
 
-  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
-
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "C.UTF-8";
 }

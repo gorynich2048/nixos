@@ -2,6 +2,7 @@
   imports = [
     ../../modules/base.nix
     ../../modules/systemd_dhcp.nix
+    ../../modules/dns.nix
     ../../modules/fish.nix
     ../../modules/nixvim
     ../../modules/direnv.nix
