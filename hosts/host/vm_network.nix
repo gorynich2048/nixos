@@ -36,10 +36,16 @@
     # Forward GRE
     nat = {
       extraCommands = ''
+        iptables -A PREROUTING -t nat -p gre --src 85.93.44.80 -j DNAT --to-destination 192.168.100.1
+        iptables -A POSTROUTING -t nat -p gre --src 192.168.100.1 -j SNAT --to-source 138.201.221.18
+
         iptables -A PREROUTING -t nat -p gre --src 92.255.229.156 -j DNAT --to-destination 192.168.100.3
         iptables -A POSTROUTING -t nat -p gre --src 192.168.100.3 -j SNAT --to-source 138.201.221.18
       '';
       extraStopCommands = ''
+        iptables -D PREROUTING -t nat -p gre --src 85.93.44.80 -j DNAT --to-destination 192.168.100.1 || true
+        iptables -D POSTROUTING -t nat -p gre --src 192.168.100.1 -j SNAT --to-source 138.201.221.18 || true
+
         iptables -D PREROUTING -t nat -p gre --src 92.255.229.156 -j DNAT --to-destination 192.168.100.3 || true
         iptables -D POSTROUTING -t nat -p gre --src 192.168.100.3 -j SNAT --to-source 138.201.221.18 || true
       '';
