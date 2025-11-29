@@ -19,7 +19,7 @@
         enable = true;
         settings.open_cmd = "enew";
       };
-      # vim-surround.enable = true;
+      vim-surround.enable = true;
       treesitter-context.enable = true;
       web-devicons.enable = true;
       hex.enable = true;
