@@ -1,7 +1,7 @@
 {
   programs.git = {
     enable = true;
-    aliases = {
+    settings.alias = {
       l = "log --all --decorate --oneline --graph";
     };
   };

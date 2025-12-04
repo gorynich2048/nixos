@@ -4,7 +4,7 @@
       killall
       ripgrep
       fd
-      aria
+      aria2
       unzip
       speedtest-cli
       neofetch

@@ -37,7 +37,7 @@
       wl-clipboard
       wineWowPackages.waylandFull
       winetricks
-      xdragon
+      dragon-drop
       mangohud
       ollama
       mpv
@@ -50,7 +50,7 @@
       wofi
       krita
       blender
-      inputs.rose-pine-hyprcursor.packages.${system}.default
+      inputs.rose-pine-hyprcursor.packages.${stdenv.hostPlatform.system}.default
       remmina
     ];
   };
@@ -141,7 +141,7 @@
           background = "#1f1f1f";
         };
         extraConfig = ''
-          font_family full_name="JetBrains Mono Regular"
+          font_family full_name="JetBrains Mono Bold"
           disable_ligatures always
           modify_font cell_height 90%
           modify_font baseline 1px
