@@ -43,6 +43,7 @@
       mpv
       yt-dlp
       inputs.gittype.packages.${stdenv.hostPlatform.system}.unstable
+      wireguard-tools
 
       qutebrowser
       chromium
