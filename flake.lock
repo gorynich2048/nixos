@@ -95,6 +95,27 @@
         "type": "github"
       }
     },
+    "gittype": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1764788672,
+        "narHash": "sha256-ekuxbyv0A0KpwWuRan0YqPxjGIL0xrtR8yRqO6vg8uE=",
+        "owner": "unhappychoice",
+        "repo": "gittype",
+        "rev": "3514f47c21a978f95575e9b8373b7e91584e32c7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unhappychoice",
+        "repo": "gittype",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -189,7 +210,9 @@
     "nixos-wsl": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1764730608,
@@ -304,6 +327,7 @@
       "inputs": {
         "disko": "disko",
         "disko-host": "disko-host",
+        "gittype": "gittype",
         "home-manager": "home-manager",
         "home-manager-host": "home-manager-host",
         "nixos-wsl": "nixos-wsl",
@@ -332,6 +356,24 @@
       "original": {
         "owner": "ndom91",
         "repo": "rose-pine-hyprcursor",
+        "type": "github"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1758335443,
+        "narHash": "sha256-2jaGMj32IckpZgBjn7kG4zyJl66T+2A1Fn2ppkHh91o=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "f1ccb14649cf87e48051a6ac3a571b4a57d84ff3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
         "type": "github"
       }
     },

@@ -42,6 +42,7 @@
       ollama
       mpv
       yt-dlp
+      inputs.gittype.packages.${stdenv.hostPlatform.system}.unstable
 
       qutebrowser
       chromium
