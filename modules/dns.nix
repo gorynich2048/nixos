@@ -1,4 +1,11 @@
-{
-  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+{ pkgs, ... }: {
+  networking = {
+    nameservers = [ "127.0.0.1" "::1" ];
+    dhcpcd.extraConfig = "nohook resolv.conf";
+  };
   services.resolved.enable = false;
+  services.stubby = {
+    enable = true;
+    settings = pkgs.stubby.passthru.settingsExample;
+  };
 }
