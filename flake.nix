@@ -28,6 +28,10 @@
       url = "github:unhappychoice/gittype";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zapret-discord-youtube = {
+      url = "github:kartavkun/zapret-discord-youtube";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # for the host
     nixpkgs-host.url = "github:NixOS/nixpkgs/release-25.05";

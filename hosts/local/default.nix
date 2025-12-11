@@ -12,6 +12,7 @@
     ./programs.nix
     ./pipewire.nix
     ./nvidia.nix
+    ./zapret.nix
   ];
 
   boot.loader = {
