@@ -9,7 +9,6 @@
       dig
       traceroute
       unzip
-      unrar
 
       # fancy stuff
       speedtest-cli
