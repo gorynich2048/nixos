@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }@inputs: {
+{ lib, pkgs, ... }: {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "nvidia-x11"
@@ -6,73 +6,30 @@
       "steam"
       "steam-original"
       "steam-run"
-      "zerotierone"
     ]
     || builtins.match "^cudatoolkit-.*" (lib.getName pkg) != [];
-
-  nixpkgs.overlays =
-    [
-      (final: prev: {
-        vimPlugins = prev.vimPlugins // {
-          cmake-tools-nvim = prev.vimPlugins.cmake-tools-nvim.overrideAttrs(oldAttrs: {
-            src = prev.fetchFromGitHub {
-              owner = "Civitasv";
-              repo = "cmake-tools.nvim";
-              rev = "aedf4b6c9b76294ec96ff617db7ffdfa634cfa69";
-              sha256 = "sha256-umUzS4Tq9IEL3zt0ru6T7yPco4KfMgraSjIEMa/6BvQ=";
-            };
-          });
-        };
-      })
-    ];
 
   environment = {
     systemPackages = with pkgs; [
       sshfs
       nmap
       android-file-transfer
-      alsa-utils
-      grimblast
-      tesseract
-      wl-clipboard
-      wineWowPackages.waylandFull
-      winetricks
-      dragon-drop
-      mangohud
-      ollama
-      mpv
-      yt-dlp
-      inputs.gittype.packages.${stdenv.hostPlatform.system}.unstable
+#     wineWowPackages.waylandFull
+#     winetricks
+#     mpv
+#     yt-dlp
+#     inputs.gittype.packages.${stdenv.hostPlatform.system}.unstable
       wireguard-tools
 
-      qutebrowser
       chromium
-      pavucontrol
-      easyeffects
-      wofi
+#     easyeffects
       krita
-      blender
-      inputs.rose-pine-hyprcursor.packages.${stdenv.hostPlatform.system}.default
+#     blender
       remmina
     ];
   };
 
-  environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.qutebrowser}/bin/qutebrowser";
-  xdg.mime.enable = true;
-  xdg.mime.defaultApplications = {
-    "text/html" = "org.qutebrowser.qutebrowser.desktop";
-    "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
-    "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
-    "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
-    "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
-  };
-
   programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-
     steam = {
       enable = true;
       extraCompatPackages = with pkgs; [
@@ -120,20 +77,6 @@
   };
 
   home-manager.users.user = {
-    dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-    };
-
-    gtk = {
-      enable = true;
-      theme = {
-        name = "Adwaita-dark";
-        package = pkgs.gnome-themes-extra;
-      };
-    };
-
     home.packages = [ pkgs.jetbrains-mono ];
     programs = {
       kitty = {
@@ -151,11 +94,5 @@
         '';
       };
     };
-  };
-  
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
   };
 }

@@ -8,10 +8,13 @@
     ../../modules/direnv.nix
     ../../modules/programs.nix
 
+    ./disk-config.nix
     ./hardware-configuration.nix
+    ./wayland.nix
     ./programs.nix
     ./pipewire.nix
     ./nvidia.nix
+    ./qutebrowser.nix
   ];
 
   boot.loader = {
