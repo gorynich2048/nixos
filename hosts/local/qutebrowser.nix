@@ -37,7 +37,7 @@
           };
           tabs.show = "never";
         };
-        # searchEngines.DEFAULT = "https://www.google.com/search?q={}";
+        searchEngines.DEFAULT = "https://www.google.com/search?q={}";
       };
     };
   };

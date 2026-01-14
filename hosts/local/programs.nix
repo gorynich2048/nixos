@@ -14,17 +14,17 @@
       sshfs
       nmap
       android-file-transfer
-#     wineWowPackages.waylandFull
-#     winetricks
+      wineWowPackages.waylandFull
+      winetricks
 #     mpv
 #     yt-dlp
 #     inputs.gittype.packages.${stdenv.hostPlatform.system}.unstable
       wireguard-tools
 
       chromium
-#     easyeffects
+      easyeffects
       krita
-#     blender
+      blender
       remmina
     ];
   };
