@@ -8,7 +8,7 @@
       aria2
       dig
       traceroute
-      unzip
+      unar
 
       # fancy stuff
       speedtest-cli
