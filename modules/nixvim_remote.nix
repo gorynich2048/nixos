@@ -10,7 +10,7 @@
           };
         visual =
           lib.mapAttrsToList (key: action: {
-            mode = "v";
+            mode = "x";
             inherit action key;
           }) {
             "<leader>p" = "\"_dP";
