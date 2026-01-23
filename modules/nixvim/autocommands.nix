@@ -39,6 +39,14 @@
         pattern = [ "*.rs" ];
         command = "lua vim.lsp.buf.format()";
       }
+      # Load bevy vscode snippets
+      {
+        event = "DirChanged";
+        pattern = [ "*" ];
+        command = ''
+          lua require("luasnip.loaders.from_vscode").load_standalone({ path = ".vscode/bevy.code-snippets" })
+        '';
+      }
     ];
   };
 }
