@@ -75,9 +75,9 @@ in {
         RemainAfterExit = "yes";
       };
       script = ''
-        ip tunnel add gre1 mode gre local 192.168.100.1 remote 85.93.44.80
-        ip addr add 10.2.0.1/30 dev gre1
-        ip link set gre1 up
+        ip tunnel add mygre mode gre local 192.168.100.1 remote 85.93.44.211
+        ip addr add 10.2.0.1/30 dev mygre
+        ip link set mygre up
       '';
     };
   };
