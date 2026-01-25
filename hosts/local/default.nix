@@ -8,6 +8,7 @@
     ../../modules/nixvim_local.nix
     ../../modules/direnv.nix
     ../../modules/programs.nix
+    ../../modules/cross_aarch64.nix
 
     ./disk-config.nix
     ./hardware-configuration.nix
