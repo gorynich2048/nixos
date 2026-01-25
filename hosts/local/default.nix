@@ -5,6 +5,7 @@
     ../../modules/dns.nix
     ../../modules/fish.nix
     ../../modules/nixvim
+    ../../modules/nixvim_local.nix
     ../../modules/direnv.nix
     ../../modules/programs.nix
 
