@@ -6,6 +6,8 @@
     ../../modules/fish.nix
     ../../modules/direnv.nix
     ../../modules/programs.nix
+    ../../modules/wireguard
+    ../../modules/wireguard_server.nix
 
     ./hardware-configuration.nix
     ./network.nix
