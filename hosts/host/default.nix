@@ -2,7 +2,7 @@
   imports = [
     ../../modules/base.nix
     ../../modules/systemd_dhcp.nix
-    ../../modules/dns.nix
+    ../../modules/dns_stubby.nix
     ../../modules/sshd.nix
     ../../modules/fish.nix
     ../../modules/direnv.nix
@@ -22,9 +22,7 @@
 
   networking = {
     hostName = "host";
-    firewall.allowedUDPPorts = [ 53 ];
   };
-  services.stubby.settings.listen_addresses = [ "0.0.0.0" ];
 
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIANY37jZd9CA4E2ktVrexTOochSow1yE4NYfCUB74fDC gorynich"

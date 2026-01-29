@@ -2,7 +2,6 @@
   imports = [
     ../../modules/base.nix
     ../../modules/systemd_dhcp.nix
-    ../../modules/dns.nix
     ../../modules/fish.nix
     ../../modules/nixvim
     ../../modules/nixvim_local.nix
@@ -34,6 +33,11 @@
       138.201.221.18 host
     '';
   };
+  networking = {
+    nameservers = [ "10.2.0.1" ];
+    dhcpcd.extraConfig = "nohook resolv.conf";
+  };
+  services.resolved.enable = false;
 
   users.users.user = {
     uid = 1000;

@@ -1,7 +1,7 @@
 { lib, ... }: {
   imports = [
     ../../modules/base.nix
-    ../../modules/dns.nix
+    ../../modules/dns_stubby.nix
     ../../modules/sshd.nix
     ../../modules/fish.nix
     ../../modules/direnv.nix
