@@ -16,7 +16,7 @@
     ./pipewire.nix
     ./nvidia.nix
     ./qutebrowser.nix
-    # ./wireguard.nix
+    ./wireguard.nix
   ];
 
   boot.loader = {
