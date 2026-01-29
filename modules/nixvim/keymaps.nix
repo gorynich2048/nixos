@@ -23,7 +23,7 @@
           inherit action key;
         }) {
           "<Backspace>" = ":Oil<CR>";
-          "<C-Backspace>" = ":Oil .<CR>";
+          "gw" = ":Oil .<CR>";
           "gh" = ":Oil ~/.home/<CR>";
           "gt" = ":b term_root<CR>";
           "yp" = ":let @+=@%<CR>";

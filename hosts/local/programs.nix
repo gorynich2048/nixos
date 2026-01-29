@@ -16,9 +16,8 @@
       android-file-transfer
       wineWowPackages.waylandFull
       winetricks
-#     mpv
-#     yt-dlp
-#     inputs.gittype.packages.${stdenv.hostPlatform.system}.unstable
+      mpv
+      yt-dlp
       wireguard-tools
 
       chromium
