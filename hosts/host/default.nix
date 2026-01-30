@@ -1,7 +1,6 @@
 { ... }: {
   imports = [
     ../../modules/base.nix
-    ../../modules/systemd_dhcp.nix
     ../../modules/dns_stubby.nix
     ../../modules/sshd.nix
     ../../modules/fish.nix
@@ -22,6 +21,23 @@
 
   networking = {
     hostName = "host";
+    useDHCP = false;
+  };
+
+  systemd.network = {
+    enable = true;
+    networks."0-en" = {
+      matchConfig.Name = "en*";
+      DHCP = "no";
+      address = [ "138.201.221.18/26" ];
+      routes = [
+        {
+          Gateway = "138.201.221.1";
+          GatewayOnLink = true;
+        }
+      ];
+      linkConfig.RequiredForOnline = "routable";
+    };
   };
 
   users.users.root.openssh.authorizedKeys.keys = [
