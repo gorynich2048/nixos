@@ -7,6 +7,7 @@
     ips = [ "10.0.0.2/24" ];
     listenPort = 51002;
     # socketNamespace = "wg";
+    mtu = 1408;
 
     peers = [
       {
