@@ -12,7 +12,6 @@
 
   programs.nixvim = {
     plugins = {
-      comment.enable = true;
       sleuth.enable = true; #auto indent
       fugitive.enable = true;
       spectre = {

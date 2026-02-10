@@ -47,6 +47,12 @@
           lua require("luasnip.loaders.from_vscode").load_standalone({ path = ".vscode/bevy.code-snippets" })
         '';
       }
+      # Disable comments continuation
+      {
+        event = "FileType";
+        pattern = [ "*" ];
+        command = "setlocal formatoptions-=ro";
+      }
     ];
   };
 }
