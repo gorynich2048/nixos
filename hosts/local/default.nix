@@ -27,6 +27,12 @@
     efi.canTouchEfiVariables = true;
   };
 
+  # Configure mouse: https://www.xvalleyinno.top/AttackShark/#/project/items
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="0047", MODE="0666", TAG+="uaccess"
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="0046", MODE="0666", TAG+="uaccess"
+  '';
+
   networking = {
     hostName = "local";
     extraHosts = ''
