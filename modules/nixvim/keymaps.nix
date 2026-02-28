@@ -17,6 +17,7 @@
           inherit action key;
         }) {
         };
+      path_match = "%:s?term:.*??:s?oil://??:p:h";
       normal =
         lib.mapAttrsToList (key: action: {
           mode = "n";
@@ -29,12 +30,14 @@
           "yp" = ":let @+=@%<CR>";
           "gs" = ":G<CR>:only<CR>";
           "gl" = ":G l<CR>:only<CR>";
-          "<leader>t" = ":e term://%:s?term:.*??:s?oil://??:p:h//$SHELL<CR>i";
+          "<leader>t" = ":e term://${path_match}//$SHELL<CR>i";
           "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":Spectre<CR>";
 
           "<leader>f" = ":Telescope find_files<CR>";
+          "<leader>F" = ":Telescope find_files cwd=${path_match}<CR>";
           "<leader>l" = ":Telescope live_grep<CR>";
+          "<leader>L" = ":Telescope live_grep cwd=${path_match}<CR>";
           "<leader>b" = ":Telescope buffers<CR>";
           "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
 
