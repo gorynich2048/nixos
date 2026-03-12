@@ -82,6 +82,8 @@
 
           "l" = "<C-u>";
           "h" = "<C-d>";
+
+          "<leader>a".__raw = "vim.lsp.buf.code_action";
         };
       insert =
         lib.mapAttrsToList (key: action: {
