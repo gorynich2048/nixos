@@ -11,6 +11,7 @@
   ];
 
   programs.nixvim = {
+    highlight.CurrentScope.fg = "#61afef";
     plugins = {
       sleuth.enable = true; #auto indent
       fugitive.enable = true;
@@ -21,15 +22,16 @@
       vim-surround.enable = true;
       treesitter-context.enable = true;
       web-devicons.enable = true;
-      hex.enable = true;
+      # hex.enable = true;
       crates.enable = true;
-      csvview.enable = true;
+      # csvview.enable = true;
       indent-blankline = {
         enable = true;
         settings = {
           scope = {
             show_start = false;
             show_end = false;
+            highlight = "CurrentScope";
           };
         };
       };

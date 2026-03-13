@@ -42,7 +42,7 @@
           "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
 
           "<Space>" = "<NOP>";
-          "<esc>" = ":noh<CR>";
+          "<Esc>" = ":noh<CR>";
 
           "<C-d>" = "M<C-d>zz";
           "<C-u>" = "M<C-u>";
@@ -52,10 +52,14 @@
           "zz" = "zzzszH";
           "<C-i>" = "<C-i>zz";
 
-          "<S-Up>" = ":resize +2<CR>";
-          "<S-Down>" = ":resize -2<CR>";
-          "<S-Left>" = ":vertical resize -2<CR>";
-          "<S-Right>" = ":vertical resize +2<CR>";
+          # "<S-Up>" = ":resize +2<CR>";
+          # "<S-Down>" = ":resize -2<CR>";
+          # "<S-Left>" = ":vertical resize -2<CR>";
+          # "<S-Right>" = ":vertical resize +2<CR>";
+          "<S-Up>" = "5<Up>";
+          "<S-Down>" = "5<Down>";
+          "<S-Left>" = "5<Left>";
+          "<S-Right>" = "5<Right>";
 
           "<C-Up>" = "<C-w>k";
           "<C-Down>" = "<C-w>j";
@@ -72,6 +76,9 @@
 
           "<C-s>" = ":w<CR>";
           "<C-S>" = ":wa<CR>";
+
+          "[<Space>" = "O<Esc>";
+          "]<Space>" = "o<Esc>";
         };
       visual =
         lib.mapAttrsToList (key: action: {

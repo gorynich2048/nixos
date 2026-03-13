@@ -14,8 +14,9 @@
           ];
           layout_strategy = "vertical";
           sorting_strategy = "ascending";
-          border = false;
-          hidden = true;
+
+          borderchars = [ "-" "" "" "" "" "" "" "" ];
+
           layout_config = {
             prompt_position = "top";
             height = 0.999;
@@ -28,9 +29,13 @@
               "<C-Backspace>".__raw = "function() vim.cmd 'normal! bdw' vim.cmd 'startinsert!' end";
             };
           };
+
+          # Search for hidden files
+          hidden = true;
         };
 
         pickers = {
+          # Search for hidden files
           find_files.hidden = true;
           live_grep.hidden = true;
         };
@@ -38,6 +43,7 @@
 
       extensions = {
         fzf-native.enable = true;
+        ui-select.enable = true;
       };
     };
   };
