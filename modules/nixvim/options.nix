@@ -56,6 +56,7 @@
       #   broken after white space to get this width.
 
       # Folding
+      foldmethod = "expr";
       foldlevel = 99; # Folds with a level higher than this number will be closed
 
       completeopt = ["menu" "menuone" "noselect" "preview"];

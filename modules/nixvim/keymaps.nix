@@ -52,19 +52,15 @@
           "zz" = "zzzszH";
           "<C-i>" = "<C-i>zz";
 
-          # "<S-Up>" = ":resize +2<CR>";
-          # "<S-Down>" = ":resize -2<CR>";
-          # "<S-Left>" = ":vertical resize -2<CR>";
-          # "<S-Right>" = ":vertical resize +2<CR>";
           "<S-Up>" = "5<Up>";
           "<S-Down>" = "5<Down>";
           "<S-Left>" = "5<Left>";
           "<S-Right>" = "5<Right>";
 
-          "<C-Up>" = "<C-w>k";
-          "<C-Down>" = "<C-w>j";
-          "<C-Left>" = "<C-w>h";
-          "<C-Right>" = "<C-w>l";
+          "<C-Up>" = "zc";
+          "<C-Down>" = "zo";
+          "<C-Left>" = "zC";
+          "<C-Right>" = "zO";
 
           "l" = "<C-u>";
           "h" = "<C-d>";
