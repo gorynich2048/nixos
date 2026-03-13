@@ -1,21 +1,12 @@
 {
   programs.nixvim = {
     autoCmd = [
-      # Enable spellcheck for some filetypes
-      {
-        event = "FileType";
-        pattern = [
-          "tex"
-          "latex"
-          "markdown"
-        ];
-        command = "setlocal spell spelllang=en";
-      }
       # Enable line numbers in terminal
       {
         event = "TermOpen";
         command = "setlocal number relativenumber";
       }
+
       # Update global marks
       {
         event = "BufLeave";
@@ -33,12 +24,14 @@
           endfor
         '';
       }
+
       # Run rustfmt on save
       {
         event = "BufWritePre";
         pattern = [ "*.rs" ];
         command = "lua vim.lsp.buf.format()";
       }
+
       # Load bevy vscode snippets
       {
         event = "DirChanged";
@@ -47,6 +40,7 @@
           lua require("luasnip.loaders.from_vscode").load_standalone({ path = ".vscode/bevy.code-snippets" })
         '';
       }
+
       # Disable comments continuation
       {
         event = "FileType";

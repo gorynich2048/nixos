@@ -8,8 +8,6 @@
             show_hidden = true;
           };
           keymaps = {
-            "-" = false;
-            "`" = false;
             "<C-s>" = false;
             "gs" = false;
           };

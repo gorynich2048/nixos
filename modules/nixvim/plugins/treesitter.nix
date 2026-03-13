@@ -4,6 +4,7 @@
       treesitter = {
         enable = true;
 
+        # Highlight Lua and VimScript inside nix expressions
         nixvimInjections = true;
 
         folding = true;
@@ -13,16 +14,7 @@
         };
       };
 
-      # treesitter-refactor = {
-      #   enable = true;
-      #   highlightDefinitions = {
-      #     enable = true;
-      #     disable = [ "c" "cpp" ];
-      #     # Set to false if you have an `updatetime` of ~100.
-      #     clearOnCursorMove = false;
-      #   };
-      # };
-
+      # Highlight Bash inside nix expressions
       hmts.enable = true;
     };
   };

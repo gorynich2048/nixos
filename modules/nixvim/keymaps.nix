@@ -30,27 +30,30 @@
           "yp" = ":let @+=@%<CR>";
           "gs" = ":G<CR>:only<CR>";
           "gl" = ":G l<CR>:only<CR>";
+
           "<leader>t" = ":e term://${path_match}//$SHELL<CR>i";
           "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":Spectre<CR>";
+          "<leader>o" = ":o<Esc>";
+          "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
 
           "<leader>f" = ":Telescope find_files<CR>";
           "<leader>F" = ":Telescope find_files cwd=${path_match}<CR>";
           "<leader>l" = ":Telescope live_grep<CR>";
           "<leader>L" = ":Telescope live_grep cwd=${path_match}<CR>";
           "<leader>b" = ":Telescope buffers<CR>";
-          "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
+          "<leader>y" = "\"+y";
+          "<leader>Y" = "\"+Y";
 
           "<Space>" = "<NOP>";
           "<Esc>" = ":noh<CR>";
 
-          "<C-d>" = "M<C-d>zz";
-          "<C-u>" = "M<C-u>";
-          # "<C-o>" = "<C-o>zzzv";
           "n" = "nzzzv";
           "N" = "Nzzzv";
           "zz" = "zzzszH";
           "<C-i>" = "<C-i>zz";
+          "gf" = "gFzz";
+          "gd" = "gdzzzv";
 
           "<S-Up>" = "5<Up>";
           "<S-Down>" = "5<Down>";
@@ -62,19 +65,12 @@
           "<C-Left>" = "zC";
           "<C-Right>" = "zO";
 
-          "l" = "<C-u>";
-          "h" = "<C-d>";
+          "l" = "M<C-u>";
+          "h" = "M<C-d>zz";
           "L" = ":tabp<CR>";
           "H" = ":tabn<CR>";
 
-          "gf" = "gFzzzv";
-          "gd" = "gdzzzv";
-
           "<C-s>" = ":w<CR>";
-          "<C-S>" = ":wa<CR>";
-
-          "[<Space>" = "O<Esc>";
-          "]<Space>" = "o<Esc>";
         };
       visual =
         lib.mapAttrsToList (key: action: {
@@ -82,9 +78,11 @@
           inherit action key;
         }) {
           "<leader>d" = "\"_d";
+          "<leader>y" = "\"+y";
+          "<leader>s" = ":sort<CR>";
 
-          "l" = "<C-u>";
-          "h" = "<C-d>";
+          "l" = "M<C-u>";
+          "h" = "M<C-d>zz";
 
           "<leader>a".__raw = "vim.lsp.buf.code_action";
         };
