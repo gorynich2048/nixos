@@ -1,11 +1,12 @@
 { nixvim, ... }: {
   imports = [
     nixvim.nixosModules.nixvim
-    ./plugins
     ./autocommands.nix
+    ./completion.nix
     ./extras.nix
     ./keymaps.nix
     ./options.nix
+    ./plugins
   ];
 
   programs.nixvim = {

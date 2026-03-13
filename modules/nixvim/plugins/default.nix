@@ -1,6 +1,5 @@
 {
   imports = [
-    ./cmp.nix
     ./dap.nix
     ./indent-blankline.nix
     ./lsp.nix

@@ -39,7 +39,6 @@
       foldmethod = "expr";
       foldlevel = 99;
 
-      completeopt = ["menu" "menuone" "noselect" "preview"];
       virtualedit = "block";
       shadafile = "NONE";
     };
