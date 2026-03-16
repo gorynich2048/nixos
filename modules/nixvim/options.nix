@@ -24,6 +24,7 @@
       splitright = true;
 
       swapfile = false;
+      ignorecase = true;
       smartcase = true;
       scrolloff = 8;
       signcolumn = "yes";
