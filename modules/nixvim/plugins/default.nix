@@ -22,7 +22,13 @@
 
       sleuth.enable = true; #auto indent
       vim-surround.enable = true;
-      treesitter-context.enable = true;
+      treesitter-context = {
+        enable = true;
+        settings = {
+          max_lines = 10;
+          multiline_threshold = 1;
+        };
+      };
       gitsigns = {
         enable = true;
         settings.signs = {

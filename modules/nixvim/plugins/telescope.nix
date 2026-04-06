@@ -14,7 +14,7 @@
           ];
 
           # border = false;
-          borderchars = [ "-" " " " " " " " " " " " " " " ];
+          borderchars = [ "-" "|" " " "|" "|" "|" "|" "|" ];
 
           mappings = {
             i = {
