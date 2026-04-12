@@ -25,6 +25,7 @@
       krita
       blender
       remmina
+      discord-canary
     ];
   };
 
