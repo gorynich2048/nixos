@@ -42,6 +42,7 @@
 
       virtualedit = "block";
       shadafile = "NONE";
+      jumpoptions = ["stack" "clean"];
     };
 
     colorschemes.onedark = {
