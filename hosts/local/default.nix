@@ -59,6 +59,7 @@
       imports = [
         ../../modules/btop_home.nix
         ../../modules/git_home.nix
+        ../../modules/zathura_home.nix
       ];
       home.stateVersion = "23.11"; # NEVER CHANGE
     };
