@@ -4,7 +4,7 @@
     ./indent-blankline.nix
     ./lsp.nix
     ./oil.nix
-    ./ollama.nix
+    # ./ollama.nix
     ./telescope.nix
     ./treesitter.nix
   ];

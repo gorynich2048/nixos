@@ -26,6 +26,7 @@
       blender
       remmina
       discord-canary
+      koboldcpp
     ];
   };
 

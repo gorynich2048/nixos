@@ -7,6 +7,7 @@
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
   nixpkgs.config.cudaSupport = true;
+  # nixpkgs.config.cudaCapabilities = [ "8.6" ]; # BEAKS BINARY CACHE # for RTX 3080
 
   hardware.nvidia = {
 
