@@ -55,15 +55,8 @@
           "gf" = "gFzz";
           "gd" = "gdzzzv";
 
-          "<S-Up>" = "5<Up>";
-          "<S-Down>" = "5<Down>";
-          "<S-Left>" = "5<Left>";
-          "<S-Right>" = "5<Right>";
-
-          "<C-Up>" = "zc";
-          "<C-Down>" = "zo";
-          "<C-Left>" = "zC";
-          "<C-Right>" = "zO";
+          "<S-Up>" = "O<ESC>";
+          "<S-Down>" = "o<ESC>";
 
           "l" = "M<C-u>";
           "h" = "M<C-d>zz";
