@@ -46,6 +46,10 @@
         settings = {
           background_opacity = 0; # 0.8;
           background = "#1f1f1f";
+          input_delay = 0;
+          repaint_delay = 8;
+          sync_to_monitor = "no";
+          wayland_enable_ime = "no";
         };
         extraConfig = ''
           font_family full_name="JetBrains Mono Bold"
