@@ -34,7 +34,8 @@
           "<leader>t" = ":e term://${path_match}//$SHELL<CR>i";
           "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":Spectre<CR>";
-          "<leader>o" = ":o<Esc>";
+          "<leader>O" = "O<Esc>";
+          "<leader>o" = "o<Esc>";
           "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
 
           "<leader>f" = ":Telescope find_files<CR>";
@@ -55,8 +56,14 @@
           "gf" = "gFzz";
           "gd" = "gdzzzv";
 
-          "<S-Up>" = "O<ESC>";
-          "<S-Down>" = "o<ESC>";
+          "<C-Up>" = "O<ESC>";
+          "<C-Down>" = "o<ESC>";
+          "<S-Up>" = ":m .-2<CR>==";
+          "<S-Down>" = ":m .+1<CR>==";
+          "j" = ":t.<CR>";
+          "k" = ".n";
+          "K" = ".N";
+          "\\" = "/\\V<C-r>\"<CR>";
 
           "l" = "M<C-u>";
           "h" = "M<C-d>zz";
@@ -76,6 +83,8 @@
 
           "l" = "M<C-u>";
           "h" = "M<C-d>zz";
+          "<S-Up>" = ":m '<-2<CR>gv=gv";
+          "<S-Down>" = ":m '>+1<CR>gv=gv";
 
           "<leader>a".__raw = "vim.lsp.buf.code_action";
         };

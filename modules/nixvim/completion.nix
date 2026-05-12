@@ -15,7 +15,11 @@
         enable = true;
 
         settings = {
-          cmdline.enabled = false;
+          cmdline = {
+            keymap.preset = "inherit";
+            completion.menu.auto_show = true;
+          };
+
           snippets.preset = "luasnip";
 
           completion = {
@@ -28,11 +32,15 @@
           };
 
           keymap = {
+            preset = "none";
+
             "<Down>" = [ "select_next" "fallback" ];
             "<Up>" = [ "select_prev" "fallback" ];
             "<S-Down>" = [ "scroll_documentation_down" "fallback" ];
-            "<S-Up>" = ["scroll_documentation_up" "fallback" ];
+            "<S-Up>" = [ "scroll_documentation_up" "fallback" ];
             "<CR>" = [ "select_and_accept" "fallback" ];
+            "<Tab>" = [ "show" ];
+            "<ESC>" = [ "cancel" "fallback" ];
           };
 
           sources = {
