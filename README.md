@@ -12,7 +12,7 @@ nixos-rebuild switch --flake . --target-host host
 
 github repo -> local host
 ```fish
-sudo nixos-rebuild switch --flake github:Terr2048/nixos --refresh
+sudo nixos-rebuild switch --flake github:gorynich2048/nixos --refresh
 ```
 
 # Test config with qemu
@@ -30,4 +30,12 @@ nix run github:nix-community/nixos-anywhere -- \
     --generate-hardware-config nixos-generate-config ./hosts/host/hardware-configuration.nix \
     --flake .#host \
     --target-host root@138.201.221.18
+```
+
+# Local setup
+```fish
+sudo nix --extra-experimental-features "nix-command flakes" \
+  run 'github:nix-community/disko/latest#disko-install' -- \
+  --flake .#local \
+  --disk disk1 /dev/DISK_NAME
 ```
