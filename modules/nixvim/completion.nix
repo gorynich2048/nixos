@@ -20,7 +20,10 @@
               preset = "inherit";
               "<Tab>" = [ "show" "cancel" ];
             };
-            completion.menu.auto_show = true;
+            completion = {
+              list.selection.preselect = false;
+              menu.auto_show = true;
+            };
           };
 
           snippets.preset = "luasnip";
@@ -39,9 +42,10 @@
 
             "<Down>" = [ "select_next" "fallback" ];
             "<Up>" = [ "select_prev" "fallback" ];
+            "<Right>" = [ "select_and_accept" "fallback" ];
+            "<CR>" = [ "accept" "fallback" ];
             "<PageDown>" = [ "scroll_documentation_down" "fallback" ];
             "<PageUp>" = [ "scroll_documentation_up" "fallback" ];
-            "<CR>" = [ "select_and_accept" "fallback" ];
           };
 
           sources = {
