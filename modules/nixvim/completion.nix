@@ -16,7 +16,10 @@
 
         settings = {
           cmdline = {
-            keymap.preset = "inherit";
+            keymap = {
+              preset = "inherit";
+              "<Tab>" = [ "show" "cancel" ];
+            };
             completion.menu.auto_show = true;
           };
 
@@ -36,11 +39,9 @@
 
             "<Down>" = [ "select_next" "fallback" ];
             "<Up>" = [ "select_prev" "fallback" ];
-            "<S-Down>" = [ "scroll_documentation_down" "fallback" ];
-            "<S-Up>" = [ "scroll_documentation_up" "fallback" ];
+            "<PageDown>" = [ "scroll_documentation_down" "fallback" ];
+            "<PageUp>" = [ "scroll_documentation_up" "fallback" ];
             "<CR>" = [ "select_and_accept" "fallback" ];
-            "<Tab>" = [ "show" ];
-            "<ESC>" = [ "cancel" "fallback" ];
           };
 
           sources = {
