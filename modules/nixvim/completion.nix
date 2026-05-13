@@ -19,6 +19,7 @@
             keymap = {
               preset = "inherit";
               "<Tab>" = [ "show" "cancel" ];
+              "<CR>" = [ "accept_and_enter" "fallback" ];
             };
             completion = {
               list.selection.preselect = false;
