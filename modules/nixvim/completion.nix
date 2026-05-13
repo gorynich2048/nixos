@@ -18,12 +18,20 @@
           cmdline = {
             keymap = {
               preset = "inherit";
-              "<Tab>" = [ "select_and_accept" ];
+              "<Tab>" = [ "show" "select_and_accept" ];
               "<CR>" = [ "accept_and_enter" "fallback" ];
             };
             completion = {
               list.selection.preselect = false;
               menu.auto_show = true;
+              # Does not work
+              ghost_text = {
+                enabled = true;
+                show_with_selection = false;
+                show_without_selection = true;
+                show_with_menu = true;
+                show_without_menu = true;
+              };
             };
           };
 
@@ -36,6 +44,13 @@
               auto_show_delay_ms = 0;
             };
             menu.max_height = 30;
+            ghost_text = {
+              enabled = true;
+              show_with_selection = false;
+              show_without_selection = true;
+              show_with_menu = true;
+              show_without_menu = true;
+            };
           };
 
           keymap = {
@@ -43,8 +58,6 @@
 
             "<Down>" = [ "select_next" "fallback" ];
             "<Up>" = [ "select_prev" "fallback" ];
-            "<Left>" = [ "cancel" "fallback" ];
-            "<Right>" = [ "select_and_accept" "fallback" ];
             "<Tab>" = [ "select_and_accept" "fallback" ];
             "<CR>" = [ "accept" "fallback" ];
             "<PageDown>" = [ "scroll_documentation_down" "fallback" ];
@@ -56,6 +69,7 @@
               "lsp"
               "path"
               "snippets"
+              "buffer"
             ];
           };
         };
