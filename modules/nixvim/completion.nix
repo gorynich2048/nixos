@@ -18,7 +18,7 @@
           cmdline = {
             keymap = {
               preset = "inherit";
-              "<Tab>" = [ "show" "cancel" ];
+              "<Tab>" = [ "select_and_accept" ];
               "<CR>" = [ "accept_and_enter" "fallback" ];
             };
             completion = {
@@ -43,7 +43,9 @@
 
             "<Down>" = [ "select_next" "fallback" ];
             "<Up>" = [ "select_prev" "fallback" ];
+            "<Left>" = [ "cancel" "fallback" ];
             "<Right>" = [ "select_and_accept" "fallback" ];
+            "<Tab>" = [ "select_and_accept" "fallback" ];
             "<CR>" = [ "accept" "fallback" ];
             "<PageDown>" = [ "scroll_documentation_down" "fallback" ];
             "<PageUp>" = [ "scroll_documentation_up" "fallback" ];
