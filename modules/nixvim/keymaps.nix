@@ -63,6 +63,8 @@
           "\\" = "/\\V<C-r>\"<CR>";
           "<C-n>" = "o<ESC>";
           "<C-p>" = ":t.<CR>";
+          "<C-k>" = "\"_dd";
+          "<C-d>" = "\"_dd";
 
           "l" = "M<C-u>";
           "h" = "M<C-d>zz";
@@ -77,7 +79,7 @@
           mode = "x";
           inherit action key;
         }) {
-          "<leader>d" = "\"_d";
+          # "<leader>d" = "\"_d"; # used by debugger mode
           "<leader>y" = "\"+y";
           "<leader>s" = ":sort<CR>";
 
