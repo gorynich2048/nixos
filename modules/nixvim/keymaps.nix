@@ -17,7 +17,7 @@
           inherit action key;
         }) {
         };
-      path_match = "%:s?term:.*??:s?oil://??:p:h";
+      buffer_path = "%:s?term:.*??:s?oil://??:p";
       normal =
         lib.mapAttrsToList (key: action: {
           mode = "n";
@@ -25,13 +25,13 @@
         }) {
           "<Backspace>" = ":Oil<CR>";
           "gw" = ":Oil .<CR>";
-          "gh" = ":Oil ~/.home/<CR>";
+          "gh" = ":Oil ~/!/<CR>";
           "gt" = ":b term_root<CR>";
-          "yp" = ":let @+=@%<CR>";
+          "yp" = ":let @+=expand(\"${buffer_path}\")<CR>";
           "gs" = ":G<CR>:only<CR>";
           "gl" = ":G l<CR>:only<CR>";
 
-          "<leader>t" = ":e term://${path_match}//$SHELL<CR>i";
+          "<leader>t" = ":e term://${buffer_path}:h//$SHELL<CR>i";
           "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
           "<leader>s" = ":Spectre<CR>";
           "<leader>O" = "O<Esc>";
@@ -39,9 +39,9 @@
           "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
 
           "<leader>f" = ":Telescope find_files<CR>";
-          "<leader>F" = ":Telescope find_files cwd=${path_match}<CR>";
+          "<leader>F" = ":Telescope find_files cwd=${buffer_path}:h<CR>";
           "<leader>l" = ":Telescope live_grep<CR>";
-          "<leader>L" = ":Telescope live_grep cwd=${path_match}<CR>";
+          "<leader>L" = ":Telescope live_grep cwd=${buffer_path}:h<CR>";
           "<leader>b" = ":Telescope buffers<CR>";
           "<leader>y" = "\"+y";
           "<leader>Y" = "\"+Y";
@@ -61,8 +61,7 @@
           "<S-Up>" = ":m .-2<CR>==";
           "<S-Down>" = ":m .+1<CR>==";
           "j" = ":t.<CR>";
-          "k" = ".n";
-          "K" = ".N";
+          "k" = ".";
           "\\" = "/\\V<C-r>\"<CR>";
 
           "l" = "M<C-u>";
@@ -71,6 +70,9 @@
           "H" = ":tabn<CR>";
 
           "<C-s>" = ":w<CR>";
+          "<C-q>" = "<C-w>c";
+          "<C-n>" = "<C-w>w";
+          "<C-p>" = "<C-w>W";
         };
       visual =
         lib.mapAttrsToList (key: action: {
