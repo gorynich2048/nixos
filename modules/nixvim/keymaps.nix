@@ -48,7 +48,7 @@
           "<leader>Y" = "\"+Y";
 
           "<Space>" = "<NOP>";
-          "<Esc>" = "<C-l>";
+          "<Esc>" = ":noh<CR>";
 
           "n" = "nzzzv";
           "N" = "Nzzzv";
