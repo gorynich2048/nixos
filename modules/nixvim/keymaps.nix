@@ -23,6 +23,7 @@
           mode = "n";
           inherit action key;
         }) {
+          "<C-s>" = ":w<CR>";
           "<Backspace>" = ":Oil<CR>";
           "gw" = ":Oil .<CR>";
           "gh" = ":Oil ~/!/<CR>";
@@ -47,7 +48,7 @@
           "<leader>Y" = "\"+Y";
 
           "<Space>" = "<NOP>";
-          "<Esc>" = ":noh<CR>";
+          "<Esc>" = "<C-l>";
 
           "n" = "nzzzv";
           "N" = "Nzzzv";
@@ -56,23 +57,20 @@
           "gf" = "gFzz";
           "gd" = "gdzzzv";
 
-          "<C-Up>" = "O<ESC>";
-          "<C-Down>" = "o<ESC>";
           "<S-Up>" = ":m .-2<CR>==";
           "<S-Down>" = ":m .+1<CR>==";
-          "j" = ":t.<CR>";
           "k" = ".";
           "\\" = "/\\V<C-r>\"<CR>";
+          "<C-n>" = "o<ESC>";
+          "<C-p>" = ":t.<CR>";
 
           "l" = "M<C-u>";
           "h" = "M<C-d>zz";
-          "L" = ":tabp<CR>";
-          "H" = ":tabn<CR>";
-
-          "<C-s>" = ":w<CR>";
-          "<C-q>" = "<C-w>c";
-          "<C-n>" = "<C-w>w";
-          "<C-p>" = "<C-w>W";
+          "H" = "<C-w>w";
+          "L" = "<C-w>W";
+          "<C-h>" = "<C-w>w";
+          "<C-l>" = "<C-w>W";
+          "<C-c>" = "<C-w>c";
         };
       visual =
         lib.mapAttrsToList (key: action: {

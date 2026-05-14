@@ -7,9 +7,10 @@
           view_options = {
             show_hidden = true;
           };
+          use_default_keymaps = false;
           keymaps = {
-            "<C-s>" = false;
-            "gs" = false;
+            "<CR>" = "actions.select";
+            "<ESC>" = "actions.refresh";
           };
           cleanup_delay_ms = false;
           # experimental_watch_for_changes = true;

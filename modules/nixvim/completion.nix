@@ -24,14 +24,6 @@
             completion = {
               list.selection.preselect = false;
               menu.auto_show = true;
-              # Does not work
-              ghost_text = {
-                enabled = true;
-                show_with_selection = false;
-                show_without_selection = true;
-                show_with_menu = true;
-                show_without_menu = true;
-              };
             };
           };
 
@@ -44,13 +36,6 @@
               auto_show_delay_ms = 0;
             };
             menu.max_height = 30;
-            ghost_text = {
-              enabled = true;
-              show_with_selection = false;
-              show_without_selection = true;
-              show_with_menu = true;
-              show_without_menu = true;
-            };
           };
 
           keymap = {
