@@ -41,6 +41,7 @@
         settings.user_default_options.names = false;
       };
       nvim-autopairs.enable = true;
+      csvview.enable = true;
     };
   };
 }
