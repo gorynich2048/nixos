@@ -53,6 +53,11 @@
         code_style = {
           comments = "none";
         };
+        highlights = {
+          "@spell".fg = "NONE";
+          "@lsp.type.parameter".fg = "#abb2bf";
+          "@operator".fg = "#e86671";
+        };
       };
     };
   };
