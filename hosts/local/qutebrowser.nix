@@ -36,7 +36,8 @@
             radius = 0;
           };
           tabs.show = "never";
-          fonts.default_size = 12;
+          fonts.default_size = "12pt";
+          zoom.default = 140;
         };
         searchEngines.DEFAULT = "https://www.google.com/search?q={}";
       };
