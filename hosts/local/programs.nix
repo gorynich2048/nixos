@@ -53,11 +53,11 @@
           wayland_enable_ime = "no";
         };
         extraConfig = ''
-          font_family full_name="JetBrains Mono Bold"
+          font_family full_name="JetBrains Mono SemiBold"
           disable_ligatures always
           modify_font cell_height 90%
           modify_font baseline 1px
-          font_size 12
+          font_size 14
         '';
       };
 

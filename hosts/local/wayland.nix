@@ -19,6 +19,10 @@
         name = "Adwaita-dark";
         package = pkgs.gnome-themes-extra;
       };
+      font = {
+        name = "Ubuntu";
+        size = 14;
+      };
     };
   };
 
@@ -33,7 +37,7 @@
 
   qt = {
     enable = true;
-    platformTheme = "gnome";
+    platformTheme = "gtk2";
     style = "adwaita-dark";
   };
 }
