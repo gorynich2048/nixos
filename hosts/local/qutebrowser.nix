@@ -37,7 +37,7 @@
           };
           tabs.show = "never";
           fonts.default_size = "12pt";
-          zoom.default = 140;
+          zoom.default = 130;
         };
         searchEngines.DEFAULT = "https://www.google.com/search?q={}";
       };
