@@ -9,6 +9,8 @@
       dig
       traceroute
       unar
+      xxd
+      tcpdump
 
       # fancy stuff
       speedtest-cli
