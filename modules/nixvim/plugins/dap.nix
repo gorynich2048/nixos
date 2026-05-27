@@ -44,7 +44,7 @@
               function()
                 require('dap').continue()
               end
-              ''; } {} ]
+              ''; } { nowait = true; } ]
               [ "t" { __raw = ''
               function()
                 require('dap').terminate()
@@ -84,7 +84,7 @@
               function()
                 require('dap').down()
               end
-              ''; } {} ]
+              ''; } { nowait = true; } ]
               [ "u" { __raw = ''
               function()
                 require('dap').up()
@@ -94,7 +94,7 @@
               function()
                 require('dap').focus_frame()
               end
-              ''; } {} ]
+              ''; } { nowait = true; } ]
             ];
           }
         ];
