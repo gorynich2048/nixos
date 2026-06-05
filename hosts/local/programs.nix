@@ -37,6 +37,8 @@
         proton-ge-bin
       ];
     };
+    # use 'gamemoderun %command%' in steam params
+    gamemode.enable = true;
   };
 
   home-manager.users.user = {
