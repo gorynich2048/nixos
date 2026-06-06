@@ -14,7 +14,7 @@
 
       # fancy stuff
       speedtest-cli
-      neofetch
+      hyfetch
     ];
   };
 }

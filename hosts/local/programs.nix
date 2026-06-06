@@ -14,7 +14,7 @@
       sshfs
       nmap
       android-file-transfer
-      wineWowPackages.waylandFull
+      wineWow64Packages.waylandFull
       winetricks
       mpv
       yt-dlp

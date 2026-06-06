@@ -7,7 +7,7 @@
         # Highlight Lua and VimScript inside nix expressions
         nixvimInjections = true;
 
-        folding = true;
+        folding.enable = true;
         settings = {
           highlight.enable = true;
           indent.enable = true;
@@ -15,7 +15,8 @@
       };
 
       # Highlight Bash inside nix expressions
-      hmts.enable = true;
+      # broken
+      # hmts.enable = true;
     };
 
     extraFiles."after/queries/rust/highlights.scm".text = ''
