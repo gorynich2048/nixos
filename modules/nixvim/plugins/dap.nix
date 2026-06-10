@@ -95,6 +95,31 @@
                 require('dap').focus_frame()
               end
               ''; } { nowait = true; } ]
+
+              [ "F" { __raw = ''
+              function()
+                local widgets = require('dap.ui.widgets')
+                widgets.centered_float(widgets.frames)
+              end
+              ''; } { nowait = true; } ]
+              [ "S" { __raw = ''
+              function()
+                local widgets = require('dap.ui.widgets')
+                widgets.centered_float(widgets.scopes)
+              end
+              ''; } { nowait = true; } ]
+              [ "T" { __raw = ''
+              function()
+                local widgets = require('dap.ui.widgets')
+                widgets.centered_float(widgets.threads)
+              end
+              ''; } { nowait = true; } ]
+              [ "E" { __raw = ''
+              function()
+                local widgets = require('dap.ui.widgets')
+                widgets.centered_float(widgets.expressions)
+              end
+              ''; } { nowait = true; } ]
             ];
           }
         ];
