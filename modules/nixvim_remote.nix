@@ -7,6 +7,7 @@
             mode = "n";
             inherit action key;
           }) {
+            "<C-p>" = "o<ESC>p";
           };
         visual =
           lib.mapAttrsToList (key: action: {

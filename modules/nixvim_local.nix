@@ -10,6 +10,7 @@
           }) {
             "p" = "\"+p";
             "P" = "\"+P";
+            "<C-p>" = "o<ESC>\"+p";
           };
         visual =
           lib.mapAttrsToList (key: action: {
