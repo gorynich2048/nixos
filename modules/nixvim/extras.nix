@@ -11,6 +11,7 @@
         };
       })
       pkgs.vimPlugins.term-edit-nvim
+      pkgs.vimPlugins.remote-sshfs-nvim
     ];
 
     extraConfigLua = ''
@@ -125,6 +126,8 @@
         prompt_end = '> ',
         default_reg = '+'
       })
+
+      require('remote-sshfs').setup()
     '';
   };
 }

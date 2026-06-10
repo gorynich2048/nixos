@@ -35,6 +35,7 @@
         fzf-native.enable = true;
         ui-select.enable = true;
       };
+      enabledExtensions = [ "remote-sshfs" ];
     };
   };
 }

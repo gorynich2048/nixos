@@ -47,6 +47,11 @@
           "<leader>y" = "\"+y";
           "<leader>Y" = "\"+Y";
 
+          "<leader>mc" = ":RemoteSSHFSConnect<CR>";
+          "<leader>md" = ":RemoteSSHFSDisconnect<CR>";
+          "<leader>mf" = ":RemoteSSHFSFindFiles<CR>";
+          "<leader>ml" = ":RemoteSSHFSLiveGrep<CR>";
+
           "<Space>" = "<NOP>";
           "<Esc>" = ":noh<CR>";
 
