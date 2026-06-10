@@ -120,6 +120,12 @@
                 widgets.centered_float(widgets.expressions)
               end
               ''; } { nowait = true; } ]
+              [ "I" { __raw = ''
+              function()
+                local widgets = require('dap.ui.widgets')
+                widgets.centered_float(widgets.expressions)
+              end
+              ''; } { nowait = true; } ]
             ];
           }
         ];
