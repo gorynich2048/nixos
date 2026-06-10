@@ -4,6 +4,11 @@
   home-manager.users.user = {
     wayland.windowManager.hyprland = {
       enable = true;
+      settings = {
+        windowrule = [
+          "suppress_event fullscreen, match:class ^(chromium-browser)$"
+        ];
+      };
       extraConfig = builtins.readFile ./hyprland.conf;
     };
 
