@@ -7,7 +7,6 @@
     ../../modules/direnv.nix
     ../../modules/programs.nix
     ../../modules/nixvim
-    ../../modules/nixvim_remote.nix
 
     ./programs.nix
     ./ssh_vpn.nix

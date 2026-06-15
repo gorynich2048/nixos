@@ -82,6 +82,10 @@
           "@lsp.type.enumMember".fg = "#98c379";
           "@lsp.type.builtinType".fg = "#e5c07b";
           "@lsp.typemod.variable.defaultLibrary".fg = "NONE";
+
+          # "@lsp.mod.controlFlow".fg = "#e86671";
+          # "@lsp.typemod.keyword.controlFlow".fg = "#e86671";
+          # "@lsp.typemod.operator.controlFlow".fg = "#e86671";
         };
       };
     };

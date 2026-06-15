@@ -6,7 +6,7 @@
     };
 
     userCommands = {
-      Cd.command = ":lua require(\"oil.actions\").cd.callback()<CR>";
+      Cd.command.__raw = "require('oil.actions').cd.callback";
     };
 
     keymaps = let
@@ -33,7 +33,7 @@
           "gl" = ":G l<CR>:only<CR>";
 
           "<leader>t" = ":e term://${buffer_path}:h//$SHELL<CR>i";
-          "<leader>e" = ":lua vim.diagnostic.open_float()<CR>";
+          "<leader>e".__raw = "vim.diagnostic.open_float";
           "<leader>s" = ":Spectre<CR>";
           "<leader>O" = "O<Esc>";
           "<leader>o" = "o<Esc>";
@@ -44,8 +44,12 @@
           "<leader>l" = ":Telescope live_grep<CR>";
           "<leader>L" = ":Telescope live_grep cwd=${buffer_path}:h<CR>";
           "<leader>b" = ":Telescope buffers<CR>";
+
           "<leader>y" = "\"+y";
           "<leader>Y" = "\"+Y";
+          "<leader>p" = "\"+p";
+          "<leader>P" = "\"+P";
+          "<C-p>" = "o<ESC>\"+p";
 
           "<leader>mc" = ":RemoteSSHFSConnect<CR>";
           "<leader>md" = ":RemoteSSHFSDisconnect<CR>";
@@ -55,12 +59,11 @@
           "<Space>" = "<NOP>";
           "<Esc>" = ":noh<CR>";
 
-          "n" = "nzzzv";
-          "N" = "Nzzzv";
-          "zz" = "zzzszH";
+          "n" = "nzz";
+          "N" = "Nzz";
           "<C-i>" = "<C-i>zz";
           "gf" = "gFzz";
-          "gd" = "gdzzzv";
+          "gd" = "gdzz";
 
           "<S-Up>" = ":m .-2<CR>==";
           "<S-Down>" = ":m .+1<CR>==";
@@ -74,8 +77,8 @@
 
           "l" = "M<C-u>";
           "h" = "M<C-d>zz";
-          "H" = "<C-w>w";
-          "L" = "<C-w>W";
+          "H" = "zH";
+          "L" = "zL";
           "<C-h>" = "<C-w>w";
           "<C-l>" = "<C-w>W";
           "<C-c>" = "<C-w>c";
@@ -85,12 +88,20 @@
           mode = "x";
           inherit action key;
         }) {
-          # "<leader>d" = "\"_d"; # used by debugger mode
           "<leader>y" = "\"+y";
+          "<leader>p" = "\"+p";
+          "<leader><C-p>" = "\"_d\"+P";
+          "<C-p>" = "\"_dP";
+          "<C-d>" = "\"_d";
+
           "<leader>s" = ":sort<CR>";
 
           "l" = "M<C-u>";
           "h" = "M<C-d>zz";
+          "H" = "zH";
+          "L" = "zL";
+          ">" = ">gv";
+          "<" = "<gv";
           "<S-Up>" = ":m '<-2<CR>gv=gv";
           "<S-Down>" = ":m '>+1<CR>gv=gv";
 
@@ -102,6 +113,7 @@
           inherit action key;
         }) {
           "<C-Backspace>" = "<C-w>";
+          "<C-v>" = "<C-o>P";
         };
       terminal =
         lib.mapAttrsToList (key: action: {
@@ -109,6 +121,7 @@
           inherit action key;
         }) {
           "<C-Backspace>" = "<C-w>";
+          "<C-v>" = "<C-\\><C-o>p";
 
           "<Esc>" = "<C-\\><C-n>";
           "<C-i>" = "<C-\\><C-n><C-i>";
