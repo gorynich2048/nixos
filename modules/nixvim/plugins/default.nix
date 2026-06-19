@@ -25,8 +25,8 @@
           on_substitute.__raw = "require('yanky.integration').substitute()";
         };
       };
-
-      sleuth.enable = true; #auto indent
+      mini-ai.enable = true; # extended a/i textobjects
+      sleuth.enable = true; # auto indent
       vim-surround.enable = true;
       treesitter-context = {
         enable = true;
@@ -35,6 +35,7 @@
           multiline_threshold = 1;
         };
       };
+      # treesitter-textobjects.enable = true;
       yanky.enable = true;
       gitsigns = {
         enable = true;
