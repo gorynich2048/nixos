@@ -33,6 +33,9 @@
           "s".__raw = "require('substitute').operator";
           "ss".__raw = "require('substitute').line";
           "S".__raw = "require('substitute').eol";
+          "sx".__raw = "require('substitute.exchange').operator";
+          "sxx".__raw = "require('substitute.exchange').line";
+          "sxc".__raw = "require('substitute.exchange').cancel";
 
           "gw" = ":Oil .<CR>";
           "gh" = ":Oil ~/!/<CR>";
@@ -108,6 +111,7 @@
           "P" = "<Plug>(YankyPutBefore)";
           "gp" = "<Plug>(YankyGPutAfter)";
           "gP" = "<Plug>(YankyGPutBefore)";
+          "X".__raw = "require('substitute.exchange').visual";
 
           "<C-d>" = "\"_d";
           "<S-Up>" = ":m '<-2<CR>gv=gv";
