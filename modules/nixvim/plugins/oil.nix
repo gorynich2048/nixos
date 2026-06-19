@@ -4,6 +4,11 @@
       oil = {
         enable = true;
         settings = {
+          # columns = [
+          #   "icon"
+          #   "permissions"
+          #   "size"
+          # ];
           view_options = {
             show_hidden = true;
           };
@@ -11,6 +16,7 @@
           keymaps = {
             "<CR>" = "actions.select";
             "<ESC>" = "actions.refresh";
+            "<leader>p" = "actions.preview";
           };
           cleanup_delay_ms = false;
           # experimental_watch_for_changes = true;

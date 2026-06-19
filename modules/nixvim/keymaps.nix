@@ -7,6 +7,13 @@
 
     userCommands = {
       Cd.command.__raw = "require('oil.actions').cd.callback";
+      Clear.command.__raw = ''
+        function()
+          vim.opt_local.scrollback = 1
+          vim.api.nvim_chan_send(vim.b.terminal_job_id, "clear\n")
+          vim.defer_fn(function() vim.opt_local.scrollback = -1 end, 10)
+        end
+      '';
     };
 
     keymaps = let
@@ -77,6 +84,7 @@
           "<leader>e".__raw = "vim.diagnostic.open_float";
           "<leader>s" = ":Spectre<CR>";
           "<leader>cd" = ":Cd<CR>:te<CR>:f term_root<CR>";
+          "<leader>cl" = ":Clear<CR>"; # clear terminal
 
           "<leader>f" = ":Telescope find_files<CR>";
           "<leader>F" = ":Telescope find_files cwd=${buffer_path}:h<CR>";
