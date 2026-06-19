@@ -1,4 +1,4 @@
-{
+{ lib, config, ... }: {
   programs.nixvim = {
     globals = {
       loaded_ruby_provider = 0;
@@ -9,7 +9,7 @@
     };
 
     clipboard = {
-      # register = "unnamedplus"; # defined in local config
+      register = lib.mkIf (config.networking.hostName == "local") "unnamedplus";
       providers.wl-copy.enable = true;
     };
 
@@ -54,13 +54,20 @@
           comments = "none";
         };
         highlights = {
+          Search.bg = "#abb2bf";
+          IncSearch.bg = "#e86671";
+          CurSearch.bg = "#e86671";
+          CurrentScope.fg = "#61afef";
+          TelescopeMatching.fg = "#e86671";
+          BlinkCmpLabelMatch.fg = "#e86671";
+
           "@spell".fg = "NONE";
           "@nospell".fg = "NONE";
 
-          # "@variable.parameter".fg = "#abb2bf";
-          # "@variable.member".fg = "#abb2bf";
-          # "@variable.builtin".fg = "#abb2bf";
-          # "@property".fg = "#abb2bf";
+          "@variable.parameter".fg = "#abb2bf";
+          "@variable.member".fg = "#abb2bf";
+          "@variable.builtin".fg = "#abb2bf";
+          "@property".fg = "#abb2bf";
           "@constant".fg = "#98c379";
           "@constant.builtin".fg = "#98c379";
           "@boolean".fg = "#98c379";
@@ -75,8 +82,8 @@
 
           # "@my_important".fg = "#e86671";
 
-          # "@lsp.type.parameter".fg = "#abb2bf";
-          # "@lsp.type.property".fg = "#abb2bf";
+          "@lsp.type.parameter".fg = "#abb2bf";
+          "@lsp.type.property".fg = "#abb2bf";
           "@lsp.type.const".fg = "#98c379";
           "@lsp.type.number".fg = "#98c379";
           "@lsp.type.enumMember".fg = "#98c379";
@@ -85,7 +92,7 @@
 
           # "@lsp.mod.controlFlow".fg = "#e86671";
           # "@lsp.typemod.keyword.controlFlow".fg = "#e86671";
-          # "@lsp.typemod.operator.controlFlow".fg = "#e86671";
+          "@lsp.typemod.operator.controlFlow".fg = "#e86671";
         };
       };
     };

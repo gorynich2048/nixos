@@ -4,7 +4,6 @@
     ../../modules/systemd_dhcp.nix
     ../../modules/fish.nix
     ../../modules/nixvim
-    ../../modules/nixvim_local.nix
     ../../modules/direnv.nix
     ../../modules/programs.nix
     ../../modules/cross_aarch64.nix
