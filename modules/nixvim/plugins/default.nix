@@ -19,6 +19,12 @@
         enable = true;
         settings.open_cmd = "enew";
       };
+      substitute = {
+        enable = true;
+        settings = {
+          on_substitute.__raw = "require('yanky.integration').substitute()";
+        };
+      };
 
       sleuth.enable = true; #auto indent
       vim-surround.enable = true;
@@ -29,6 +35,7 @@
           multiline_threshold = 1;
         };
       };
+      yanky.enable = true;
       gitsigns = {
         enable = true;
         settings.signs = {

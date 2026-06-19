@@ -30,6 +30,9 @@
           "k" = ".";
           "\\" = "/\\V<C-r>\"<CR>";
           "yp" = ":let @+=expand(\"${buffer_path}\")<CR>";
+          "s".__raw = "require('substitute').operator";
+          "ss".__raw = "require('substitute').line";
+          "S".__raw = "require('substitute').eol";
 
           "gw" = ":Oil .<CR>";
           "gh" = ":Oil ~/!/<CR>";
@@ -44,11 +47,15 @@
           # "<C-i>" = "<C-i>zz";
           "l" = "M<C-u>";
           "h" = "M<C-d>zz";
+          "p" = "<Plug>(YankyPutAfter)";
+          "P" = "<Plug>(YankyPutBefore)";
+          "gp" = "<Plug>(YankyGPutAfter)";
+          "gP" = "<Plug>(YankyGPutBefore)";
 
           "<Space>" = "<NOP>";
           "<Esc>" = ":noh<CR>";
 
-          "<C-p>" = "o<ESC>p";
+          "<C-p>" = "<Plug>(YankyPutIndentAfterLinewise)";
           "<C-n>" = "o<ESC>";
           "<C-u>" = "O<ESC>";
           "<C-j>" = ":t.<CR>";
@@ -56,6 +63,9 @@
           "<C-h>" = "<C-w>w";
           "<C-l>" = "<C-w>W";
           "<C-c>" = "<C-w>c";
+
+          "<C-Up>" = "<Plug>(YankyPreviousEntry)";
+          "<C-Down>" = "<Plug>(YankyNextEntry)";
 
           "<S-Up>" = ":m .-2<CR>==";
           "<S-Down>" = ":m .+1<CR>==";
@@ -92,15 +102,19 @@
           "L" = "zL";
           ">" = ">gv";
           "<" = "<gv";
+          "s".__raw = "require('substitute').visual";
 
-          "<C-p>" = "\"_dP";
+          "p" = "<Plug>(YankyPutAfter)";
+          "P" = "<Plug>(YankyPutBefore)";
+          "gp" = "<Plug>(YankyGPutAfter)";
+          "gP" = "<Plug>(YankyGPutBefore)";
+
           "<C-d>" = "\"_d";
           "<S-Up>" = ":m '<-2<CR>gv=gv";
           "<S-Down>" = ":m '>+1<CR>gv=gv";
 
           "<leader>y" = "\"+y";
           "<leader>p" = "\"+p";
-          "<leader><C-p>" = "\"_d\"+P";
 
           "<leader>s" = ":sort<CR>";
           "<leader>a".__raw = "vim.lsp.buf.code_action";
