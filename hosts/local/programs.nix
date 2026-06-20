@@ -53,6 +53,7 @@
           repaint_delay = 8;
           sync_to_monitor = "no";
           wayland_enable_ime = "no";
+          cursor_blink_interval = 0;
         };
         extraConfig = ''
           font_family full_name="JetBrains Mono SemiBold"
