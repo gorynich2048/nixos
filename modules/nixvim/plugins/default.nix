@@ -37,6 +37,23 @@
       };
       # treesitter-textobjects.enable = true;
       yanky.enable = true;
+      noice = {
+        enable = true;
+        settings = {
+          views.cmdline_popup = {
+            border.style = "single";
+            position.row = "75%";
+            position.col = "35%";
+          };
+          messages.enabled = false;
+          popupmenu.enabled = false;
+          notify.enabled = false;
+          lsp.progress.enabled = false;
+          lsp.hover.enabled = false;
+          lsp.signature.enabled = false;
+          lsp.message.enabled = false;
+        };
+      };
       gitsigns = {
         enable = true;
         settings.signs = {

@@ -35,7 +35,7 @@
               auto_show = true;
               auto_show_delay_ms = 0;
             };
-            menu.max_height = 15;
+            menu.max_height = 10;
           };
 
           keymap = {

@@ -6,6 +6,7 @@
     ./extras.nix
     ./keymaps.nix
     ./options.nix
+    ./theme.nix
     ./plugins
   ];
 
