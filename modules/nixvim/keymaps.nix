@@ -30,6 +30,9 @@
           mode = "n";
           inherit action key;
         }) {
+          "<Space>" = "<NOP>";
+          "ZZ" = "<NOP>";
+          "<Esc>" = "<cmd>noh<CR>";
           "<C-s>" = "<cmd>w<CR>";
           "<Backspace>" = "<cmd>Oil<CR>";
           "H" = "zH";
@@ -61,9 +64,6 @@
           "P" = "<Plug>(YankyPutBefore)";
           "gp" = "<Plug>(YankyGPutAfter)";
           "gP" = "<Plug>(YankyGPutBefore)";
-
-          "<Space>" = "<NOP>";
-          "<Esc>" = "<cmd>noh<CR>";
 
           "<C-p>" = "<Plug>(YankyPutIndentAfterLinewise)";
           "<C-n>" = "o<ESC>";
