@@ -7,11 +7,9 @@
         # Highlight Lua and VimScript inside nix expressions
         nixvimInjections = true;
 
+        highlight.enable = true;
         folding.enable = true;
-        settings = {
-          highlight.enable = true;
-          indent.enable = true;
-        };
+        indent.enable = false;
       };
 
       # Highlight Bash inside nix expressions
