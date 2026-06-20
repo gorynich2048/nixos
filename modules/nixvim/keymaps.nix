@@ -20,9 +20,11 @@
       # :h map-modes
       operator = 
         lib.mapAttrsToList (key: action: {
-          mode = "";
+          mode = "o";
           inherit action key;
         }) {
+          "l".__raw = "function() vim.cmd('normal! ^vt=h') end";
+          "r".__raw = "function() vim.cmd('normal! ^f=llvt;') end";
         };
       buffer_path = "%:s?term:.*??:s?oil://??:p";
       normal =
