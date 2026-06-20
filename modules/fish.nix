@@ -11,6 +11,7 @@
         alias wget=aria2c
         alias cmd='/mnt/c/Windows/System32/cmd.exe /c'
         alias pwsh='/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /c'
+        alias nixvim-print-init='cat $(which nixvim-print-init) | grep -oP "init=\K.*"'
       '';
     };
   };

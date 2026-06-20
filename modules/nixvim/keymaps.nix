@@ -121,7 +121,7 @@
           "P" = "<Plug>(YankyPutBefore)";
           "gp" = "<Plug>(YankyGPutAfter)";
           "gP" = "<Plug>(YankyGPutBefore)";
-          "X".__raw = "require('substitute.exchange').visual";
+          "x".__raw = "require('substitute.exchange').visual";
 
           "<C-d>" = "\"_d";
           "<S-Up>" = ":m '<-2<CR>gv=gv";
