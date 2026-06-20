@@ -43,6 +43,7 @@
       virtualedit = "block";
       shadafile = "NONE";
       jumpoptions = ["stack" "clean"];
+      isfname = "@,48-57,/,.,-,_,+,,,#,$,%,~,=,!";
     };
   };
 }

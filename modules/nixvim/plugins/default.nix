@@ -42,8 +42,8 @@
         settings = {
           views.cmdline_popup = {
             border.style = "single";
-            position.row = "75%";
-            position.col = "35%";
+            position.row = -10;
+            position.col = 25;
           };
           messages.enabled = false;
           popupmenu.enabled = false;
