@@ -1,4 +1,4 @@
-{ lib, config, ... }: {
+{ config, ... }: {
   programs.nixvim = {
     globals = {
       loaded_ruby_provider = 0;
@@ -9,7 +9,7 @@
     };
 
     clipboard = {
-      register = lib.mkIf (config.networking.hostName == "local") "unnamedplus";
+      register = if config.networking.hostName == "local" then "unnamedplus" else {};
       providers.wl-copy.enable = true;
     };
 

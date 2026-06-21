@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   programs.nixvim = {
     extraPlugins = [
       (pkgs.vimUtils.buildVimPlugin {
@@ -124,8 +124,34 @@
 
       require('term-edit').setup({
         prompt_end = '> ',
-        default_reg = '+'
+        default_reg = ${if config.networking.hostName == "local" then "'+'" else "'\"'"}
       })
+      local coord = require('term-edit.coord')
+      local async = require('term-edit.async')
+      require('term-edit.navigate').navigate_normal = function(target)
+        local function n(old)
+          local current = coord.get_coord '.'
+          if coord.equals(current, old) then
+            return
+          end
+          local keys = nil
+          if current.line < target.line then
+            keys = string.rep('<Down>', target.line - current.line)
+          elseif current.line > target.line then
+            keys = string.rep('<Up>', current.line - target.line)
+          elseif current.col < target.col then
+            keys = string.rep('<Right>', target.col - current.col)
+          elseif current.col > target.col then
+            keys = string.rep('<Left>', current.col - target.col)
+          end
+          if keys then
+            async.feedkeys(keys, function()
+              n(current)
+            end, { moves = true, start_normal = true, callback_normal = true })
+          end
+        end
+        n()
+      end
 
       require('remote-sshfs').setup()
     '';
