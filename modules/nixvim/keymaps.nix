@@ -14,6 +14,18 @@
           vim.defer_fn(function() vim.opt_local.scrollback = -1 end, 10)
         end
       '';
+      ToggleBufMarks.command.__raw = ''
+        function()
+          local current_state = vim.b.disable_global_marks or false
+          vim.b.disable_global_marks = not current_state
+          
+          if vim.b.disable_global_marks then
+            print("Marks tracking DISABLED for this buffer")
+          else
+            print("Marks tracking ENABLED for this buffer")
+          end
+        end
+      '';
     };
 
     keymaps = let
@@ -86,7 +98,8 @@
           "<leader>e".__raw = "vim.diagnostic.open_float";
           "<leader>s" = "<cmd>Spectre<CR>";
           "<leader>cd" = "<cmd>Cd<CR>:te<CR>:f term_root<CR>";
-          "<leader>cl" = "<cmd>Clear<CR>"; # clear terminal
+          "<leader>cl" = "<cmd>Clear<CR>";
+          "<leader>cm" = "<cmd>ToggleBufMarks<CR>";
 
           "<leader>f" = "<cmd>Telescope find_files<CR>";
           "<leader>F" = "<cmd>Telescope find_files cwd=${buffer_path}:h<CR>";

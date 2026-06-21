@@ -10,18 +10,17 @@
       # Update global marks
       {
         event = "BufLeave";
-        command = ''
-          function! s:in_current_file(marks)
-            return a:marks->filter({_, mark_info -> fnamemodify(mark_info.file, ':p') == expand('%:p')})
-          endfunction
+        callback.__raw = ''
+          function(args)
+            if vim.b[args.buf].disable_global_marks then return end
 
-          function! s:global_alpha_marks()
-            return getmarklist()->filter({_, mark_info -> mark_info.mark[1:] =~? '[[:alpha:]]'})
-          endfunction
-
-          for info in s:global_alpha_marks()->s:in_current_file()
-            exe 'normal! m' . info.mark[1:]
-          endfor
+            local cur = vim.fn.expand('%:p')
+            for _, m in ipairs(vim.fn.getmarklist()) do
+              if m.mark:sub(2):match('^[A-Z]$') and vim.fn.fnamemodify(m.file, ':p') == cur then
+                vim.cmd('normal! m' .. m.mark:sub(2))
+              end
+            end
+          end
         '';
       }
 
@@ -29,15 +28,17 @@
       {
         event = "BufWritePre";
         pattern = [ "*.rs" ];
-        command = "lua vim.lsp.buf.format()";
+        callback.__raw = "function() vim.lsp.buf.format({ async = false }) end";
       }
 
       # Load bevy vscode snippets
       {
         event = "DirChanged";
         pattern = [ "*" ];
-        command = ''
-          lua require("luasnip.loaders.from_vscode").load_standalone({ path = ".vscode/bevy.code-snippets" })
+        callback.__raw = ''
+          function()
+            require("luasnip.loaders.from_vscode").load_standalone({ path = ".vscode/bevy.code-snippets" })
+          end
         '';
       }
 

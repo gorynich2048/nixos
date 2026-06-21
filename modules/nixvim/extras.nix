@@ -11,7 +11,7 @@
         };
       })
       (pkgs.vimPlugins.term-edit-nvim.overrideAttrs (old: {
-        patches = [
+        patches = (old.patches or []) ++ [
           ./term-edit.patch
         ];
       }))
