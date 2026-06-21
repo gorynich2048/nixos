@@ -16,6 +16,11 @@
           # border = false;
           borderchars = [ "-" "|" " " "|" "|" "|" "|" "|" ];
 
+          layout_config = {
+            width.padding = 0;
+            height.padding = 0;
+          };
+
           mappings = {
             i = {
               "<C-v>".__raw = "function() vim.cmd 'normal! p' vim.cmd 'startinsert!' end";

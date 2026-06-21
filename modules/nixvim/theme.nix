@@ -16,6 +16,10 @@
           TelescopeMatching.fg = "#e86671";
           BlinkCmpLabelMatch.fg = "#e86671";
           FloatBorder.fg = "#61afef";
+          TelescopeBorder.fg = "#61afef";
+          TelescopePromptBorder.fg = "#61afef";
+          TelescopeResultsBorder.fg = "#61afef";
+          TelescopePreviewBorder.fg = "#61afef";
 
           "@spell".fg = "NONE";
           "@nospell".fg = "NONE";
