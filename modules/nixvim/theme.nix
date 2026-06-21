@@ -15,7 +15,6 @@
           CurrentScope.fg = "#61afef";
           TelescopeMatching.fg = "#e86671";
           BlinkCmpLabelMatch.fg = "#e86671";
-          NoiceCmdlinePopupBorder.fg = "#61afef";
           FloatBorder.fg = "#61afef";
 
           "@spell".fg = "NONE";
