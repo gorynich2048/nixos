@@ -1,0 +1,12 @@
+--- a/lua/term-edit/async.lua
++++ b/lua/term-edit/async.lua
+@@ -81,7 +81,8 @@ function M.feedkeys(keys, callback, opts)
+     end
+     keys = keys .. call_callback() .. '<CR>'
+   end
+-  vim.api.nvim_input(keys)
++  local keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
++  vim.api.nvim_feedkeys(keys, "n", false)
+ end
+ 
+ ---quit insert (terminal) mode
