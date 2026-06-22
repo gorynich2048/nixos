@@ -80,8 +80,8 @@
           "gP" = "<Plug>(YankyGPutBefore)";
 
           "<C-p>" = "<Plug>(YankyPutIndentAfterLinewise)";
-          "<C-n>" = "o<ESC>";
-          "<C-u>" = "O<ESC>";
+          "<C-n>" = "mao<Esc>`a";
+          "<C-u>" = "maO<Esc>`a";
           "<C-j>" = "<cmd>t.<CR>";
           "<C-d>" = "\"_dd";
           "<C-h>" = "<C-w>w";
