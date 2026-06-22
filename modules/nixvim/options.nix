@@ -9,7 +9,7 @@
     };
 
     clipboard = {
-      register = if config.networking.hostName == "local" then "unnamedplus" else {};
+      register = if config.networking.hostName == "local" then "unnamedplus" else "unnamed";
       providers.wl-copy.enable = true;
     };
 
