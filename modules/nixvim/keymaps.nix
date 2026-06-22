@@ -137,6 +137,7 @@
           "x".__raw = "require('substitute.exchange').visual";
 
           "<C-d>" = "\"_d";
+          "<C-j>" = ":t'><CR>";
           "<S-Up>" = ":m '<-2<CR>gv=gv";
           "<S-Down>" = ":m '>+1<CR>gv=gv";
 
