@@ -68,6 +68,8 @@
           "gl" = "<cmd>G l<CR>:only<CR>";
           "gf" = "gFzz";
           "gd" = "gdzz";
+          "gco" = "oa<Esc><cmd>norm gcc<CR>A<BS>";
+          "gcO" = "Oa<Esc><cmd>norm gcc<CR>A<BS>";
 
           # "n" = "nzz";
           # "N" = "Nzz";
