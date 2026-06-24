@@ -9,7 +9,7 @@
     };
 
     clipboard = {
-      register = if config.networking.hostName == "local" then "unnamedplus" else "unnamed";
+      register = if config.networking.hostName == "local" then "unnamedplus" else "osc52";
       providers.wl-copy.enable = true;
     };
 
