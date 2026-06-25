@@ -25,7 +25,14 @@
           on_substitute.__raw = "require('yanky.integration').substitute()";
         };
       };
-      mini-ai.enable = true; # extended a/i textobjects
+      mini-ai = {
+        enable = true; # extended a/i textobjects
+        settings = {
+          custom_textobjects = {
+            c.__raw = "require('mini.ai').gen_spec.function_call()";
+          };
+        };
+      };
       sleuth.enable = true; # auto indent
       vim-surround.enable = true;
       treesitter-context = {
@@ -35,7 +42,7 @@
           multiline_threshold = 1;
         };
       };
-      # treesitter-textobjects.enable = true;
+      treesitter-textobjects.enable = true;
       yanky.enable = true;
       gitsigns = {
         enable = true;

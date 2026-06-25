@@ -32,11 +32,45 @@
       # :h map-modes
       operator = 
         lib.mapAttrsToList (key: action: {
-          mode = "o";
+          mode = [ "x" "o" ];
           inherit action key;
         }) {
           "l".__raw = "function() vim.cmd('normal! ^vt=h') end";
           "r".__raw = "function() vim.cmd('normal! ^f=llvt;') end";
+          "if".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@function.inner', 'textobjects') end";
+          "af".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@function.outer', 'textobjects') end";
+          "is".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@class.inner', 'textobjects') end";
+          "as".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@class.outer', 'textobjects') end";
+          "il".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@local.scope', 'locals') end";
+          "al".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@local.scope', 'locals') end";
+        };
+      normal_operator = 
+        lib.mapAttrsToList (key: action: {
+          mode = [ "n" "x" "o" ];
+          inherit action key;
+        }) {
+          "]f".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects') end";
+          "]F".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_end('@function.outer', 'textobjects') end";
+          "[f".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer', 'textobjects') end";
+          "[F".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_end('@function.outer', 'textobjects') end";
+          "]s".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_start('@class.outer', 'textobjects') end";
+          "]S".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_end('@class.outer', 'textobjects') end";
+          "[s".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_start('@class.outer', 'textobjects') end";
+          "[S".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_end('@class.outer', 'textobjects') end";
+
+          ";".__raw = "require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_next";
+          ",".__raw = "require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_previous";
+        };
+      normal_operator_expr = 
+        lib.mapAttrsToList (key: action: {
+          mode = [ "n" "x" "o" ];
+          options.expr = true;
+          inherit action key;
+        }) {
+          "f".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_f_expr";
+          "F".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_F_expr";
+          "t".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_t_expr";
+          "T".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_T_expr";
         };
       buffer_path = "%:s?term:.*??:s?oil://??:p";
       normal =
@@ -172,7 +206,7 @@
           "<Tab>" = "<Tab>";
         };
     in
-      (operator ++ normal ++ visual ++ insert ++ terminal);
+      (operator ++ normal_operator ++ normal_operator_expr ++ normal ++ visual ++ insert ++ terminal);
 
     extraConfigLua = ''
       -- Use lowercase for global marks and uppercase for local marks.
