@@ -71,6 +71,8 @@
           "F".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_F_expr";
           "t".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_t_expr";
           "T".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_T_expr";
+          "n" = "v:searchforward ? 'n' : 'N'";
+          "N" = "v:searchforward ? 'N' : 'n'";
         };
       buffer_path = "%:s?term:.*??:s?oil://??:p";
       normal =
@@ -94,6 +96,7 @@
           "sx".__raw = "require('substitute.exchange').operator";
           "sxx".__raw = "require('substitute.exchange').line";
           "sxc".__raw = "require('substitute.exchange').cancel";
+          "*" = ":let @/='\\<'.expand('<cword>').'\\>' | set hlsearch | let v:searchforward=1<CR>";
 
           "gw" = "<cmd>Oil .<CR>";
           "gh" = "<cmd>Oil ~/!/<CR>";
