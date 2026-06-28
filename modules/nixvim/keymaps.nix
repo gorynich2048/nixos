@@ -35,8 +35,8 @@
           mode = [ "x" "o" ];
           inherit action key;
         }) {
-          "l".__raw = "function() vim.cmd('normal! ^vt=h') end";
-          "r".__raw = "function() vim.cmd('normal! ^f=llvt;') end";
+          "l".__raw = "function() vim.cmd('normal! ^vf=F h') end";
+          "r".__raw = "function() vim.cmd('normal! ^f=f lvt;') end";
           "if".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@function.inner', 'textobjects') end";
           "af".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@function.outer', 'textobjects') end";
           "is".__raw = "function() require('nvim-treesitter-textobjects.select').select_textobject('@class.inner', 'textobjects') end";
@@ -49,17 +49,10 @@
           mode = [ "n" "x" "o" ];
           inherit action key;
         }) {
-          "]f".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects') end";
-          "]F".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_end('@function.outer', 'textobjects') end";
-          "[f".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer', 'textobjects') end";
-          "[F".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_end('@function.outer', 'textobjects') end";
-          "]s".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_start('@class.outer', 'textobjects') end";
-          "]S".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_end('@class.outer', 'textobjects') end";
-          "[s".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_start('@class.outer', 'textobjects') end";
-          "[S".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_end('@class.outer', 'textobjects') end";
-
-          ";".__raw = "require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_next";
-          ",".__raw = "require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_previous";
+          ")".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects') end";
+          "(".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer', 'textobjects') end";
+          "]".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_start('@class.outer', 'textobjects') end";
+          "[".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_start('@class.outer', 'textobjects') end";
         };
       normal_operator_expr = 
         lib.mapAttrsToList (key: action: {
@@ -73,6 +66,8 @@
           "T".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_T_expr";
           "n" = "v:searchforward ? 'n' : 'N'";
           "N" = "v:searchforward ? 'N' : 'n'";
+          ";" = "getcharsearch().forward ? ';' : ','";
+          "," = "getcharsearch().forward ? ',' : ';'";
         };
       buffer_path = "%:s?term:.*??:s?oil://??:p";
       normal =
@@ -85,18 +80,18 @@
           "<Esc>" = "<cmd>noh<CR>";
           "<C-s>" = "<cmd>w<CR>";
           "<Backspace>" = "<cmd>Oil<CR>";
-          "H" = "zH";
-          "L" = "zL";
-          "k" = ".";
+          "H" = "zL";
+          "L" = "zH";
+          "j" = ".";
           "\\" = "/\\V<C-r>\"<CR>";
           "yp" = "<cmd>let @+=expand(\"${buffer_path}\")<CR>";
-          "s".__raw = "require('substitute').operator";
-          "ss".__raw = "require('substitute').line";
-          "S".__raw = "require('substitute').eol";
-          "sx".__raw = "require('substitute.exchange').operator";
-          "sxx".__raw = "require('substitute.exchange').line";
-          "sxc".__raw = "require('substitute.exchange').cancel";
-          "*" = ":let @/='\\<'.expand('<cword>').'\\>' | set hlsearch | let v:searchforward=1<CR>";
+          "k".__raw = "require('substitute').operator";
+          "kk".__raw = "require('substitute').line";
+          "K".__raw = "require('substitute').eol";
+          "ks".__raw = "require('substitute.exchange').operator";
+          "kss".__raw = "require('substitute.exchange').line";
+          "ksc".__raw = "require('substitute.exchange').cancel";
+          "s" = "\"_s";
 
           "gw" = "<cmd>Oil .<CR>";
           "gh" = "<cmd>Oil ~/!/<CR>";
@@ -111,8 +106,8 @@
           # "n" = "nzz";
           # "N" = "Nzz";
           # "<C-i>" = "<C-i>zz";
-          "l" = "M<C-u>";
-          "h" = "M<C-d>zz";
+          "l" = "<C-u>";
+          "h" = "<C-d>";
           "p" = "<Plug>(YankyPutAfter)";
           "P" = "<Plug>(YankyPutBefore)";
           "gp" = "<Plug>(YankyGPutAfter)";
@@ -136,6 +131,8 @@
           "<leader>t" = "<cmd>e term://${buffer_path}:h//$SHELL<CR>i";
           "<leader>e".__raw = "vim.diagnostic.open_float";
           "<leader>s" = "<cmd>Spectre<CR>";
+          "<leader>h" = ":let @/='\\<'.expand('<cword>').'\\>' | set hlsearch | let v:searchforward=1<CR>";
+
           "<leader>cd" = "<cmd>Cd<CR>:te<CR>:f term_root<CR>";
           "<leader>cl" = "<cmd>Clear<CR>";
           "<leader>cm" = "<cmd>ToggleBufMarks<CR>";
@@ -155,19 +152,23 @@
           "<leader>md" = "<cmd>RemoteSSHFSDisconnect<CR>";
           "<leader>mf" = "<cmd>RemoteSSHFSFindFiles<CR>";
           "<leader>ml" = "<cmd>RemoteSSHFSLiveGrep<CR>";
+
+          "<X1Mouse>" = "<C-o>";
+          "<X2Mouse>" = "<C-i>";
         };
       visual =
         lib.mapAttrsToList (key: action: {
           mode = "x";
           inherit action key;
         }) {
-          "l" = "M<C-u>";
-          "h" = "M<C-d>zz";
-          "H" = "zH";
-          "L" = "zL";
+          "l" = "<C-u>";
+          "h" = "<C-d>";
+          "H" = "zL";
+          "L" = "zH";
           ">" = ">gv";
           "<" = "<gv";
-          "s".__raw = "require('substitute').visual";
+          "k".__raw = "require('substitute').visual";
+          "s" = "\"_s";
 
           "p" = "<Plug>(YankyPutAfter)";
           "P" = "<Plug>(YankyPutBefore)";
@@ -218,6 +219,38 @@
 
       for i=0,25 do vim.keymap.set("n", "m"..low(i), "`"..upp(i)) end
       for i=0,25 do vim.keymap.set("n", "M"..low(i), "m"..upp(i)) end
+
+      local target_modes = { "n", "v", "o" }
+
+      local function is_target_chord(lhs)
+        local first_char = lhs:sub(1, 1)
+        return (first_char == "[" or first_char == "]") and #lhs > 1
+      end
+
+      -- Use vim.schedule to run this right AFTER all built-in plugins (like matchit) load
+      vim.schedule(function()
+        for _, mode in ipairs(target_modes) do
+          for _, map in ipairs(vim.api.nvim_get_keymap(mode)) do
+            if is_target_chord(map.lhs) then
+              pcall(vim.keymap.del, mode, map.lhs)
+            end
+          end
+        end
+      end)
+
+      -- Keep the buffer-local protection for whenever new files open
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "*",
+        callback = function()
+          for _, mode in ipairs(target_modes) do
+            for _, map in ipairs(vim.api.nvim_buf_get_keymap(0, mode)) do
+              if is_target_chord(map.lhs) then
+                pcall(vim.keymap.del, mode, map.lhs, { buffer = true })
+              end
+            end
+          end
+        end,
+      })
     '';
   };
 }
