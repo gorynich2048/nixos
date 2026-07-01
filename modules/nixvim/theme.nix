@@ -9,52 +9,67 @@
           comments = "none";
         };
         highlights = {
-          Search.bg = "#abb2bf";
-          IncSearch.bg = "#e86671";
-          CurSearch.bg = "#e86671";
-          CurrentScope.fg = "#61afef";
-          TelescopeMatching.fg = "#e86671";
-          BlinkCmpLabelMatch.fg = "#e86671";
-          FloatBorder.fg = "#61afef";
-          TelescopeBorder.fg = "#61afef";
-          TelescopePromptBorder.fg = "#61afef";
-          TelescopeResultsBorder.fg = "#61afef";
-          TelescopePreviewBorder.fg = "#61afef";
-
           "@spell".fg = "NONE";
           "@nospell".fg = "NONE";
-
-          "@variable.parameter".fg = "#abb2bf";
-          "@variable.parameter.builtin".fg = "#abb2bf";
-          "@variable.member".fg = "#abb2bf";
-          "@variable.builtin".fg = "#abb2bf";
-          "@property".fg = "#abb2bf";
-          "@constant".fg = "#98c379";
-          "@constant.builtin".fg = "#98c379";
-          "@boolean".fg = "#98c379";
-          "@number".fg = "#98c379";
-          "@number.float".fg = "#98c379";
-          "@character".fg = "#98c379";
-          "@string.regexp".fg = "#98c379";
-          "@type.builtin".fg = "#e5c07b";
-          "@module.builtin".fg = "#e5c07b";
-          "@function.builtin".fg = "#61afef";
-          "@comment.todo".fg = "#e86671";
-
-          # "@my_important".fg = "#e86671";
-
-          "@lsp.type.parameter".fg = "#abb2bf";
-          "@lsp.type.property".fg = "#abb2bf";
-          "@lsp.type.const".fg = "#98c379";
-          "@lsp.type.number".fg = "#98c379";
-          "@lsp.type.enumMember".fg = "#98c379";
-          "@lsp.type.builtinType".fg = "#e5c07b";
           "@lsp.typemod.variable.defaultLibrary".fg = "NONE";
-
-          # "@lsp.mod.controlFlow".fg = "#e86671";
-          # "@lsp.typemod.keyword.controlFlow".fg = "#e86671";
-          "@lsp.typemod.operator.controlFlow".fg = "#e86671";
-        };
+        }
+        // (let red = "#e86671"; in {
+          IncSearch.bg = red;
+          CurSearch.bg = red;
+          TelescopeMatching.fg = red;
+          BlinkCmpLabelMatch.fg = red;
+          "@comment.todo".fg = red;
+          "@lsp.typemod.operator.controlFlow".fg = red;
+          # "@my_important".fg = red;
+        })
+        //
+        (let green = "#98c379"; in {
+          "@constant".fg = green;
+          "@constant.builtin".fg = green;
+          "@boolean".fg = green;
+          "@number".fg = green;
+          "@number.float".fg = green;
+          "@character".fg = green;
+          "@string.regexp".fg = green;
+          "@lsp.type.const".fg = green;
+          "@lsp.type.number".fg = green;
+          "@lsp.type.enumMember".fg = green;
+        })
+        // (let yellow = "#e5c07b"; in {
+          "@type.builtin".fg = yellow;
+          "@module.builtin".fg = yellow;
+          "@lsp.type.builtinType".fg = yellow;
+        })
+        // (let blue = "#61afef"; in {
+          CurrentScope.fg = blue;
+          FloatBorder.fg = blue;
+          TelescopeBorder.fg = blue;
+          TelescopePromptBorder.fg = blue;
+          TelescopeResultsBorder.fg = blue;
+          TelescopePreviewBorder.fg = blue;
+          "@function.builtin".fg = blue;
+        })
+        // (let magenta = "#c678dd"; in {
+        })
+        // (let bluegreen = "#56b6c2"; in {
+        })
+        // (let dark = "#6c7380"; in {
+          "@comment".fg = dark;
+          "@lsp.type.comment".fg = dark;
+        })
+        // (let grey = "#abb2bf"; in {
+          Search.bg = grey;
+          "@variable.member".fg = grey;
+          "@property".fg = grey;
+          "@lsp.type.property".fg = grey;
+        })
+        // (let white = "#ebf2ff"; in {
+          "@variable.parameter".fg = white;
+          "@variable.parameter.builtin".fg = white;
+          "@variable.builtin".fg = white;
+          "@lsp.type.parameter".fg = white;
+          "@character.special".fg = white;
+        });
       };
     };
   };
