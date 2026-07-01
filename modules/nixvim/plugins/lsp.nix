@@ -21,12 +21,7 @@
         };
       };
       servers = {
-        nixd = {
-          enable = true;
-          settings = {
-            nixpkgs.expr = "import <nixpkgs> {}";
-          };
-        };
+        nixd.enable = true;
         clangd.enable = true;
         rust_analyzer = {
           enable = true;

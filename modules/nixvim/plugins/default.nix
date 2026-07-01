@@ -1,10 +1,8 @@
 {
   imports = [
     ./dap.nix
-    ./indent-blankline.nix
     ./lsp.nix
     ./oil.nix
-    # ./ollama.nix
     ./telescope.nix
     ./treesitter.nix
   ];
@@ -33,7 +31,6 @@
           };
         };
       };
-      sleuth.enable = true; # auto indent
       vim-surround.enable = true;
       treesitter-context = {
         enable = true;
@@ -54,6 +51,16 @@
       colorizer = {
         enable = true;
         settings.user_default_options.names = false;
+      };
+      indent-blankline = {
+        enable = true;
+        settings = {
+          scope = {
+            show_start = false;
+            show_end = false;
+            highlight = "CurrentScope";
+          };
+        };
       };
       # nvim-autopairs.enable = true;
       csvview.enable = true;
