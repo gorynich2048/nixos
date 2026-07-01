@@ -57,7 +57,7 @@
               ''; } {} ]
               [ "r" { __raw = ''
               function()
-                require('dap').repl.open({},"enew")
+                require('dap').repl.open()
               end
               ''; } { exit = true; } ]
               [ "<Esc>" { __raw = ''
