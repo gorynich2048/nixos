@@ -70,6 +70,7 @@
           "," = "getcharsearch().forward ? ',' : ';'";
         };
       buffer_path = "%:s?term:.*??:s?oil://??:p";
+      clipboard = if config.networking.hostName == "local" then "+" else "\"";
       normal =
         lib.mapAttrsToList (key: action: {
           mode = "n";
@@ -84,7 +85,7 @@
           "L" = "zH";
           "j" = ".";
           "\\" = "/\\V<C-r>\"<CR>";
-          "yp" = "<cmd>let @+=expand(\"${buffer_path}\")<CR>";
+          "yp" = "<cmd>let @${clipboard}=expand(\"${buffer_path}\")<CR>";
           "k".__raw = "require('substitute').operator";
           "kk".__raw = "require('substitute').line";
           "K".__raw = "require('substitute').eol";
@@ -193,7 +194,7 @@
           inherit action key;
         }) {
           "<C-Backspace>" = "<C-w>";
-          "<C-v>" = "<C-r>" + (if config.networking.hostName == "local" then "+" else "\"");
+          "<C-v>" = "<C-r>" + clipboard;
         };
       terminal =
         lib.mapAttrsToList (key: action: {
