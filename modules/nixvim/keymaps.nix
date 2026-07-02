@@ -68,6 +68,8 @@
           "N" = "v:searchforward ? 'N' : 'n'";
           ";" = "getcharsearch().forward ? ';' : ','";
           "," = "getcharsearch().forward ? ',' : ';'";
+          "<Down>" = "v:count > 1 ? \"m'\" . v:count . 'j' : 'j'";
+          "<Up>" = "v:count > 1 ? \"m'\" . v:count . 'k' : 'k'";
         };
       buffer_path = "%:s?term:.*??:s?oil://??:p";
       clipboard = if config.networking.hostName == "local" then "+" else "\"";
@@ -99,14 +101,13 @@
           "gt" = "<cmd>b term_root<CR>";
           "gs" = "<cmd>G<CR>:only<CR>";
           "gl" = "<cmd>G l<CR>:only<CR>";
-          "gf" = "gFzz";
-          "gd" = "gdzz";
           "gco" = "oa<Esc><cmd>norm gcc<CR>A<BS>";
           "gcO" = "Oa<Esc><cmd>norm gcc<CR>A<BS>";
+          "gf" = "gF";
+          "gd" = "<cmd>Telescope lsp_definitions<CR>";
+          "gr" = "<cmd>Telescope lsp_references<CR>";
+          "gi" = "<cmd>Telescope lsp_implementations<CR>";
 
-          # "n" = "nzz";
-          # "N" = "Nzz";
-          # "<C-i>" = "<C-i>zz";
           "l" = "<C-u>";
           "h" = "<C-d>";
           "p" = "<Plug>(YankyPutAfter)";
@@ -129,30 +130,40 @@
           "<S-Up>" = "<cmd>m .-2<CR>==";
           "<S-Down>" = "<cmd>m .+1<CR>==";
 
-          "<leader>t" = "<cmd>e term://${buffer_path}:h//$SHELL<CR>i";
-          "<leader>e".__raw = "vim.diagnostic.open_float";
-          "<leader>s" = "<cmd>Spectre<CR>";
           "<leader>h" = ":let @/='\\<'.expand('<cword>').'\\>' | set hlsearch | let v:searchforward=1<CR>";
+          "<leader>e".__raw = "vim.diagnostic.open_float";
+          "<leader>i".__raw = "vim.lsp.buf.hover";
+          "<leader>r".__raw = "vim.lsp.buf.rename";
+          "<leader>a".__raw = "vim.lsp.buf.code_action";
 
           "<leader>cd" = "<cmd>Cd<CR>:te<CR>:f term_root<CR>";
           "<leader>cl" = "<cmd>Clear<CR>";
           "<leader>cm" = "<cmd>ToggleBufMarks<CR>";
+          "<leader>ct" = "<cmd>e term://${buffer_path}:h//$SHELL<CR>i";
+          "<leader>cr" = "<cmd>Spectre<CR>";
 
           "<leader>f" = "<cmd>Telescope find_files<CR>";
           "<leader>F" = "<cmd>Telescope find_files cwd=${buffer_path}:h<CR>";
           "<leader>l" = "<cmd>Telescope live_grep<CR>";
           "<leader>L" = "<cmd>Telescope live_grep cwd=${buffer_path}:h<CR>";
           "<leader>b" = "<cmd>Telescope buffers<CR>";
+          "<leader>o" = "<cmd>Telescope jumplist<CR>";
+          "<leader>t" = "<cmd>Telescope treesitter<CR>";
+          "<leader>s" = "<cmd>Telescope lsp_document_symbols<CR>";
+          "<leader>m" = "<cmd>Telescope marks<CR>";
+          "<leader>w" = "<cmd>Telescope lsp_workspace_symbols<CR>";
+          "<leader>g" = "<cmd>Telescope git_commits<CR>";
+          "<leader>E" = "<cmd>Telescope diagnostics<CR>";
 
           "<leader>y" = "\"+y";
           "<leader>Y" = "\"+Y";
           "<leader>p" = "\"+p";
           "<leader>P" = "\"+P";
 
-          "<leader>mc" = "<cmd>RemoteSSHFSConnect<CR>";
-          "<leader>md" = "<cmd>RemoteSSHFSDisconnect<CR>";
-          "<leader>mf" = "<cmd>RemoteSSHFSFindFiles<CR>";
-          "<leader>ml" = "<cmd>RemoteSSHFSLiveGrep<CR>";
+          # "<leader>mc" = "<cmd>RemoteSSHFSConnect<CR>";
+          # "<leader>md" = "<cmd>RemoteSSHFSDisconnect<CR>";
+          # "<leader>mf" = "<cmd>RemoteSSHFSFindFiles<CR>";
+          # "<leader>ml" = "<cmd>RemoteSSHFSLiveGrep<CR>";
 
           "<X1Mouse>" = "<C-o>";
           "<X2Mouse>" = "<C-i>";
