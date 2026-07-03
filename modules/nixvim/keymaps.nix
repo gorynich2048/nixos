@@ -33,7 +33,7 @@
       operator = 
         lib.mapAttrsToList (key: action: {
           mode = [ "x" "o" ];
-          inherit action key;
+          inherit key action;
         }) {
           "l".__raw = "function() vim.cmd('normal! ^vf=F h') end";
           "r".__raw = "function() vim.cmd('normal! ^f=f lvt;') end";
@@ -47,7 +47,7 @@
       normal_operator = 
         lib.mapAttrsToList (key: action: {
           mode = [ "n" "x" "o" ];
-          inherit action key;
+          inherit key action;
         }) {
           ")".__raw = "function() require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects') end";
           "(".__raw = "function() require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer', 'textobjects') end";
@@ -58,7 +58,7 @@
         lib.mapAttrsToList (key: action: {
           mode = [ "n" "x" "o" ];
           options.expr = true;
-          inherit action key;
+          inherit key action;
         }) {
           "f".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_f_expr";
           "F".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_F_expr";
@@ -66,8 +66,6 @@
           "T".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_T_expr";
           "n" = "v:searchforward ? 'n' : 'N'";
           "N" = "v:searchforward ? 'N' : 'n'";
-          ";" = "getcharsearch().forward ? ';' : ','";
-          "," = "getcharsearch().forward ? ',' : ';'";
           "<Down>" = "v:count > 1 ? \"m'\" . v:count . 'j' : 'j'";
           "<Up>" = "v:count > 1 ? \"m'\" . v:count . 'k' : 'k'";
         };
@@ -76,34 +74,31 @@
       normal =
         lib.mapAttrsToList (key: action: {
           mode = "n";
-          inherit action key;
+          inherit key action;
         }) {
           "<Space>" = "<NOP>";
           "ZZ" = "<NOP>";
-          "<Esc>" = "<cmd>noh<CR>";
+          "<Esc>" = "<Plug>(clever-f-reset)<cmd>noh<CR>";
           "<C-s>" = "<cmd>w<CR>";
           "<Backspace>" = "<cmd>Oil<CR>";
           "H" = "zL";
           "L" = "zH";
-          "j" = ".";
+          "k" = ".";
           "\\" = "/\\V<C-r>\"<CR>";
           "yp" = "<cmd>let @${clipboard}=expand(\"${buffer_path}\")<CR>";
-          "k".__raw = "require('substitute').operator";
-          "kk".__raw = "require('substitute').line";
-          "K".__raw = "require('substitute').eol";
-          "ks".__raw = "require('substitute.exchange').operator";
-          "kss".__raw = "require('substitute.exchange').line";
-          "ksc".__raw = "require('substitute.exchange').cancel";
           "s" = "\"_s";
 
           "gw" = "<cmd>Oil .<CR>";
           "gh" = "<cmd>Oil ~/!/<CR>";
-          "gt" = "<cmd>b term_root<CR>";
-          "gs" = "<cmd>G<CR>:only<CR>";
-          "gl" = "<cmd>G l<CR>:only<CR>";
           "gco" = "oa<Esc><cmd>norm gcc<CR>A<BS>";
           "gcO" = "Oa<Esc><cmd>norm gcc<CR>A<BS>";
           "gf" = "gF";
+          "gs".__raw = "require('substitute').operator";
+          "gss".__raw = "require('substitute').line";
+          "gS".__raw = "require('substitute').eol";
+          "gx".__raw = "require('substitute.exchange').operator";
+          "gxx".__raw = "require('substitute.exchange').line";
+          "gxc".__raw = "require('substitute.exchange').cancel";
           "gd" = "<cmd>Telescope lsp_definitions<CR>";
           "gr" = "<cmd>Telescope lsp_references<CR>";
           "gi" = "<cmd>Telescope lsp_implementations<CR>";
@@ -135,6 +130,8 @@
           "<leader>i".__raw = "vim.lsp.buf.hover";
           "<leader>r".__raw = "vim.lsp.buf.rename";
           "<leader>a".__raw = "vim.lsp.buf.code_action";
+          "<leader>t" = "<cmd>b term_root<CR>";
+          "<leader>g" = "<cmd>Gedit :<CR>";
 
           "<leader>cd" = "<cmd>Cd<CR>:te<CR>:f term_root<CR>";
           "<leader>cl" = "<cmd>Clear<CR>";
@@ -148,11 +145,10 @@
           "<leader>L" = "<cmd>Telescope live_grep cwd=${buffer_path}:h<CR>";
           "<leader>b" = "<cmd>Telescope buffers<CR>";
           "<leader>o" = "<cmd>Telescope jumplist<CR>";
-          "<leader>t" = "<cmd>Telescope treesitter<CR>";
-          "<leader>s" = "<cmd>Telescope lsp_document_symbols<CR>";
+          # "<leader>t" = "<cmd>Telescope treesitter<CR>";
+          # "<leader>s" = "<cmd>Telescope lsp_document_symbols<CR>";
           "<leader>m" = "<cmd>Telescope marks<CR>";
           "<leader>w" = "<cmd>Telescope lsp_workspace_symbols<CR>";
-          "<leader>g" = "<cmd>Telescope git_commits<CR>";
           "<leader>E" = "<cmd>Telescope diagnostics<CR>";
 
           "<leader>y" = "\"+y";
@@ -165,13 +161,46 @@
           # "<leader>mf" = "<cmd>RemoteSSHFSFindFiles<CR>";
           # "<leader>ml" = "<cmd>RemoteSSHFSLiveGrep<CR>";
 
+          "<LeftMouse>" = "<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>";
+          "<2-LeftMouse>" = "<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>";
+          "<3-LeftMouse>" = "<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>";
+          "<4-LeftMouse>" = "<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>";
+          "<LeftDrag>" = "<Nop>";
+          "<2-LeftDrag>" = "<Nop>";
+          "<3-LeftDrag>" = "<Nop>";
+          "<4-LeftDrag>" = "<Nop>";
+          "<LeftRelease>" = "<Nop>";
+          "<2-LeftRelease>" = "<Nop>";
+          "<3-LeftRelease>" = "<Nop>";
+          "<4-LeftRelease>" = "<Nop>";
+
+          "<RightMouse>" = "<LeftMouse><cmd>lua vim.lsp.buf.hover()<CR>";
+          "<2-RightMouse>" = "<LeftMouse><cmd>lua vim.lsp.buf.hover()<CR>";
+          "<3-RightMouse>" = "<LeftMouse><cmd>lua vim.lsp.buf.hover()<CR>";
+          "<4-RightMouse>" = "<LeftMouse><cmd>lua vim.lsp.buf.hover()<CR>";
+          "<RightDrag>" = "<Nop>";
+          "<2-RightDrag>" = "<Nop>";
+          "<3-RightDrag>" = "<Nop>";
+          "<4-RightDrag>" = "<Nop>";
+          "<RightRelease>" = "<Nop>";
+          "<2-RightRelease>" = "<Nop>";
+          "<3-RightRelease>" = "<Nop>";
+          "<4-RightRelease>" = "<Nop>";
+
           "<X1Mouse>" = "<C-o>";
+          "<2-X1Mouse>" = "<C-o>";
+          "<3-X1Mouse>" = "<C-o>";
+          "<4-X1Mouse>" = "<C-o>";
+
           "<X2Mouse>" = "<C-i>";
+          "<2-X2Mouse>" = "<C-i>";
+          "<3-X2Mouse>" = "<C-i>";
+          "<4-X2Mouse>" = "<C-i>";
         };
       visual =
         lib.mapAttrsToList (key: action: {
           mode = "x";
-          inherit action key;
+          inherit key action;
         }) {
           "l" = "<C-u>";
           "h" = "<C-d>";
@@ -179,14 +208,14 @@
           "L" = "zH";
           ">" = ">gv";
           "<" = "<gv";
-          "k".__raw = "require('substitute').visual";
+          "gs".__raw = "require('substitute').visual";
           "s" = "\"_s";
 
           "p" = "<Plug>(YankyPutAfter)";
           "P" = "<Plug>(YankyPutBefore)";
           "gp" = "<Plug>(YankyGPutAfter)";
           "gP" = "<Plug>(YankyGPutBefore)";
-          "x".__raw = "require('substitute.exchange').visual";
+          "gx".__raw = "require('substitute.exchange').visual";
 
           "<C-d>" = "\"_d";
           "<C-j>" = ":t'><CR>";
@@ -202,7 +231,7 @@
       insert =
         lib.mapAttrsToList (key: action: {
           mode = "!";
-          inherit action key;
+          inherit key action;
         }) {
           "<C-Backspace>" = "<C-w>";
           "<C-v>" = "<C-r>" + clipboard;
@@ -210,7 +239,7 @@
       terminal =
         lib.mapAttrsToList (key: action: {
           mode = "t";
-          inherit action key;
+          inherit key action;
         }) {
           "<C-Backspace>" = "<C-w>";
           "<C-v>" = "<C-\\><C-o>p";

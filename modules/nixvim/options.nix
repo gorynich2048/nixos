@@ -6,6 +6,8 @@
       loaded_python3_provider = 0;
       loaded_node_provider = 0;
       terminal_scrollback_buffer_size = 100000;
+      clever_f_mark_char_color = "IncSearch";
+      clever_f_fix_key_direction = 1;
     };
 
     clipboard = {

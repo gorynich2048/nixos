@@ -13,6 +13,7 @@
       fugitive.enable = true;
       web-devicons.enable = true;
       crates.enable = true;
+      sleuth.enable = true; # autodetect tabstop for <Tab> key
       spectre = {
         enable = true;
         settings.open_cmd = "enew";

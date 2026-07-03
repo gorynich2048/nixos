@@ -4,6 +4,7 @@
       (pkgs.vimPlugins.term-edit-nvim.overrideAttrs (old: {
         patches = (old.patches or []) ++ [ ./term-edit.patch ];
       }))
+      pkgs.vimPlugins.clever-f-vim
       pkgs.vimPlugins.remote-sshfs-nvim
     ];
 
