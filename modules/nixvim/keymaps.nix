@@ -66,8 +66,6 @@
           "T".__raw = "require('nvim-treesitter-textobjects.repeatable_move').builtin_T_expr";
           "n" = "v:searchforward ? 'n' : 'N'";
           "N" = "v:searchforward ? 'N' : 'n'";
-          "<Down>" = "v:count > 1 ? \"m'\" . v:count . 'j' : 'j'";
-          "<Up>" = "v:count > 1 ? \"m'\" . v:count . 'k' : 'k'";
         };
       buffer_path = "%:s?term:.*??:s?oil://??:p";
       clipboard = if config.networking.hostName == "local" then "+" else "\"";
