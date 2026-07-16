@@ -14,6 +14,11 @@
               bind.port = 51001;
               host.address = "localhost";
               host.port = 22;
+            } {
+              bind.address = "*";
+              bind.port = 51002;
+              host.address = "localhost";
+              host.port = 3389;
             }];
           };
         };
