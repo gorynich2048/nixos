@@ -17,7 +17,7 @@
             } {
               bind.address = "*";
               bind.port = 51002;
-              host.address = "localhost";
+              host.address = "172.24.128.1";
               host.port = 3389;
             }];
           };
