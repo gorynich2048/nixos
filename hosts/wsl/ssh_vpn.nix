@@ -3,7 +3,7 @@
     users.root = {
       programs.ssh = {
         enable = true;
-        ServerAliveInterval = 0;
+        serverAliveInterval = 0;
         matchBlocks = {
           lab = {
             hostname = "138.201.221.18";
