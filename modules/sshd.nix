@@ -6,7 +6,8 @@
       settings = {
         PasswordAuthentication = false;
         PermitTunnel = "yes";
-        ClientAliveInterval = 0;
+        ClientAliveInterval = 60;
+        ClientAliveCountMax = 3;
       };
     };
   };

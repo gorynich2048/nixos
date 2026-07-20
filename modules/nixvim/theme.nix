@@ -49,9 +49,9 @@
           TelescopePreviewBorder.fg = blue;
           "@function.builtin".fg = blue;
         })
-        // (let magenta = "#c678dd"; in {
+        // (let violet = "#c678dd"; in {
         })
-        // (let bluegreen = "#56b6c2"; in {
+        // (let cyan = "#56b6c2"; in {
         })
         // (let dark = "#6c7380"; in {
           "@comment".fg = dark;
