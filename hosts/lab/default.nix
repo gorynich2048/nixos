@@ -1,6 +1,7 @@
 { lib, ... }: {
   imports = [
     ../../modules/base.nix
+    ../../modules/dns.nix
     ../../modules/dns_proxy.nix
     ../../modules/sshd.nix
     ../../modules/fish.nix
