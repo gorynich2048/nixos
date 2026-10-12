@@ -25,6 +25,7 @@
     };
     efi.canTouchEfiVariables = true;
   };
+  boot.kernel.sysctl."kernel.sysrq" = 1;
 
   # Configure mouse: https://www.xvalleyinno.top/AttackShark/#/project/items
   services.udev.extraRules = ''
